@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: #FFEAAE;
+}
+
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+
+.header-title {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    font-weight: 400;
+    line-height: 100px;
+    text-align: center;
+    color: #0A0903;
+}
+
+.screen1-left {
+    float: left;
+    width: 50%;
+    height: calc(100vh - 100px);
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.screen1-right {
+    float: left;
+    width: 50%;
+    height: calc(100vh - 100px);
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.about-header {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #0A0903;
+    padding-top: 50px;
+}
+
+.about-text {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    font-size: 20px;
+    padding: 20px 20px;
+    width: 80%;
+}
