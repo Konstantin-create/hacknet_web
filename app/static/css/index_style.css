@@ -54,6 +54,50 @@ header {
 .about-text {
     font-family: 'Encode Sans Semi Condensed', sans-serif;
     font-size: 20px;
+    font-weight: 200;
     padding: 20px 20px;
     width: 80%;
+}
+
+.recently-header {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #0A0903;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 25px;
+}
+
+.post {
+    width: 75%;
+    height: 125px;
+    margin: 25px auto;
+    box-sizing: border-box;
+    background-color: #f4e0ab;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(244, 224, 171, 0.8);
+}
+
+.post-image {
+    float: left;
+    display: block;
+    width: 100px;
+    margin: 12.5px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
+}
+
+.post-header {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 7px 20px;
+}
+
+.post-data {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
 }
