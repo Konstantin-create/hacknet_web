@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/hacknet.github.io.iml" filepath="$PROJECT_DIR$/.idea/hacknet.github.io.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/hacknet_web.iml" filepath="$PROJECT_DIR$/.idea/hacknet_web.iml" />
     </modules>
   </component>
 </project>
