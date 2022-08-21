@@ -4,23 +4,76 @@
 }
 
 :root {
-    --aside-width: 250px;
-    --main-background: #1e1e1e;
-    --aside-background: #353535;
+    --aside-width: 300px;
+    --main-background: #181818;
+    --aside-background: #202020;
 }
 
 aside {
-    position: fixed;
     float: left;
     width: var(--aside-width);
     height: 100vh;
     background: var(--aside-background);
-    box-shadow: 2px 0 10px var(--aside-background);
+    box-shadow: 5px 0 15px rgba(53, 53, 53, 0.1);
 }
 
 main {
     float: left;
-    width: 100%;
+    width: calc(100% - var(--aside-width));
     height: 100vh;
     background-color: var(--main-background);
+}
+
+.aside-img {
+    display: block;
+    width: var(--aside-width);
+    height: 180px;
+    background-image: url("../img/aside-img.jpg");
+}
+
+.user-logo {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: wheat;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    margin: -50px auto;
+}
+
+.user-name {
+    font-family: "Cantarell", sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.user-short-description {
+    font-family: "Cantarell Light", sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.user-description-hr {
+    color: #ffffff;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.user-description {
+    font-family: "Cantarell", sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.pm-me {
+    width: 120px;
+    height: 50px;
 }
