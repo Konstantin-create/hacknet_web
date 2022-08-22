@@ -6,4 +6,4 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-app.run()
+app.run(host='0.0.0.0', port=80)
