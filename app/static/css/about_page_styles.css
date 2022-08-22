@@ -70,8 +70,49 @@ hr {
 }
 
 .gh-contributions {
-    display: block;
-    width: 1000px;
+    display: flex;
+    width: 70%;
+    height: 269px;
+    background-image: url("../img/gh-contributions.png");
+    background-size: cover;
     margin: 50px auto;
     border-radius: 10px;
+    justify-content: space-around;
+}
+
+.gh.gh-col {
+    width: calc(100% / 3);
+}
+
+.gh-col-header {
+    position: relative;
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.gh-col-data {
+    font-family: Roboto, sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.gh-more-btn {
+    position: absolute;
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 210px;
+    padding: 5px 30px;
+    background-color: #107EFF;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
 }

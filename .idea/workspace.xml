@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="687b2af5-2a78-4202-bdcb-d99ef558fcab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/css/about_page_styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hacknet_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hacknet_web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index_page_styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/aside-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/blog-img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/gh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/tg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/user-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/base_animations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.6.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/about_page_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/about_page_styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/about.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "list.type.of.created.stylesheet": "CSS",
+    "settings.editor.selected.configurable": "preferences.editor",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -65,7 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1661173966186</updated>
       <workItem from="1661173970568" duration="1140000" />
-      <workItem from="1661175437621" duration="8770000" />
+      <workItem from="1661175437621" duration="11473000" />
     </task>
     <servers />
   </component>
