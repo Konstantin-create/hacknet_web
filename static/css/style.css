@@ -1,12 +1,19 @@
 * {
     margin: 0;
     padding: 0;
+    outline: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
 
 :root {
     --aside-width: 300px;
     --main-background: #181818;
     --aside-background: #202020;
+    --header-height: 50px;
 }
 
 aside {
@@ -35,7 +42,9 @@ main {
     display: block;
     width: 100px;
     height: 100px;
-    background: wheat;
+    background-image: url("../img/user-logo.png");
+    background-size: cover;
+    background-position: 50% 50%;
     border: 2px solid #ffffff;
     border-radius: 50%;
     margin: -50px auto;
@@ -75,5 +84,66 @@ main {
 
 .pm-me {
     width: 120px;
-    height: 50px;
+    margin: 20px auto;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pm-img {
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    height: var(--header-height);
+    background-color: #080708;
+}
+
+.header-item {
+    float: left;
+    font-family: Roboto, monospace;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    padding: calc(var(--header-height) / 4);
+    margin: 0 30px;
+
+    cursor: pointer;
+}
+
+.header-item:after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: width 0.2s ease-in-out;
+}
+
+.header-item:hover:after,
+.header-item:focus:after {
+    width: 100%;
+}
+
+.header-item:hover {
+    color: white;
+}
+
+.header-finder {
+    float: right;
+    width: 250px;
+    height: var(--header-height);
+    box-sizing: border-box;
+    padding: 10px 10px;
+
+    font-family: 'Roboto Thin', sans-serif;
+    color: rgba(255, 255, 255, 0.4);
+
+    background-color: #202020;
+    border: 0;
 }
