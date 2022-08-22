@@ -1,0 +1,77 @@
+main {
+    width: 100%;
+}
+
+body {
+    height: 200vh;
+}
+
+.background-mask {
+    box-sizing: border-box;
+    width: 100%;
+    height: 400px;
+    background: rgba(0, 0, 0, 1);
+}
+
+.background-img {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/background.png");
+    opacity: 20%;
+}
+
+.user-logo {
+    display: block;
+    width: 125px;
+    height: 125px;
+    background: url("../img/user-logo.png") 50% 50%;
+    background-size: cover;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    margin: -62.5px auto;
+}
+
+.nickname {
+    position: absolute;
+    font-family: Cantarell, sans-serif;
+    left: calc(50% - 4em);
+    color: #ffffff;
+    padding-top: 150px;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.about-text {
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    width: 50%;
+    margin: 100px auto;
+}
+
+hr {
+    width: 50%;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, .1), rgba(255, 255, 255, 1), rgba(255, 255, 255, .1));
+    margin: 10px auto;
+    border: none;
+}
+
+.gh-header {
+    font-family: Roboto, sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.gh-contributions {
+    display: block;
+    width: 1000px;
+    margin: 50px auto;
+    border-radius: 10px;
+}
