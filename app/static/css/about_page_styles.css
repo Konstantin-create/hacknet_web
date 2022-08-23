@@ -3,7 +3,7 @@ main {
 }
 
 body {
-    height: 200vh;
+    height: auto;
 }
 
 .background-mask {
@@ -49,7 +49,30 @@ body {
     color: white;
     text-align: center;
     width: 50%;
-    margin: 100px auto;
+    margin: 100px auto 20px;
+}
+
+.pm-header {
+    font-family: Roboto, sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 25px;
+}
+
+.pm-methods {
+    width: 275px;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto 50px;
+}
+
+.pm-methods-img {
+    height: 100%;
+    cursor: pointer;
 }
 
 hr {
@@ -66,7 +89,7 @@ hr {
     font-weight: 400;
     color: white;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 .gh-contributions {
@@ -74,6 +97,7 @@ hr {
     width: 70%;
     height: 269px;
     background-image: url("../img/gh-contributions.png");
+    background-position: 50% 0;
     background-size: cover;
     margin: 50px auto;
     border-radius: 10px;
@@ -111,8 +135,26 @@ hr {
     text-align: center;
     margin-top: 210px;
     padding: 5px 30px;
-    background-color: #107EFF;
+    background-color: #104BE3;
     border-radius: 10px;
     color: white;
     cursor: pointer;
+    transition: 1s;
+}
+
+.gh-more-btn:after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: width 0.2s ease-in-out;
+}
+
+.gh-more-btn:hover:after, .header-item:focus:after {
+    width: 100%;
+}
+
+.gh-more-btn:hover {
+    background-color: #107EFF;
 }
