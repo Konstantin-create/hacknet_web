@@ -13,8 +13,7 @@
     <header>
         <p class="aside-toggle" onclick="aside_show()">|||</p>
         <h4 class="header-item"><a href="/">Main</a></h4>
-        <h4 class="header-item"><a href="/about">About me</a></h4>
-        <form action="/find">
+            <form action="/find">
             <label>
                 <input type="text" placeholder="Find any info on this site" class="header-finder">
             </label>
@@ -49,7 +48,7 @@
     <hr>
     <h3 class="gh-header">GitHub profile</h3>
     <div class="gh-contributions">
-        <div class="gh-col">
+        <div class="gh-col col-repos">
             <h2 class="gh-col-header">Repositories</h2>
             <p class="gh-col-data">{{ gh_stat['repos'] }}</p>
         </div>

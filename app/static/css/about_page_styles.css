@@ -1,160 +1,395 @@
-main {
-    width: 100%;
+@media (min-width: 700px) {
+    main {
+        width: 100%;
+    }
+
+    body {
+        height: auto;
+    }
+
+    .aside-toggle {
+        display: none;
+    }
+
+    .background-mask {
+        box-sizing: border-box;
+        width: 100%;
+        height: 400px;
+        background: rgba(0, 0, 0, 1);
+    }
+
+    .background-img {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        background-image: url("../img/background.png");
+        opacity: 20%;
+    }
+
+    .user-logo {
+        display: block;
+        width: 125px;
+        height: 125px;
+        background: url("../img/user-logo.png") 50% 50%;
+        background-size: cover;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        margin: -62.5px auto;
+    }
+
+    .nickname {
+        position: absolute;
+        font-family: Cantarell, sans-serif;
+        left: calc(50% - 4em);
+        color: #ffffff;
+        padding-top: 150px;
+        font-weight: 400;
+        font-size: 50px;
+    }
+
+    .about-text {
+        font-family: Roboto, sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: white;
+        text-align: center;
+        width: 50%;
+        margin: 100px auto 20px;
+    }
+
+    .pm-header {
+        font-family: Roboto, sans-serif;
+        font-size: 34px;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .pm-methods {
+        width: 275px;
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        margin: 10px auto 50px;
+    }
+
+    .pm-methods-img {
+        height: 100%;
+        cursor: pointer;
+    }
+
+    hr {
+        width: 50%;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, .1), rgba(255, 255, 255, 1), rgba(255, 255, 255, .1));
+        margin: 10px auto;
+        border: none;
+    }
+
+    .gh-header {
+        font-family: Roboto, sans-serif;
+        font-size: 34px;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .gh-contributions {
+        display: flex;
+        width: 70%;
+        height: 269px;
+        background-image: url("../img/gh-contributions.png");
+        background-position: 50% 0;
+        background-size: cover;
+        margin: 50px auto;
+        border-radius: 10px;
+        justify-content: space-around;
+    }
+
+    .gh.gh-col {
+        width: calc(100% / 3);
+    }
+
+    .gh-col-header {
+        position: relative;
+        font-family: Roboto, sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    .gh-col-data {
+        font-family: Roboto, sans-serif;
+        font-size: 27px;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .gh-more-btn {
+        position: absolute;
+        font-family: Roboto, sans-serif;
+        font-size: 30px;
+        font-weight: 200;
+        text-align: center;
+        margin-top: 210px;
+        padding: 5px 30px;
+        background-color: #104BE3;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .gh-more-btn:after {
+        display: block;
+        content: "";
+        height: 2px;
+        width: 0;
+        background-color: white;
+        transition: width 0.2s ease-in-out;
+    }
+
+    .gh-more-btn:hover:after, .header-item:focus:after {
+        width: 100%;
+    }
+
+    .gh-more-btn:hover {
+        background-color: #107EFF;
+    }
 }
 
-body {
-    height: auto;
+@media (max-width: 1400px) {
+
+
+    main {
+        width: 100%;
+    }
+
+    body {
+        height: auto;
+    }
+
+    .aside-toggle {
+        display: none;
+    }
+
+    .header-item {
+        display: block;
+    }
+
+    .background-mask {
+        box-sizing: border-box;
+        width: 100%;
+        height: 400px;
+        background: rgba(0, 0, 0, 1);
+    }
+
+    .background-img {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        background-image: url("../img/background.png");
+        opacity: 20%;
+    }
+
+    .user-logo {
+        display: block;
+        width: 125px;
+        height: 125px;
+        background: url("../img/user-logo.png") 50% 50%;
+        background-size: cover;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        margin: -62.5px auto;
+    }
+
+    .nickname {
+        position: absolute;
+        font-family: Cantarell, sans-serif;
+        left: calc(50% - 4em);
+        color: #ffffff;
+        padding-top: 150px;
+        font-weight: 400;
+        font-size: 50px;
+    }
+
+    .about-text {
+        font-family: Roboto, sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: white;
+        text-align: center;
+        width: 70%;
+        margin: 100px auto 20px;
+    }
+
+    .pm-header {
+        font-family: Roboto, sans-serif;
+        font-size: 34px;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .pm-methods {
+        width: 275px;
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        margin: 10px auto 50px;
+    }
+
+    .pm-methods-img {
+        height: 100%;
+        cursor: pointer;
+    }
+
+    hr {
+        width: 50%;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, .1), rgba(255, 255, 255, 1), rgba(255, 255, 255, .1));
+        margin: 10px auto;
+        border: none;
+    }
+
+    .gh-header {
+        font-family: Roboto, sans-serif;
+        font-size: 34px;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .gh-contributions {
+        display: flex;
+        width: 100%;
+        height: 269px;
+        background-image: url("../img/gh-contributions.png");
+        background-position: 50% 0;
+        background-size: cover;
+        margin: 50px auto;
+        border-radius: 10px;
+        justify-content: space-around;
+    }
+
+    .gh.gh-col {
+        width: calc(100% / 3);
+    }
+
+    .gh-col-header {
+        position: relative;
+        font-family: Roboto, sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    .gh-col-data {
+        font-family: Roboto, sans-serif;
+        font-size: 27px;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .gh-more-btn {
+        position: absolute;
+        font-family: Roboto, sans-serif;
+        font-size: 30px;
+        font-weight: 200;
+        text-align: center;
+        margin-top: 210px;
+        padding: 5px 30px;
+        background-color: #104BE3;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .gh-more-btn:after {
+        display: block;
+        content: "";
+        height: 2px;
+        width: 0;
+        background-color: white;
+        transition: width 0.2s ease-in-out;
+    }
+
+    .gh-more-btn:hover:after, .header-item:focus:after {
+        width: 100%;
+    }
+
+    .gh-more-btn:hover {
+        background-color: #107EFF;
+    }
 }
 
-.background-mask {
-    box-sizing: border-box;
-    width: 100%;
-    height: 400px;
-    background: rgba(0, 0, 0, 1);
+@media (max-width: 1000px) {
+    .about-text {
+        width: 85%;
+    }
 }
 
-.background-img {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    background-image: url("../img/background.png");
-    opacity: 20%;
+@media (max-width: 550px) {
+    .about-text {
+        width: 95%;
+    }
+
+    .gh-col-header {
+        padding-top: 50px;
+        font-size: 26px;
+    }
+
+    .gh-col-data {
+        font-size: 24px;
+    }
 }
 
-.user-logo {
-    display: block;
-    width: 125px;
-    height: 125px;
-    background: url("../img/user-logo.png") 50% 50%;
-    background-size: cover;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    margin: -62.5px auto;
+@media (max-width: 430px) {
+    .nickname {
+        font-size: 40px;
+    }
+
+    .gh-col-header {
+        padding-top: 60px;
+        font-size: 24px;
+    }
+
+    .gh-col-data {
+        font-size: 22px;
+    }
 }
 
-.nickname {
-    position: absolute;
-    font-family: Cantarell, sans-serif;
-    left: calc(50% - 4em);
-    color: #ffffff;
-    padding-top: 150px;
-    font-weight: 400;
-    font-size: 50px;
-}
+@media (max-width: 340px) {
+    .background-img {
+        background-position: 50% 0;
+    }
 
-.about-text {
-    font-family: Roboto, sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    color: white;
-    text-align: center;
-    width: 50%;
-    margin: 100px auto 20px;
-}
+    .nickname {
+        font-size: 36px;
+    }
 
-.pm-header {
-    font-family: Roboto, sans-serif;
-    font-size: 34px;
-    font-weight: 400;
-    color: white;
-    text-align: center;
-    padding-top: 20px;
-    margin-bottom: 25px;
-}
+    .about-text {
+        font-size: 18px;
+        width: 90%;
+    }
 
-.pm-methods {
-    width: 275px;
-    height: 75px;
-    display: flex;
-    justify-content: space-between;
-    margin: 10px auto 50px;
-}
+    .col-repos {
+        display: none;
+    }
 
-.pm-methods-img {
-    height: 100%;
-    cursor: pointer;
-}
-
-hr {
-    width: 50%;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, .1), rgba(255, 255, 255, 1), rgba(255, 255, 255, .1));
-    margin: 10px auto;
-    border: none;
-}
-
-.gh-header {
-    font-family: Roboto, sans-serif;
-    font-size: 34px;
-    font-weight: 400;
-    color: white;
-    text-align: center;
-    padding-top: 50px;
-}
-
-.gh-contributions {
-    display: flex;
-    width: 70%;
-    height: 269px;
-    background-image: url("../img/gh-contributions.png");
-    background-position: 50% 0;
-    background-size: cover;
-    margin: 50px auto;
-    border-radius: 10px;
-    justify-content: space-around;
-}
-
-.gh.gh-col {
-    width: calc(100% / 3);
-}
-
-.gh-col-header {
-    position: relative;
-    font-family: Roboto, sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    color: white;
-    text-align: center;
-    padding-top: 30px;
-}
-
-.gh-col-data {
-    font-family: Roboto, sans-serif;
-    font-size: 27px;
-    font-weight: 400;
-    color: white;
-    text-align: center;
-    padding-top: 40px;
-}
-
-.gh-more-btn {
-    position: absolute;
-    font-family: Roboto, sans-serif;
-    font-size: 30px;
-    font-weight: 200;
-    text-align: center;
-    margin-top: 210px;
-    padding: 5px 30px;
-    background-color: #104BE3;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.gh-more-btn:after {
-    display: block;
-    content: "";
-    height: 2px;
-    width: 0;
-    background-color: white;
-    transition: width 0.2s ease-in-out;
-}
-
-.gh-more-btn:hover:after, .header-item:focus:after {
-    width: 100%;
-}
-
-.gh-more-btn:hover {
-    background-color: #107EFF;
 }
