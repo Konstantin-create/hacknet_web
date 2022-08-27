@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     {% block title %}{% endblock %}
-    {% block style %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/base_animations.js') }}"></script>
+    {% block style %}{% endblock %}
 </head>
 <body>
 <aside id="aside">
