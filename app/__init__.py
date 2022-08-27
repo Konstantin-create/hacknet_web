@@ -9,4 +9,4 @@ threading.Thread(target=set_profile_data).start()
 
 from app.routes import *
 
-app.run()
+app.run(host='0.0.0.0')
