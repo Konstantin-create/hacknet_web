@@ -14,4 +14,4 @@ def about():
 
 @app.route('/find')
 def find():
-    return render_template()
+    return render_template('find.html')
