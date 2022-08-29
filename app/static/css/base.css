@@ -145,25 +145,6 @@ body {
     .header-item:hover:after, .header-item:focus:after {
         width: 100%;
     }
-
-
-    .header-finder {
-        float: right;
-        width: 250px;
-        height: var(--header-height);
-        box-sizing: border-box;
-        padding: 10px 10px;
-
-        font-family: 'Roboto Thin', sans-serif;
-        color: rgba(255, 255, 255, 0.4);
-
-        background-color: #202020;
-        border: 0;
-    }
-
-    .find-button {
-        display: none;
-    }
 }
 
 @media (max-width: 1149px) {
@@ -286,23 +267,6 @@ body {
 
     .header-item:hover:after, .header-item:focus:after {
         width: 100%;
-    }
-
-
-    .header-finder {
-        display: none;
-
-    }
-
-    .find-button {
-        display: block;
-        float: right;
-        line-height: var(--header-height);
-        font-size: 30px;
-        padding: 0 30px;
-        font-family: 'Noto Emoji', sans-serif;
-        color: white;
-        cursor: pointer;
     }
 }
 
