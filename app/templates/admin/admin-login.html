@@ -7,10 +7,10 @@
 </head>
 <body>
 <h1 class="main-header">Login Page</h1>
-<form action="/admin-login  ">
-    <label><input type="text" placeholder="Login" class="input-frame"></label>
+<form action="/admin/form/login" method="post">
+    <label><input type="text" placeholder="Login" class="input-frame" name="username"></label>
     <br>
-    <label><input type="text" placeholder="Password" class="input-frame"></label>
+    <label><input type="password" placeholder="Password" class="input-frame" name="password"></label>
     <label><input type="submit" value="Login" class="input-submit"></label>
 </form>
 </body>

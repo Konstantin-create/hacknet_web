@@ -1,5 +1,5 @@
 import threading
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
 from app.modules.github_tools import set_profile_data
 
 app = Flask(__name__)
