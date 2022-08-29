@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konstantin-create admin panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_styles/login_page_styles.css') }}">
+</head>
+<body>
+<h1 class="main-header">Login Page</h1>
+<form action="/admin-login  ">
+    <label><input type="text" placeholder="Login" class="input-frame"></label>
+    <br>
+    <label><input type="text" placeholder="Password" class="input-frame"></label>
+    <label><input type="submit" value="Login" class="input-submit"></label>
+</form>
+</body>
+</html>

@@ -12,6 +12,6 @@ def about():
     return render_template('about.html', gh_stat=github_tools.get_profile_data())
 
 
-@app.route('/find')
-def find():
-    return render_template('find.html')
+@app.route('/admin/login')
+def admin_login():
+    return render_template('admin/admin-login.html')
