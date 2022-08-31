@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="687b2af5-2a78-4202-bdcb-d99ef558fcab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +45,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/modules" />
       <recent name="$PROJECT_DIR$/app" />
@@ -87,6 +90,7 @@
       <workItem from="1661590753724" duration="602000" />
       <workItem from="1661669015385" duration="897000" />
       <workItem from="1661764783554" duration="4497000" />
+      <workItem from="1661937583961" duration="6580000" />
     </task>
     <servers />
   </component>
