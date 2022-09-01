@@ -117,3 +117,40 @@ body {
     margin: 50px auto;
     background-image: linear-gradient(to right, rgba(100, 100, 100, 0.5), rgba(255, 255, 255, 0.75), rgba(100, 100, 100, 0.5));
 }
+
+.gh-contributions {
+    width: 70%;
+    height: 300px;
+    border-radius: 10px;
+    margin: 20px auto;
+    background-image: url("../img/gh-contributions.png");
+}
+
+.gh-header {
+    font-family: Cantarell, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: #EDF2EF;
+    padding-top: 15px;
+}
+
+.gh-col {
+    float: left;
+    width: calc(100% / 3);
+    padding-top: 50px;
+}
+
+.gh-col-header {
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    color: #EDF2EF;
+    text-align: center;
+}
+
+.gh-col-data {
+    font-family: Roboto, sans-serif;
+    font-size: 22px;
+    color: #EDF2EF;
+    text-align: center;
+    padding-top: 40px;
+}
