@@ -109,3 +109,11 @@ body {
     width: 60%;
     margin: 20px auto;
 }
+
+.block-hr {
+    width: 50%;
+    border: 0;
+    height: 1px;
+    margin: 50px auto;
+    background-image: linear-gradient(to right, rgba(100, 100, 100, 0.5), rgba(255, 255, 255, 0.75), rgba(100, 100, 100, 0.5));
+}
