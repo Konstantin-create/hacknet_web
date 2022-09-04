@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="687b2af5-2a78-4202-bdcb-d99ef558fcab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +94,7 @@
       <workItem from="1661764783554" duration="4497000" />
       <workItem from="1661937583961" duration="9156000" />
       <workItem from="1662049992407" duration="2910000" />
-      <workItem from="1662093256014" duration="12219000" />
+      <workItem from="1662093256014" duration="12531000" />
     </task>
     <servers />
   </component>
