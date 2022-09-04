@@ -263,3 +263,16 @@ footer {
 
     cursor: pointer;
 }
+
+.header-with-opacity {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+    background-color: rgba(10, 10, 10, .8);
+    z-index: 50;
+
+    display: none;
+}
