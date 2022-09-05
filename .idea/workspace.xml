@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="687b2af5-2a78-4202-bdcb-d99ef558fcab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/js/animations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+>>>>>>> 4e47a8fc704b356977fb8c5ca32da45da6f9ebb4
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +20,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -93,7 +100,7 @@
       <workItem from="1661764783554" duration="4497000" />
       <workItem from="1661937583961" duration="9156000" />
       <workItem from="1662049992407" duration="2910000" />
-      <workItem from="1662093256014" duration="14827000" />
+      <workItem from="1662093256014" duration="16164000" />
     </task>
     <servers />
   </component>
