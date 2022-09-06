@@ -7,13 +7,13 @@ function scroll_handler() {
 
     if (last_position < current_position) {
         if (current_position > 50) {
-            main_header.fadeOut('slow')
-            opacity_header.fadeIn('slow')
+            main_header.fadeOut(300)
+            opacity_header.fadeIn(300)
         }
     } else if (last_position > current_position) {
         if (current_position <= 50) {
-            main_header.fadeIn('slow')
-            opacity_header.fadeOut('slow')
+            main_header.fadeIn(300)
+            opacity_header.fadeOut(300)
         }
     }
     last_position = current_position
