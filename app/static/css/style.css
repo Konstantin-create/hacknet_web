@@ -541,6 +541,7 @@ body {
     .background-img {
         background-position: 50% 50%;
     }
+
     .header-items {
         width: 50%;
     }
@@ -562,23 +563,11 @@ body {
 
 }
 
-/*@media (max-width: 800px) and (min-width: 500px) {*/
-/*    .background-img {*/
-/*        background-position: 30% 50%;*/
-/*    }*/
-/*    .header-items {*/
-/*        width: 60%;*/
-/*    }*/
-
-/*    .gh-contributions {*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
-
 @media (max-width: 800px) and (min-width: 300px) {
     .background-img {
         background-position: 50% 50%;
     }
+
     .header-items {
         width: 100%;
     }

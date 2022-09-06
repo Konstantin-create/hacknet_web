@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Konstantin-create</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/animations.js"></script>
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
@@ -118,9 +118,9 @@
     </div>
 </main>
 <footer>
-    <a href="https://github.com/Konstantin-create/"><img class="footer-item-img" src="img/github.png" alt=""></a>
-    <a href="https://t.me/hacknet_dev"><img class="footer-item-img" src="img/telegram.png" alt=""></a>
-    <a href="https://instagram.com"><img class="footer-item-img" src="img/instagram.png" alt=""></a>
+    <a href="https://github.com/Konstantin-create/"><img class="footer-item-img" src="../static/img/github.png" alt=""></a>
+    <a href="https://t.me/hacknet_dev"><img class="footer-item-img" src="../static/img/telegram.png" alt=""></a>
+    <a href="https://instagram.com"><img class="footer-item-img" src="../static/img/instagram.png" alt=""></a>
 </footer>
 </body>
 </html>
