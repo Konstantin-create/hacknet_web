@@ -128,5 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-app/modules/TOKEN.TXT
+app/modules/TOKEN.txt
 .idea/
