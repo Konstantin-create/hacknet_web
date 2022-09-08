@@ -1,4 +1,5 @@
 from github import Github
+from datetime import datetime
 
 token = open('TOKEN.txt', 'r').read()
 
@@ -6,7 +7,12 @@ g = Github(token)
 
 
 def get_statistics():
-    pass
+    last_update = datetime.utcnow()
+    while True:
+        print(datetime.utcnow() - last_update)
+        if (datetime.utcnow() - last_update) > 60:
+            last_update = datetime.utcnow()
+            return get_stars(), get_followers(), get_repos()
 
 
 def get_followers() -> int:
@@ -32,3 +38,5 @@ def get_stars() -> int:
     for repo in repos:
         total += repo.stargazers_count
     return total
+
+get_statistics()
