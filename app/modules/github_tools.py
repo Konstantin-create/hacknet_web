@@ -1,6 +1,4 @@
 import json
-import time
-
 from github import Github
 from datetime import datetime, timedelta
 
@@ -11,12 +9,10 @@ g = Github(token)
 
 def set_statistics():
     last_update = datetime.utcnow()
-    time.sleep(1)
     while True:
-        if (datetime.utcnow() - last_update) > timedelta(seconds=2):
+        if (datetime.utcnow() - last_update) > timedelta(hours=1):
             last_update = datetime.utcnow()
             json.dump((get_stars(), get_followers(), get_repos()), open('../data/github_stat.json', 'w'))
-            break
 
 
 def get_statistic():
