@@ -12,4 +12,3 @@ def init_page():
     return render_template('index.html', gh_stat=github_tools.get_stars())
 
 
-app.run()
