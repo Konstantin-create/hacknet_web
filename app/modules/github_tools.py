@@ -1,18 +1,26 @@
+import json
+import time
+
 from github import Github
-from datetime import datetime
+from datetime import datetime, timedelta
 
 token = open('TOKEN.txt', 'r').read()
 
 g = Github(token)
 
 
-def get_statistics():
+def set_statistics():
     last_update = datetime.utcnow()
+    time.sleep(1)
     while True:
-        print(datetime.utcnow() - last_update)
-        if (datetime.utcnow() - last_update) > 60:
+        if (datetime.utcnow() - last_update) > timedelta(seconds=2):
             last_update = datetime.utcnow()
-            return get_stars(), get_followers(), get_repos()
+            json.dump((get_stars(), get_followers(), get_repos()), open('../data/github_stat.json', 'w'))
+            break
+
+
+def get_statistic():
+    return json.load(open('../data/github_stat.json'))
 
 
 def get_followers() -> int:
@@ -38,5 +46,3 @@ def get_stars() -> int:
     for repo in repos:
         total += repo.stargazers_count
     return total
-
-get_statistics()
