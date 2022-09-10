@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 token = open('TOKEN.txt', 'r').read()
 
 g = Github(token)
+pinned_projects = ['Konstantin-create/VCS', 'Konstantin-create/cSc-chat', 'Konstantin-create/DataStructures']
 
 
 def set_statistics():
@@ -47,4 +48,5 @@ def get_stars() -> int:
 def parse_pinned_projects() -> list:
     """Function to parse pinned projects"""
 
-    pass
+    for repo in pinned_projects:
+        print(g.get_repo(repo))

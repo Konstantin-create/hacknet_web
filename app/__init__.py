@@ -5,6 +5,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 threading.Thread(target=github_tools.set_statistics).start()
+github_tools.parse_pinned_projects()
 
 
 @app.route('/')
