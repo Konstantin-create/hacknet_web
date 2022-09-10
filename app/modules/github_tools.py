@@ -42,3 +42,9 @@ def get_stars() -> int:
     for repo in repos:
         total += repo.stargazers_count
     return total
+
+
+def parse_pinned_projects() -> list:
+    """Function to parse pinned projects"""
+
+    pass
