@@ -4,7 +4,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-threading.Thread(target=github_tools.set_statistics()).start()
+threading.Thread(target=github_tools.set_statistics).start()
 
 
 @app.route('/')
