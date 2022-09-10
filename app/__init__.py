@@ -5,11 +5,11 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 threading.Thread(target=github_tools.set_statistics).start()
-github_tools.parse_pinned_projects()
+threading.Thread(target=github_tools.set_pinned_repos).start()
 
 
 @app.route('/')
 def init_page():
-    return render_template('index.html', gh_stat=github_tools.get_stars())
+    return render_template('index.html', gh_stat=github_tools.get_stars(), gh_pinned=github_tools.get_pinned_repos())
 
 
