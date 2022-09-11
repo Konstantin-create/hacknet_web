@@ -68,3 +68,15 @@ def get_pinned_repos() -> list:
     """Function to get pinned repos data from local storage"""
 
     return json.load(open('app/data/github_pinned.json', 'r'))
+
+
+def get_user_description() -> str:
+    """Function to get user description"""
+
+    content = str(g.get_repo('Konstantin-create/Konstantin-create').get_readme().decoded_content)
+    print(
+        content[
+            content.find('<!---first-description-->')+len('<!---first-description-->'):
+            content.find('<!---end-->', content.find('<!---first-description-->'))
+        ]
+    )

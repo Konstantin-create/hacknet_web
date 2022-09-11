@@ -4,6 +4,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+print(github_tools.get_user_description())
 threading.Thread(target=github_tools.set_statistics).start()
 threading.Thread(target=github_tools.set_pinned_repos).start()
 
