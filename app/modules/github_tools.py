@@ -1,12 +1,23 @@
+import json
 from github import Github
+from datetime import datetime, timedelta
 
 token = open('TOKEN.txt', 'r').read()
 
 g = Github(token)
+pinned_projects = ['Konstantin-create/VCS', 'Konstantin-create/cSc-chat', 'Konstantin-create/DataStructures']
 
 
-def get_statistics():
-    pass
+def set_statistics():
+    last_update = datetime.utcnow()
+    while True:
+        if (datetime.utcnow() - last_update) > timedelta(hours=1):
+            last_update = datetime.utcnow()
+            json.dump((get_stars(), get_followers(), get_repos()), open('app/data/github_stat.json', 'w'))
+
+
+def get_statistic():
+    return json.load(open('app/data/github_stat.json'))
 
 
 def get_followers() -> int:
@@ -32,3 +43,40 @@ def get_stars() -> int:
     for repo in repos:
         total += repo.stargazers_count
     return total
+
+
+def set_pinned_repos():
+    """Function to parse pinned repos"""
+    last_update = datetime.utcnow()
+    while True:
+        if (datetime.utcnow() - last_update) > timedelta(hours=1):
+            last_update = datetime.utcnow()
+
+            output = []
+            for repo in pinned_projects:
+                repo_obj = g.get_repo(repo)
+                output.append({
+                    'name': repo[:repo.rfind('/')],
+                    'description': repo_obj.description,
+                    'stars': repo_obj.stargazers_count,
+                    'language': repo_obj.language
+                })
+            json.dump(output, open('app/data/github_pinned.json', 'w'))
+
+
+def get_pinned_repos() -> list:
+    """Function to get pinned repos data from local storage"""
+
+    return json.load(open('app/data/github_pinned.json', 'r'))
+
+
+def get_user_description() -> str:
+    """Function to get user description"""
+
+    content = str(g.get_repo('Konstantin-create/Konstantin-create').get_readme().decoded_content)
+    print(
+        content[
+            content.find('<!---first-description-->')+len('<!---first-description-->'):
+            content.find('<!---end-->', content.find('<!---first-description-->'))
+        ]
+    )

@@ -56,60 +56,36 @@
         <div class="gh-contributions">
             <h3 class="gh-header">GitHub profile statistic</h3>
             <div class="gh-col">
-                <h4 class="gh-col-header">Contributions</h4>
-                <p class="gh-col-data">305</p>
+                <h4 class="gh-col-header">Repositories</h4>
+                <p class="gh-col-data">{{ gh_stat[0] }}</p>
             </div>
             <div class="gh-col">
                 <h4 class="gh-col-header">Stars</h4>
-                <p class="gh-col-data">25</p>
+                <p class="gh-col-data">{{ gh_stat[2] }}</p>
             </div>
             <div class="gh-col">
                 <h4 class="gh-col-header">Followers</h4>
-                <p class="gh-col-data">3</p>
+                <p class="gh-col-data">{{ gh_stat[1] }}</p>
             </div>
         </div>
         <div class="gh-best-projects" id="projects">
             <h3 class="gh-best-projects-header">Pinned projects</h3>
             <div class="gh-pinned">
-                <div class="project">
-                    <h3 class="project-header">
-                        <span style="font-family: 'Noto Emoji', sans-serif;">📔</span> cSc-chat
-                    </h3>
-                    <p class="project-description">Client - Server - Client chat</p>
-                    <div class="project-footer">
-                        <div class="project-tag">Python</div>
-                        <p class="project-stars">
-                            <span style="color: #EDF2EF; font-family: 'Noto Emoji', sans-serif">⭐</span>
-                            2
-                        </p>
+                {% for repo in gh_pinned %}
+                    <div class="project">
+                        <h3 class="project-header">
+                            <span style="font-family: 'Noto Emoji', sans-serif;">📔</span> {{ repo['name'] }}
+                        </h3>
+                        <p class="project-description">{{ repo['description'] }}</p>
+                        <div class="project-footer">
+                            <div class="project-tag">{{ repo['language'] }}</div>
+                            <p class="project-stars">
+                                <span style="color: #EDF2EF; font-family: 'Noto Emoji', sans-serif">⭐</span>
+                                {{ repo['stars'] }}
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="project">
-                    <h3 class="project-header">
-                        <span style="font-family: 'Noto Emoji', sans-serif;">📔</span> VCS
-                    </h3>
-                    <p class="project-description">This is my first simple version control system </p>
-                    <div class="project-footer">
-                        <div class="project-tag">Python</div>
-                        <p class="project-stars">
-                            <span style="color: #EDF2EF; font-family: 'Noto Emoji', sans-serif">⭐</span>
-                            7
-                        </p>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3 class="project-header">
-                        <span style="font-family: 'Noto Emoji', sans-serif;">📔</span> Data Structures
-                    </h3>
-                    <p class="project-description">In this repo im going to create some data structures </p>
-                    <div class="project-footer">
-                        <div class="project-tag">Python</div>
-                        <p class="project-stars">
-                            <span style="color: #EDF2EF; font-family: 'Noto Emoji', sans-serif">⭐</span>
-                            2
-                        </p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
