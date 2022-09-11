@@ -10,6 +10,7 @@ threading.Thread(target=github_tools.set_pinned_repos).start()
 
 @app.route('/')
 def init_page():
-    return render_template('index.html', gh_stat=github_tools.get_stars(), gh_pinned=github_tools.get_pinned_repos())
-
-
+    return render_template(
+        'index.html', gh_stat=github_tools.get_statistic(),
+        gh_pinned=github_tools.get_pinned_repos()
+    )

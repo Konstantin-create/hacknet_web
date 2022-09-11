@@ -47,17 +47,21 @@ def get_stars() -> int:
 
 def set_pinned_repos():
     """Function to parse pinned repos"""
+    last_update = datetime.utcnow()
+    while True:
+        if (datetime.utcnow() - last_update) > timedelta(hours=1):
+            last_update = datetime.utcnow()
 
-    output = []
-    for repo in pinned_projects:
-        repo_obj = g.get_repo(repo)
-        output.append({
-            'name': repo[:repo.rfind('/')],
-            'description': repo_obj.description,
-            'stars': repo_obj.stargazers_count,
-            'language': repo_obj.language
-        })
-    json.dump(output, open('app/data/github_pinned.json', 'w'))
+            output = []
+            for repo in pinned_projects:
+                repo_obj = g.get_repo(repo)
+                output.append({
+                    'name': repo[:repo.rfind('/')],
+                    'description': repo_obj.description,
+                    'stars': repo_obj.stargazers_count,
+                    'language': repo_obj.language
+                })
+            json.dump(output, open('app/data/github_pinned.json', 'w'))
 
 
 def get_pinned_repos() -> list:
