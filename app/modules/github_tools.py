@@ -1,4 +1,5 @@
 import json
+import markdown
 from github import Github
 from datetime import datetime, timedelta
 
@@ -8,7 +9,9 @@ g = Github(token)
 pinned_projects = ['Konstantin-create/VCS', 'Konstantin-create/cSc-chat', 'Konstantin-create/DataStructures']
 
 
-def set_statistics():
+def set_statistics() -> None:
+    """Function to get global profile statistics"""
+
     last_update = datetime.utcnow()
     while True:
         if (datetime.utcnow() - last_update) > timedelta(hours=1):
@@ -16,7 +19,9 @@ def set_statistics():
             json.dump((get_stars(), get_followers(), get_repos()), open('app/data/github_stat.json', 'w'))
 
 
-def get_statistic():
+def get_statistic() -> list:
+    """Function to get global profile statistics from local storage"""
+
     return json.load(open('app/data/github_stat.json'))
 
 
@@ -45,8 +50,9 @@ def get_stars() -> int:
     return total
 
 
-def set_pinned_repos():
+def set_pinned_repos() -> None:
     """Function to parse pinned repos"""
+
     last_update = datetime.utcnow()
     while True:
         if (datetime.utcnow() - last_update) > timedelta(hours=1):
@@ -70,13 +76,27 @@ def get_pinned_repos() -> list:
     return json.load(open('app/data/github_pinned.json', 'r'))
 
 
-def get_user_description() -> str:
+def set_user_description() -> None:
     """Function to get user description"""
 
-    content = str(g.get_repo('Konstantin-create/Konstantin-create').get_readme().decoded_content)
-    print(
-        content[
-            content.find('<!---first-description-->')+len('<!---first-description-->'):
-            content.find('<!---end-->', content.find('<!---first-description-->'))
-        ]
-    )
+    # last_update = datetime.utcnow()
+    # while True:
+    #     if (datetime.utcnow() - last_update) > timedelta(hours=1):
+    #         last_update = datetime.utcnow()
+
+    content = g.get_repo('Konstantin-create/Konstantin-create').get_readme().decoded_content.decode('utf-8')
+    first_description = content[
+                        content.find('<!---first-description-->') + len('<!---first-description-->'):
+                        content.find('<!---end-->', content.find('<!---first-description-->'))
+                        ]
+    second_description = content[
+                         content.find('<!---second-description-->') + len('<!---second-description-->'):
+                         content.find('<!---end-->', content.find('<!---second-description-->'))
+                         ]
+    open('app/data/github_about.txt', 'w').write(markdown.markdown(first_description + second_description))
+
+
+def get_user_description() -> str:
+    """Function to get user description from local storage"""
+
+    return open('app/data/github_about.txt').read()
