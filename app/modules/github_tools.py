@@ -99,4 +99,4 @@ def set_user_description() -> None:
 def get_user_description() -> str:
     """Function to get user description from local storage"""
 
-    return open('app/data/github_about.txt').read()
+    return open('app/data/github_about.html').read()
