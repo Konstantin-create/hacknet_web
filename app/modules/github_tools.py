@@ -79,24 +79,18 @@ def get_pinned_repos() -> list:
 def set_user_description() -> None:
     """Function to get user description"""
 
-    # last_update = datetime.utcnow()
-    # while True:
-    #     if (datetime.utcnow() - last_update) > timedelta(hours=1):
-    #         last_update = datetime.utcnow()
+    last_update = datetime.utcnow()
+    while True:
+        if (datetime.utcnow() - last_update) > timedelta(hours=1):
+            last_update = datetime.utcnow()
 
-    content = g.get_repo('Konstantin-create/Konstantin-create').get_readme().decoded_content.decode('utf-8')
-    first_description = content[
-                        content.find('<!---first-description-->') + len('<!---first-description-->'):
-                        content.find('<!---end-->', content.find('<!---first-description-->'))
-                        ]
-    second_description = content[
-                         content.find('<!---second-description-->') + len('<!---second-description-->'):
-                         content.find('<!---end-->', content.find('<!---second-description-->'))
-                         ]
-    open('app/data/github_about.txt', 'w').write(markdown.markdown(first_description + second_description))
-
-
-def get_user_description() -> str:
-    """Function to get user description from local storage"""
-
-    return open('app/data/github_about.html').read()
+            content = g.get_repo('Konstantin-create/Konstantin-create').get_readme().decoded_content.decode('utf-8')
+            first_description = content[
+                                content.find('<!---first-description-->') + len('<!---first-description-->'):
+                                content.find('<!---end-->', content.find('<!---first-description-->'))
+                                ]
+            second_description = content[
+                                 content.find('<!---second-description-->') + len('<!---second-description-->'):
+                                 content.find('<!---end-->', content.find('<!---second-description-->'))
+                                 ]
+            open('app/templates/temp/github_about.html', 'w').write(markdown.markdown((first_description + second_description).replace('\\', '')))
