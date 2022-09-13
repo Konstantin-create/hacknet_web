@@ -21,6 +21,62 @@ body {
     background-color: #000807;
 }
 
+.beta {
+    position: absolute;
+    top: 0;
+    left: calc((100% - 500px) / 2);
+    background-color: #790000;
+    width: 500px;
+    height: 1.5em;
+    border-radius: 0 0 10px 10px;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    color: #EDF2EF;
+    text-align: center;
+}
+
+.about-frame {
+    width: 100%;
+    padding-top: 50px;
+}
+
+.about-frame > p {
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+
+    color: #EDF2EF;
+}
+
+.about-frame > h3 {
+    font-family: Roboto, sans-serif;
+    font-size: 22px;
+    font-weight: 200;
+    text-align: center;
+    margin: 30px auto;
+
+    color: #EDF2EF;
+}
+
+.about-frame > ul {
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.5em;
+    width: 300px;
+    margin: 10px auto;
+
+    color: #EDF2EF;
+}
+
+.about-frame > li {
+
+}
+
 @media (min-width: 1000px) {
     .header-items {
         width: 35%;
