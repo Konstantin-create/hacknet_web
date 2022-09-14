@@ -15,3 +15,8 @@ def init_page():
         'index.html', gh_stat=github_tools.get_statistic(),
         gh_pinned=github_tools.get_pinned_repos()
     )
+
+@app.route('/')
+   def init_page():
+       return render_template(
+           'blog_page.html')
