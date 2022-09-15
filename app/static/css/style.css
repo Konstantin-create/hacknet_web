@@ -78,6 +78,10 @@ body {
 }
 
 @media (min-width: 1000px) {
+    #faded-header {
+        display: none;
+    }
+
     .header-items {
         width: 35%;
         display: flex;

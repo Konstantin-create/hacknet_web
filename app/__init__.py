@@ -16,7 +16,6 @@ def init_page():
         gh_pinned=github_tools.get_pinned_repos()
     )
 
-@app.route('/')
-   def init_page():
-       return render_template(
-           'blog_page.html')
+@app.route('/blog')
+def blog_page():
+    return render_template('blog_page.html')

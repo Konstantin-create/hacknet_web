@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+}
+
+body {
+    background-color: #000807;
+}
+
+main {
+    height: 200vh;
+}
+
+.header-items {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-item {
+    font-family: "Cantarell", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #EDF2EF;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    width: auto;
+}
+
+.header-item:after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: width 0.2s ease-in-out;
+    z-index: 10;
+}
+
+.header-item:hover:after, .header-item:focus:after {
+    width: 100%;
+}
