@@ -68,3 +68,12 @@ main {
 
     display: none;
 }
+
+
+.blog-header {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 30px;
+    color: #EDF2EF;
+    padding: 20px 30px;
+}
