@@ -79,12 +79,29 @@ main {
 }
 
 .post {
+    position: relative;
     width: 90%;
     height: 500px;
     background-color: #171717;
     border-radius: 10px;
     margin: 5px auto;
     box-shadow: 5px 5px 5px rgba(23, 23, 23, 0.1);
+    box-sizing: border-box;
+}
+
+.post-text {
+    float: left;
+    width: auto;
+}
+
+.post-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 100%;
+    background-color: red;
+    border-radius: 0 10px 10px 0;
 }
 
 .post-header {
