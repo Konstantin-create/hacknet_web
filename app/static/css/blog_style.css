@@ -77,3 +77,20 @@ main {
     color: #EDF2EF;
     padding: 20px 30px;
 }
+
+.post {
+    width: 90%;
+    height: 500px;
+    background-color: #171717;
+    border-radius: 10px;
+    margin: 5px auto;
+    box-shadow: 5px 5px 5px rgba(23, 23, 23, 0.1);
+}
+
+.post-header {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    color: #EDF2EF;
+    padding: 10px 20px;
+}
