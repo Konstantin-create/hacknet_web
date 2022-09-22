@@ -91,7 +91,8 @@ main {
 
 .post-text {
     float: left;
-    width: auto;
+    width: calc(100% - 500px);
+    height: 500px;
 }
 
 .post-image {
@@ -110,4 +111,12 @@ main {
     font-size: 24px;
     color: #EDF2EF;
     padding: 10px 20px;
+}
+
+.post-description {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    color: #EDF2EF;
+    padding: 20px 20px;
 }
