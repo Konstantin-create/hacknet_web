@@ -127,3 +127,12 @@ main {
     height: 75px;
     bottom: 0;
 }
+
+.post-link {
+    padding-left: 20px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 75px;
+    color: #EDF2EF;
+}
