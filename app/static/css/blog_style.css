@@ -129,10 +129,20 @@ main {
 }
 
 .post-link {
+    float: left;
     padding-left: 20px;
     font-family: Roboto, sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 75px;
     color: #EDF2EF;
+}
+
+.post-tags {
+    float: left;
+    position: relative;
+    width: 200px;
+    height: 50%;
+    background-color: red;
+    margin: 35.5px 30%;
 }
