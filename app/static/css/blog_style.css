@@ -141,8 +141,22 @@ main {
 .post-tags {
     float: left;
     position: relative;
-    width: 200px;
-    height: 50%;
-    background-color: red;
-    margin: 35.5px 30%;
+    height: calc(100% - 20px);
+    margin: 20px 10%;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+    background-color: #1c1c1c;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.post-tag {
+    cursor: pointer;
+    float: left;
+    font-family: Cantarell, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #790000;
+    padding: 0 20px;
+    line-height: 35px;
 }
