@@ -23,3 +23,8 @@ def init_page():
 @app.route('/blog')
 def blog_page():
     return render_template('blog_page.html')
+
+
+@app.route('/admin/login')
+def admin_login_page():
+    return render_template('admin/login_page.html')
