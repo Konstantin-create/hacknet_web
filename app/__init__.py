@@ -28,3 +28,7 @@ def blog_page():
 @app.route('/admin/login')
 def admin_login_page():
     return render_template('admin/login_page.html')
+
+@app.route('/admin/dashboard')
+def admin_dashboard_login():
+    return render_template('admin/dashboard_page.html')

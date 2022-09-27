@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+aside {
+    float: left;
+    width: 75px;
+    height: 100vh;
+    background-color: red;
+}
+
+main {
+    float: left;
+    width: calc(100% - 75px);
+    height: 100vh;
+    background-color: black;
+}
