@@ -8,12 +8,21 @@ aside {
     float: left;
     width: 75px;
     height: 100vh;
-    background-color: red;
+    background-color: #141414;
+    box-shadow: 10px 10px 10px rgba(10, 10, 10, .5);
 }
 
 main {
     float: left;
     width: calc(100% - 75px);
     height: 100vh;
-    background-color: black;
+    background-color: #171717;
+}
+
+.dashboard-header {
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    padding: 20px 50px;
+    color: #EDF2EF;
 }
