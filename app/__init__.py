@@ -1,7 +1,7 @@
 import os
 import threading
-from app.modules import github_tools
-from flask import Flask, render_template, make_response
+from app.modules import github_tools, dashboard_tools
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 web_site_folder = os.path.dirname(__file__)
@@ -13,6 +13,7 @@ threading.Thread(target=github_tools.set_user_description).start()
 
 @app.route('/')
 def init_page():
+    dashboard_tools.request_handler(ip=request.remote_addr, url='/')
     return render_template(
         'index.html', gh_stat=github_tools.get_statistic(),
         gh_pinned=github_tools.get_pinned_repos(),
@@ -22,6 +23,7 @@ def init_page():
 
 @app.route('/blog')
 def blog_page():
+    dashboard_tools.request_handler(ip=request.remote_addr, url='/blog')
     return render_template('blog_page.html')
 
 
@@ -29,6 +31,7 @@ def blog_page():
 def admin_login_page():
     return render_template('admin/login_page.html')
 
+
 @app.route('/admin/dashboard')
 def admin_dashboard_login():
-    return render_template('admin/dashboard_page.html')
+    return render_template('admin/dashboard_page.html', all_requests=dashboard_tools.get_requests_list())
