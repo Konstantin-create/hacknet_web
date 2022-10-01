@@ -1,11 +1,14 @@
 import os
 import json
+from datetime import datetime
 
 
-def request_handler(request: dict) -> None:
+def request_handler(ip: str, url: str) -> None:
     """Function to get user request and save this in local storage"""
 
+    request = {'ip': ip, 'time_stamp': datetime.utcnow(), 'url': url}
     print(request)
+    add_request_to_list(request)
 
 
 # Uniq visitors
