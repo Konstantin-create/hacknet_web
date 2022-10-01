@@ -1,11 +1,11 @@
-import json
 import os
+import json
 
 
-def request_handler() -> None:
+def request_handler(request: dict) -> None:
     """Function to get user request and save this in local storage"""
 
-    pass
+    print(request)
 
 
 # Uniq visitors
@@ -48,13 +48,24 @@ def get_month_users_statistics() -> list:
 def get_requests_list() -> list:
     """Function to get list of requests"""
 
-    pass
+    if os.path.exists('app/data/visits/requests.json'):
+        try:
+            return json.load(open('app/data/visits/requests.json', 'r'))
+        except:
+            return []
+    return []
 
 
 def add_request_to_list(request: dict) -> bool:
     """Function to add request to local storage"""
 
-    pass
+    requests = get_visitors_list()
+    requests.append(request)
+    try:
+        json.dump(requests, open('app/data/visits/uniq.json'))
+        return False
+    except:
+        return False
 
 
 def get_day_requests_statistics() -> dict:
