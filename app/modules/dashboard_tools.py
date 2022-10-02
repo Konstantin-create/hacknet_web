@@ -65,7 +65,6 @@ def add_request_to_list(request: dict) -> bool:
     requests = get_requests_list()
     requests.append(request)
     try:
-        print(requests)
         json.dump(requests, open('app/data/visits/requests.json', 'w'))
         return False
     except:
