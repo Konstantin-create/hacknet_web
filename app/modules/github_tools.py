@@ -16,7 +16,7 @@ def set_statistics() -> None:
     while True:
         if (datetime.utcnow() - last_update) > timedelta(hours=1):
             last_update = datetime.utcnow()
-            json.dump((get_stars(), get_followers(), get_repos()), open('app/data/github_stat.json', 'w'))
+            json.dump((get_stars(), get_followers(), get_repos()), open('app/data/github_stat.json', 'w'), indent=4)
 
 
 def get_statistic() -> list:
@@ -67,7 +67,7 @@ def set_pinned_repos() -> None:
                     'stars': repo_obj.stargazers_count,
                     'language': repo_obj.language
                 })
-            json.dump(output, open('app/data/github_pinned.json', 'w'))
+            json.dump(output, open('app/data/github_pinned.json', 'w'), indent=4)
 
 
 def get_pinned_repos() -> list:
@@ -93,4 +93,5 @@ def set_user_description() -> None:
                                  content.find('<!---second-description-->') + len('<!---second-description-->'):
                                  content.find('<!---end-->', content.find('<!---second-description-->'))
                                  ]
-            open('app/templates/temp/github_about.html', 'w').write(markdown.markdown((first_description + second_description).replace('\\', '')))
+            open('app/templates/temp/github_about.html', 'w').write(
+                markdown.markdown((first_description + second_description).replace('\\', '')))
