@@ -6,7 +6,7 @@ from datetime import datetime
 def request_handler(ip: str, url: str) -> None:
     """Function to get user request and save this in local storage"""
 
-    request = {'ip': ip, 'time_stamp': datetime.utcnow(), 'url': url}
+    request = {'ip': ip, 'time_stamp': datetime.utcnow().strftime("%Y:%m:%d-%H:%M:%S"), 'url': url}
     print(request)
     add_request_to_list(request)
 
@@ -29,7 +29,7 @@ def add_visitor_to_list(visitor: dict) -> bool:
     visitors = get_visitors_list()
     visitors.append(visitor)
     try:
-        json.dump(visitors, open('app/data/visits/uniq.json'))
+        json.dump(visitors, open('app/data/visits/uniq.json', 'w'))
         return False
     except:
         return False
