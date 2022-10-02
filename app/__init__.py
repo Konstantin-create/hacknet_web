@@ -34,4 +34,4 @@ def admin_login_page():
 
 @app.route('/admin/dashboard')
 def admin_dashboard_login():
-    return render_template('admin/dashboard_page.html', all_requests=dashboard_tools.get_requests_list())
+    return render_template('admin/dashboard_page.html', all_requests=dashboard_tools.generate_requests_data())

@@ -1,6 +1,6 @@
 import os
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def request_handler(ip: str, url: str) -> None:
@@ -29,7 +29,7 @@ def add_visitor_to_list(visitor: dict) -> bool:
     visitors = get_visitors_list()
     visitors.append(visitor)
     try:
-        json.dump(visitors, open('app/data/visits/uniq.json', 'w'))
+        json.dump(visitors, open('app/data/visits/uniq.json', 'w'), indent=4)
         return False
     except Exception as e:
         return False
@@ -65,19 +65,25 @@ def add_request_to_list(request: dict) -> bool:
     requests = get_requests_list()
     requests.append(request)
     try:
-        json.dump(requests, open('app/data/visits/requests.json', 'w'))
+        json.dump(requests, open('app/data/visits/requests.json', 'w'), indent=4)
         return False
     except:
         return False
 
 
-def get_day_requests_statistics() -> dict:
-    """Function to get requests statistics by 24 hours"""
+def generate_requests_data() -> dict:
+    """Function to generate requests data from local storage"""
 
-    pass
+    data_src = get_requests_list()
+    data = []
+    out = {'total': 0, 'per_day': 0, 'per_month': 0}
+    for el in data_src:
+        time_stamp = datetime.strptime(el['time_stamp'], '%Y:%m:%d-%H:%M:%S')
+        time_delta = (datetime.utcnow() - time_stamp)
+        if time_delta <= timedelta(hours=24):
+            out['per_day'] += 1
+        elif time_delta <= timedelta(days=31):
+            out['per_month'] += 1
+        out['total'] += 1
 
-
-def get_month_requests_statistics() -> list:
-    """Function to get requests statistics by 1 month"""
-
-    pass
+    return out
