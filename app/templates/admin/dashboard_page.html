@@ -15,7 +15,10 @@
 <main>
     <h1 class="dashboard-header">Dashboard</h1>
     <div class="dashes">
-        <div class="dash"><p>{{ all_requests }}</p></div>
+        <div class="dash">
+            <h3 class="total-requests-header">Total requests</h3>
+            <p class="total-requests-data">All time: {{ all_requests }}</p>
+        </div>
         <div class="dash"></div>
         <div class="dash"></div>
     </div>
