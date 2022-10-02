@@ -31,7 +31,7 @@ def add_visitor_to_list(visitor: dict) -> bool:
     try:
         json.dump(visitors, open('app/data/visits/uniq.json', 'w'))
         return False
-    except:
+    except Exception as e:
         return False
 
 
@@ -54,7 +54,7 @@ def get_requests_list() -> list:
     if os.path.exists('app/data/visits/requests.json'):
         try:
             return json.load(open('app/data/visits/requests.json', 'r'))
-        except:
+        except Exception as e:
             return []
     return []
 
@@ -62,10 +62,11 @@ def get_requests_list() -> list:
 def add_request_to_list(request: dict) -> bool:
     """Function to add request to local storage"""
 
-    requests = get_visitors_list()
+    requests = get_requests_list()
     requests.append(request)
     try:
-        json.dump(requests, open('app/data/visits/uniq.json'))
+        print(requests)
+        json.dump(requests, open('app/data/visits/requests.json', 'w'))
         return False
     except:
         return False
