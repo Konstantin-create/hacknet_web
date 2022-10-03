@@ -56,16 +56,16 @@ main {
 }
 
 
-.total-requests-header {
+.data-header {
     font-family: Cantarell, sans-serif;
     font-size: 24px;
     color: #EDF2EF;
     padding: 10px 20px;
 }
 
-.total-requests-data {
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    padding: 10px 20px;
+.data-value {
+    font-family: "Cantarell Light", sans-serif;
+    font-size: 20px;
+    padding: 10px 50px;
     color: #EDF2EF;
 }

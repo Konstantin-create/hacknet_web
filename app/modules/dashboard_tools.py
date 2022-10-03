@@ -76,14 +76,14 @@ def generate_requests_data() -> dict:
 
     data_src = get_requests_list()
     data = []
-    out = {'total': 0, 'per_day': 0, 'per_month': 0}
+    out = {'requests': {'total': 0, 'per_day': 0, 'per_month': 0}}
     for el in data_src:
         time_stamp = datetime.strptime(el['time_stamp'], '%Y:%m:%d-%H:%M:%S')
         time_delta = (datetime.utcnow() - time_stamp)
         if time_delta <= timedelta(hours=24):
-            out['per_day'] += 1
+            out['requests']['per_day'] += 1
         elif time_delta <= timedelta(days=31):
-            out['per_month'] += 1
-        out['total'] += 1
+            out['requests']['per_month'] += 1
+        out['requests']['total'] += 1
 
     return out

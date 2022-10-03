@@ -16,10 +16,18 @@
     <h1 class="dashboard-header">Dashboard</h1>
     <div class="dashes">
         <div class="dash">
-            <h3 class="total-requests-header">Total requests</h3>
-            <p class="total-requests-data">All time: {{ all_requests['total'] }}</p>
-            <p class="total-requests-data">Per month: {{ all_requests['per_month'] }}</p>
-            <p class="total-requests-data">Per day: {{ all_requests['per_day'] }}</p>
+            <div class="left">
+                <h3 class="data-header">Total requests</h3>
+                <p class="data-value">All time: {{ all_requests['requests']['total'] }}</p>
+                <p class="data-value">Per month: {{ all_requests['requests']['per_month'] }}</p>
+                <p class="data-value">Per day: {{ all_requests['requests']['per_day'] }}</p>
+            </div>
+            <div class="left">
+                <h3 class="data-header">Unique users</h3>
+                <p class="data-value">All time: {{ all_requests['requests']['total'] }}</p>
+                <p class="data-value">Per month: {{ all_requests['requests']['per_month'] }}</p>
+                <p class="data-value">Per day: {{ all_requests['requests']['per_day'] }}</p>
+            </div>
         </div>
         <div class="dash"></div>
         <div class="dash"></div>
