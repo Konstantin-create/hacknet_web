@@ -55,17 +55,52 @@ main {
     box-shadow: 10px 10px 10px rgba(28, 28, 28, .5);
 }
 
+.left {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.right {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
 
 .data-header {
     font-family: Cantarell, sans-serif;
     font-size: 24px;
     color: #EDF2EF;
     padding: 10px 20px;
+    text-align: center;
 }
 
 .data-value {
     font-family: "Cantarell Light", sans-serif;
     font-size: 20px;
-    padding: 10px 50px;
+    padding: 10px 80px;
     color: #EDF2EF;
+}
+
+.clear_btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+
+    color: #EDF2EF;
+    background-color: #202020;
+
+    padding: 10px 20px;
+    border-radius: 10px 0 10px 0;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.clear_btn:hover {
+    background-color: #282828;
 }
