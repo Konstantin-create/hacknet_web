@@ -87,3 +87,11 @@ def generate_requests_data() -> dict:
         out['requests']['total'] += 1
 
     return out
+
+
+def generate_pages_data() -> list:
+    """Function to generate the most visitable pages data"""
+
+    data_src = get_requests_list()
+    tmp = {}
+    out = []
