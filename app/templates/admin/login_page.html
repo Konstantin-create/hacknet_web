@@ -11,8 +11,8 @@
             <h2 class="input-header">Login</h2>
             <input type="text" class="input-field" autofocus name="username">
             <input type="password" class="input-field" name="password">
-            {% if error == 200 %}
-            <p class="error-text">Username or password error!</p>
+            {% if error_code == 200 %}
+            <p class="error-text">Username or password are incorrect!</p>
             {% endif %}
             <input type="submit" class="input-field submit-field">
         </form>

@@ -28,8 +28,8 @@ def blog_page():
 
 
 @app.route('/admin/login')
-def admin_login_page(error: int = 100):  # dev: Code 100 is OK code
-    return render_template('admin/login_page.html')
+def admin_login_page(error_code: int = 100):  # dev: Code 100 is OK code
+    return render_template('admin/login_page.html', error_code=error_code)
 
 
 @app.route('/admin/dashboard')
@@ -50,5 +50,5 @@ def admin_login_handler():
         if user.check_login():
             return redirect('/admin/dashboard')
         else:
-            return admin_login_page(error=200)
-    return admin_login_page(error=200)  # dev: Error code 200 is login error code
+            return admin_login_page(error_code=200)
+    return admin_login_page(error_code=200)  # dev: Error code 200 is login error code
