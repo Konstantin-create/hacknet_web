@@ -77,10 +77,18 @@ main {
     text-align: center;
 }
 
+.data-col-header {
+    font-family: Cantarell, sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: #EDF2EF;
+    padding: 10px 20px;
+}
+
 .data-value {
     font-family: "Cantarell Light", sans-serif;
     font-size: 20px;
-    padding: 10px 80px;
+    padding: 10px 30px;
     color: #EDF2EF;
 }
 
