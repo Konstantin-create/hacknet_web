@@ -7,10 +7,13 @@
 </head>
 <body>
     <div class="login-form">
-        <form>
+        <form action="/admin/login/form" method="post">
             <h2 class="input-header">Login</h2>
-            <input type="text" class="input-field" autofocus>
-            <input type="password" class="input-field">
+            <input type="text" class="input-field" autofocus name="username">
+            <input type="password" class="input-field" name="password">
+            {% if error == 200 %}
+            <p class="error-text">Username or password error!</p>
+            {% endif %}
             <input type="submit" class="input-field submit-field">
         </form>
     </div>

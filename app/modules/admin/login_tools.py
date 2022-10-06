@@ -19,7 +19,7 @@ class AdminUser:
         if os.path.exists(f'{self.cur_dir}/app/data/admin/credentials.json'):
             try:
                 _data = json.load(open(f'{self.cur_dir}/app/data/admin/credentials.json', 'r'))
-                return _data[list(_data.keys())[0]], _data[list(_data.keys())[1]]
+                return _data['username'], _data['password']
             except json.JSONDecoder:
                 return None
 
