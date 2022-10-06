@@ -1,6 +1,6 @@
 import os
 import threading
-from app.modules import github_tools, dashboard_tools
+from app.modules import github_tools, dashboard_tools, admin
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
@@ -44,6 +44,11 @@ def admin_dashboard():
 @app.route('/admin/login/form', methods=['GET', 'POST'])
 def admin_login_handler():
     if request.method == 'POST':
-        print(request.form.get('username'), request.form.get('password'))
-        return redirect('/admin/dashboard')
+        username, password = request.form.get('username'), request.form.get('password')
+        user = admin.AdminUser(username=username, password=password)
+        print(user.check_login())
+        if user.check_login():
+            return redirect('/admin/dashboard')
+        else:
+            return admin_login_page(error=200)
     return admin_login_page(error=200)  # dev: Error code 200 is login error code

@@ -6,21 +6,21 @@ from hashlib import sha256
 class AdminUser:
     """Class of admin user"""
 
-    __slots__ = ('cur_dir', 'username', 'password')
+    __slots__ = ('username', 'password', 'authorized')
 
     def __init__(self, username: str, password: str):
-        self.cur_dir = os.path.dirname(__name__)
         self.username = username
         self.password = sha256(password.encode('utf-8')).hexdigest()
+        self.authorized = False
 
     def get_local_login(self) -> tuple | None:
         """Function to get local credentials of admin user. Return saved username and password"""
 
-        if os.path.exists(f'{self.cur_dir}/app/data/admin/credentials.json'):
+        if os.path.exists(f'app/data/admin/credentials.json'):
             try:
-                _data = json.load(open(f'{self.cur_dir}/app/data/admin/credentials.json', 'r'))
+                _data = json.load(open(f'app/data/admin/credentials.json', 'r'))
                 return _data['username'], _data['password']
-            except json.JSONDecoder:
+            except Exception as e:
                 return None
 
     def check_login(self) -> bool:
@@ -30,4 +30,5 @@ class AdminUser:
         if _local_login is None:
             return True
         else:
-            return _local_login[0] == self.username and _local_login[1] == self.password
+            self.authorized = _local_login[0] == self.username and _local_login[1] == self.password
+            return self.authorized
