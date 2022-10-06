@@ -51,6 +51,14 @@ body {
     color: #EDF2EF;
 }
 
+.error-text {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    color: red;
+
+    padding: 10px 20px;
+}
+
 .submit-field {
     position: absolute;
     line-height: 1.5em;
