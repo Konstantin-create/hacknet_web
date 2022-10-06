@@ -11,9 +11,9 @@ class AdminUser:
     def __init__(self, username: str, password: str):
         self.cur_dir = os.path.dirname(__name__)
         self.username = username
-        self.password = sha256(password).hexdigest()
+        self.password = sha256(password.encode('utf-8')).hexdigest()
 
-    def get_local_login(self) -> tuple:
+    def get_local_login(self) -> tuple | None:
         """Function to get local credentials of admin user. Return saved username and password"""
 
         if os.path.exists(f'{self.cur_dir}/app/data/admin/credentials.json'):
@@ -21,10 +21,13 @@ class AdminUser:
                 _data = json.load(open(f'{self.cur_dir}/app/data/admin/credentials.json', 'r'))
                 return _data[list(_data.keys())[0]], _data[list(_data.keys())[1]]
             except json.JSONDecoder:
-                return None, None
+                return None
 
     def check_login(self) -> bool:
         """Function to check login"""
 
         _local_login = self.get_local_login()
-        return _local_login[0] == self.username and _local_login[1] == self.password
+        if _local_login is None:
+            return True
+        else:
+            return _local_login[0] == self.username and _local_login[1] == self.password
