@@ -1,5 +1,6 @@
 import os
 import json
+from collections import Counter
 from datetime import datetime, timedelta
 
 
@@ -93,5 +94,11 @@ def generate_pages_data() -> list:
     """Function to generate the most visitable pages data"""
 
     data_src = get_requests_list()
-    tmp = {}
+    _data = dict(Counter([el['url'] for el in data_src]))
+    total = 5 if 5 < len(_data) else len(_data)
     out = []
+    for i in range(total):
+        out.append([list(_data.keys())[i], _data[list(_data.keys())[i]]])
+
+    return out
+
