@@ -1,9 +1,13 @@
 import os
 import threading
-from app.modules import github_tools, dashboard_tools, admin
+from flask_login import LoginManager
+from app.modules import github_tools, dashboard_tools
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
+login_manager = LoginManager()
+
+login_manager.init_app(app)
 web_site_folder = os.path.dirname(__file__)
 
 threading.Thread(target=github_tools.set_statistics).start()
@@ -34,21 +38,24 @@ def admin_login_page(error_code: int = 100):  # dev: Code 100 is OK code
 
 @app.route('/admin/dashboard')
 def admin_dashboard():
+    # if user.is_authorized():
     return render_template(
         'admin/dashboard_page.html',
         all_requests=dashboard_tools.generate_requests_data(),
         all_visitors=dashboard_tools.generate_pages_data()
     )
+    # else:
+    #     return admin_login_page(error_code=200)
 
 
 @app.route('/admin/login/form', methods=['GET', 'POST'])
 def admin_login_handler():
     if request.method == 'POST':
         username, password = request.form.get('username'), request.form.get('password')
-        user = admin.AdminUser(username=username, password=password)
-        print(user.check_login())
-        if user.check_login():
-            return redirect('/admin/dashboard')
-        else:
-            return admin_login_page(error_code=200)
+        # user = admin.AdminUser(username=username, password=password)
+        # print(user.check_login())
+        # if user.check_login():
+        return redirect('/admin/dashboard')
+        # else:
+        #     return admin_login_page(error_code=200)
     return admin_login_page(error_code=200)  # dev: Error code 200 is login error code
