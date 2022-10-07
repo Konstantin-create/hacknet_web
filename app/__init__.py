@@ -34,11 +34,14 @@ def admin_login_page(error_code: int = 100):  # dev: Code 100 is OK code
 
 @app.route('/admin/dashboard')
 def admin_dashboard():
-    return render_template(
-        'admin/dashboard_page.html',
-        all_requests=dashboard_tools.generate_requests_data(),
-        all_visitors=dashboard_tools.generate_pages_data()
-    )
+    if user.is_authorized():
+        return render_template(
+            'admin/dashboard_page.html',
+            all_requests=dashboard_tools.generate_requests_data(),
+            all_visitors=dashboard_tools.generate_pages_data()
+        )
+    else:
+        return admin_login_page(error_code=200)
 
 
 @app.route('/admin/login/form', methods=['GET', 'POST'])
