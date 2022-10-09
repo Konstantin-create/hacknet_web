@@ -76,16 +76,18 @@ def generate_requests_data() -> dict:
     """Function to generate requests data from local storage"""
 
     data_src = get_requests_list()
-    data = []
-    out = {'requests': {'total': 0, 'per_day': 0, 'per_month': 0}}
-    for el in data_src:
-        time_stamp = datetime.strptime(el['time_stamp'], '%Y:%m:%d-%H:%M:%S')
-        time_delta = (datetime.utcnow() - time_stamp)
-        if time_delta <= timedelta(hours=24):
-            out['requests']['per_day'] += 1
-        elif time_delta <= timedelta(days=31):
-            out['requests']['per_month'] += 1
-        out['requests']['total'] += 1
+    out = {'requests': None}
+    if data_src:
+        data = []
+        out = {'requests': {'total': 0, 'per_day': 0, 'per_month': 0}}
+        for el in data_src:
+            time_stamp = datetime.strptime(el['time_stamp'], '%Y:%m:%d-%H:%M:%S')
+            time_delta = (datetime.utcnow() - time_stamp)
+            if time_delta <= timedelta(hours=24):
+                out['requests']['per_day'] += 1
+            elif time_delta <= timedelta(days=31):
+                out['requests']['per_month'] += 1
+            out['requests']['total'] += 1
 
     return out
 
@@ -94,11 +96,17 @@ def generate_pages_data() -> list:
     """Function to generate the most visitable pages data"""
 
     data_src = get_requests_list()
-    _data = dict(Counter([el['url'] for el in data_src]))
-    total = 5 if 5 < len(_data) else len(_data)
     out = []
-    for i in range(total):
-        out.append([list(_data.keys())[i], _data[list(_data.keys())[i]]])
+    if data_src:
+        _data = dict(Counter([el['url'] for el in data_src]))
+        total = 5 if 5 < len(_data) else len(_data)
+        for i in range(total):
+            out.append([list(_data.keys())[i], _data[list(_data.keys())[i]]])
 
     return out
 
+
+def clear_statistics() -> None:
+    """Function to clear visitors statistics"""
+
+    json.dump([], open('app/data/visits/requests.json', 'w'))

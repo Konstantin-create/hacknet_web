@@ -1,13 +1,10 @@
 import os
 import threading
-# from flask_login import LoginManager
 from app.modules import github_tools, dashboard_tools
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
-# login_manager = LoginManager()
 
-# login_manager.init_app(app)
 web_site_folder = os.path.dirname(__file__)
 
 threading.Thread(target=github_tools.set_statistics).start()
@@ -46,6 +43,15 @@ def admin_dashboard():
     )
     # else:
     #     return admin_login_page(error_code=200)
+
+
+@app.route('/admin/clear-stat')
+def admin_clear_stat():
+    try:
+        dashboard_tools.clear_statistics()
+    except Exception as e:
+        print(e)
+    return redirect('/admin/dashboard')
 
 
 @app.route('/admin/content-editor')
