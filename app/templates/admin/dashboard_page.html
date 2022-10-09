@@ -1,53 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Konstantin-create Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/dashboard_page.css') }}">
-</head>
-<body>
-<aside>
-    <div class="imgs">
-        <img src="{{ url_for('static', filename='img/admin/content.png') }}" alt="" class="aside-img">
-        <img src="{{ url_for('static', filename='img/admin/statistics.png') }}" alt="" class="aside-img">
-    </div>
-</aside>
-<main>
-    <h1 class="dashboard-header">Dashboard</h1>
-    <div class="dashes">
-        <div class="dash">
-            <div class="left">
-                <h3 class="data-header">Total requests</h3>
-                <p class="data-value">All time: {{ all_requests['requests']['total'] }}</p>
-                <p class="data-value">Per month: {{ all_requests['requests']['per_month'] }}</p>
-                <p class="data-value">Per day: {{ all_requests['requests']['per_day'] }}</p>
-            </div>
-            <div class="right">
-                <h3 class="data-header">Unique users</h3>
-                <p class="data-value">All time: {{ all_requests['requests']['total'] }}</p>
-                <p class="data-value">Per month: {{ all_requests['requests']['per_month'] }}</p>
-                <p class="data-value">Per day: {{ all_requests['requests']['per_day'] }}</p>
-                <p class="clear_btn">Clear statistics</p>
-            </div>
-        </div>
-        <div class="dash">
-            <h3 class="data-header">The most visitable pages</h3>
-            <div class="left">
-                <h4 class="data-col-header">Urls:</h4>
-                {% for el in all_visitors %}
-                <p class="data-value">{{ el[0] }}</p>
-                {% endfor %}
-            </div>
-            <div class="right">
-                <h4 class="data-col-header">Total visits:</h4>
-                {% for el in all_visitors %}
-                <p class="data-value">{{ el[1] }}</p>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="dash"></div>
-    </div>
+{% extends 'admin/admin_template.html'%}
 
-</main>
-</body>
-</html>
+{% block title %}<title>Konstantin-create Dashboard</title>{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/dashboard_page.css') }}">
+{% endblock %}}
+{% block page_name %}<h1 class="header-title">Dashboard</h1>{% endblock %}
+{% block content %}
+<div class="dashes">
+    <div class="dash">
+        <div class="left">
+            <h3 class="data-header">Total requests</h3>
+            <p class="data-value">All time: {{ all_requests['requests']['total'] }}</p>
+            <p class="data-value">Per month: {{ all_requests['requests']['per_month'] }}</p>
+            <p class="data-value">Per day: {{ all_requests['requests']['per_day'] }}</p>
+        </div>
+        <div class="right">
+            <h3 class="data-header">Unique users</h3>
+            <p class="data-value">All time: {{ all_requests['requests']['total'] }}</p>
+            <p class="data-value">Per month: {{ all_requests['requests']['per_month'] }}</p>
+            <p class="data-value">Per day: {{ all_requests['requests']['per_day'] }}</p>
+            <p class="clear_btn">Clear statistics</p>
+        </div>
+    </div>
+    <div class="dash">
+        <h3 class="data-header">The most visitable pages</h3>
+        <div class="left">
+            <h4 class="data-col-header">Urls:</h4>
+            {% for el in all_visitors %}
+            <p class="data-value">{{ el[0] }}</p>
+            {% endfor %}
+        </div>
+        <div class="right">
+            <h4 class="data-col-header">Total visits:</h4>
+            {% for el in all_visitors %}
+            <p class="data-value">{{ el[1] }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="dash"></div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+    document.getElementById('img-2').className = 'aside-img active-page'
+</script>
+{% endblock %}
