@@ -10,15 +10,19 @@
     <div class="dash">
         <div class="left">
             <h3 class="data-header">Total requests</h3>
+            {% if all_requests['requests'] %}
             <p class="data-value">All time: {{ all_requests['requests']['total'] }}</p>
             <p class="data-value">Per month: {{ all_requests['requests']['per_month'] }}</p>
             <p class="data-value">Per day: {{ all_requests['requests']['per_day'] }}</p>
+            {% endif %}
         </div>
         <div class="right">
             <h3 class="data-header">Unique users</h3>
+            {% if all_requests['requests'] %}
             <p class="data-value">All time: {{ all_requests['requests']['total'] }}</p>
             <p class="data-value">Per month: {{ all_requests['requests']['per_month'] }}</p>
             <p class="data-value">Per day: {{ all_requests['requests']['per_day'] }}</p>
+            {% endif %}
             <p class="clear_btn"><a href="/admin/clear-stat">Clear statistics</a></p>
         </div>
     </div>

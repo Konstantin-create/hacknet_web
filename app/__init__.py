@@ -47,6 +47,10 @@ def admin_dashboard():
 
 @app.route('/admin/clear-stat')
 def admin_clear_stat():
+    try:
+        dashboard_tools.clear_statistics()
+    except Exception as e:
+        print(e)
     return redirect('/admin/dashboard')
 
 
