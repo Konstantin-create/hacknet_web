@@ -1,29 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Konstantin-create - Content editor</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/content-editor.css') }}">
-</head>
-<body>
-<aside>
-    <div class="imgs">
-        <a href="/admin/dashboard">
-            <img src="{{ url_for('static', filename='img/admin/statistics.png') }}" alt="" class="aside-img">
-        </a>
-        <a href="/admin/content-editor">
-            <img src="{{ url_for('static', filename='img/admin/content.png') }}" alt="" class="aside-img active-page">
-        </a>
-        <a href="/admin/posts-editor">
-            <img src="{{ url_for('static', filename='img/admin/posts.png') }}" alt="" class="aside-img">
-        </a>
-    </div>
-</aside>
-<main>
-    <header>
-        <h1 class="content-editor-header">Content Editor</h1>
-        <div class="page-selector"></div>
-    </header>
-</main>
-</body>
-</html>
+{% extends 'admin/admin_template.html'%}
+
+{% block title %}<title>Konstantin-create Content Editor</title>{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/content-editor.css') }}">
+{% endblock %}
+{% block page_name %}<h1 class="header-title">Content Editor</h1>{% endblock %}
+{% block content %}
+{% endblock %}
+{% block js %}
+<script>
+    document.getElementById('img-2').className = 'aside-img active-page'
+    // todo: change class name. getElem.className = '' doesnt work
+</script>
+{% endblock %}

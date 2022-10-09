@@ -11,19 +11,19 @@
     <div class="imgs">
         <a href="/admin/dashboard">
             <img src="{{ url_for('static', filename='img/admin/statistics.png') }}" alt=""
-                 class="aside-img active-page">
+                 class="aside-img" id="img-1">
         </a>
         <a href="/admin/content-editor">
-            <img src="{{ url_for('static', filename='img/admin/content.png') }}" alt="" class="aside-img">
+            <img src="{{ url_for('static', filename='img/admin/content.png') }}" alt="" class="aside-img" id="img-2">
         </a>
         <a href="/admin/posts-editor">
-            <img src="{{ url_for('static', filename='img/admin/posts.png') }}" alt="" class="aside-img">
+            <img src="{{ url_for('static', filename='img/admin/posts.png') }}" alt="" class="aside-img" id="img-3">
         </a>
     </div>
 </aside>
 <main>
     <header>
-        {% block page-name %}{% endblock %}
+        {% block page_name %}{% endblock %}
     </header>
     {% block content %}{% endblock %}
 </main>
