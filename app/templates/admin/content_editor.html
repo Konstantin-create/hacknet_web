@@ -8,10 +8,22 @@
 <body>
 <aside>
     <div class="imgs">
-        <img src="{{ url_for('static', filename='img/admin/content.png') }}" alt="" class="aside-img">
-        <img src="{{ url_for('static', filename='img/admin/statistics.png') }}" alt="" class="aside-img">
+        <a href="/admin/dashboard">
+            <img src="{{ url_for('static', filename='img/admin/statistics.png') }}" alt="" class="aside-img">
+        </a>
+        <a href="/admin/content-editor">
+            <img src="{{ url_for('static', filename='img/admin/content.png') }}" alt="" class="aside-img">
+        </a>
+        <a href="/admin/posts-editor">
+            <img src="{{ url_for('static', filename='img/admin/posts.png') }}" alt="" class="aside-img">
+        </a>
     </div>
 </aside>
-<main></main>
+<main>
+    <header>
+        <h1 class="content-editor-header">Content Editor</h1>
+        <div class="page-selector"></div>
+    </header>
+</main>
 </body>
 </html>
