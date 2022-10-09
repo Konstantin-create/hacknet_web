@@ -24,6 +24,17 @@ aside {
     width: 90%;
     margin: 5px 5%;
     cursor: pointer;
+    transition: 1s;
+}
+
+.aside-img:hover {
+    background-color: #1c1c1c;
+    border-radius: 5px;
+}
+
+.active-page {
+    background-color: rgba(32, 32, 32, 0.5);
+    border-radius: 5px;
 }
 
 main {

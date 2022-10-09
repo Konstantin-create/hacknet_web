@@ -9,7 +9,8 @@
 <aside>
     <div class="imgs">
         <a href="/admin/dashboard">
-            <img src="{{ url_for('static', filename='img/admin/statistics.png') }}" alt="" class="aside-img">
+            <img src="{{ url_for('static', filename='img/admin/statistics.png') }}" alt=""
+                 class="aside-img active-page">
         </a>
         <a href="/admin/content-editor">
             <img src="{{ url_for('static', filename='img/admin/content.png') }}" alt="" class="aside-img">
@@ -20,7 +21,9 @@
     </div>
 </aside>
 <main>
-    <h1 class="dashboard-header">Dashboard</h1>
+    <header>
+        <h1 class="dashboard-header">Dashboard</h1>
+    </header>
     <div class="dashes">
         <div class="dash">
             <div class="left">
