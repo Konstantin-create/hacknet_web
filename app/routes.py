@@ -50,6 +50,13 @@ def admin_content_editor():
     )
 
 
+@app.route('/admin/posts-creator')
+def admin_post_creator():
+    return render_template(
+        'admin/post-creator.html'
+    )
+
+
 @app.route('/admin/login/form', methods=['GET', 'POST'])
 def admin_login_handler():
     if request.method == 'POST':
