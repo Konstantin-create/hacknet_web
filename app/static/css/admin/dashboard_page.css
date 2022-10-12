@@ -18,6 +18,7 @@ a {
 }
 
 .left {
+    position: relative;
     float: left;
     width: 50%;
     height: 100%;
@@ -52,6 +53,17 @@ a {
     font-size: 20px;
     padding: 10px 30px;
     color: #EDF2EF;
+}
+
+.no-data {
+    position: absolute;
+    font-family: "Cantarell", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    top: 45%;
+    left: 110px;
+    text-align: center;
+    color: #790000;
 }
 
 .clear_btn {
