@@ -24,18 +24,17 @@ def admin_login_page(error_code: int = 100):  # dev: Code 100 is OK code
 
 @app.route('/admin/dashboard')
 def admin_dashboard():
-    # if user.is_authorized():
+    # todo: login required
     return render_template(
         'admin/dashboard_page.html',
         all_requests=dashboard_tools.generate_requests_data(),
         all_visitors=dashboard_tools.generate_pages_data()
     )
-    # else:
-    #     return admin_login_page(error_code=200)
 
 
 @app.route('/admin/clear-stat')
 def admin_clear_stat():
+    # todo: login required
     try:
         dashboard_tools.clear_statistics()
     except Exception as e:
@@ -45,6 +44,7 @@ def admin_clear_stat():
 
 @app.route('/admin/content-editor')
 def admin_content_editor():
+    # todo: login required
     return render_template(
         'admin/content_editor.html'
     )
@@ -52,8 +52,9 @@ def admin_content_editor():
 
 @app.route('/admin/posts-creator')
 def admin_post_creator():
+    # todo: login required
     return render_template(
-        'admin/post-creator.html'
+        'admin/posts-creator.html'
     )
 
 
@@ -61,10 +62,6 @@ def admin_post_creator():
 def admin_login_handler():
     if request.method == 'POST':
         username, password = request.form.get('username'), request.form.get('password')
-        # user = admin.AdminUser(username=username, password=password)
-        # print(user.check_login())
-        # if user.check_login():
+        # todo: login admin in flask-login
         return redirect('/admin/dashboard')
-        # else:
-        #     return admin_login_page(error_code=200)
     return admin_login_page(error_code=200)  # dev: Error code 200 is login error code
