@@ -5,7 +5,13 @@
 {% block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/posts-creator.css') }}">
 {% endblock %}
-{% block page_name %}<h1 class="header-title">Posts creator</h1>{% endblock %}
+{% block page_name %}
+<h1 class="header-title">Posts creator</h1>
+<div class="header-nav">
+    <p class="header-nav-item">Old posts</p>
+    <p class="header-nav-item">Create new</p>
+</div>
+{% endblock %}
 {% block content %}
 {% endblock %}
 {% block js %}
