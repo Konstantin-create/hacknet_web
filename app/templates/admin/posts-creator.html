@@ -99,7 +99,9 @@
     </div>
 </div>
 <div class="new-posts" id="new-posts">
-    New
+    <form action="/add-post" method="post">
+        <label><input type="text" class="one-line-input" placeholder="Post header"></label>
+    </form>
 </div>
 {% endblock %}
 {% block js %}
