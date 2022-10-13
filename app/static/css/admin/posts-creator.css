@@ -1,0 +1,33 @@
+.header-nav {
+    width: 60%;
+    height: 100px;
+    margin: 20px auto;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-nav-item {
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    color: #EDF2EF;
+
+    cursor: pointer;
+    width: auto;
+}
+
+.header-nav-item:after {
+    display: block;
+    content: "";
+    margin-top: 5px;
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: width 0.2s ease-in-out;
+    z-index: 10;
+    border-radius: 10px;
+}
+
+.header-nav-item:hover:after, .header-nav-item:focus:after {
+    width: 100%;
+}
