@@ -1,21 +1,128 @@
 <!DOCTYPE html>
 {% extends 'admin/admin_template.html'%}
 
-{% block title %}<title>Konstantin-create Content Editor</title>{% endblock %}
+{% block title %}<title xmlns="http://www.w3.org/1999/html">Konstantin-create Posts Creator</title>{% endblock %}
 {% block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/posts-creator.css') }}">
 {% endblock %}
 {% block page_name %}
 <h1 class="header-title">Posts creator</h1>
 <div class="header-nav">
-    <p class="header-nav-item">Old posts</p>
-    <p class="header-nav-item">Create new</p>
+    <p class="header-nav-item active" id="header-nav-1" onclick="change_active()">Old posts</p>
+    <p class="header-nav-item" id="header-nav-2" onclick="change_active()">Create new</p>
 </div>
 {% endblock %}
 {% block content %}
+<div class="old-posts" id="old-posts">
+    <div class="posts">
+        <div class="post">
+            <div class="post-text">
+                <h3 class="post-header">Header</h3>
+                <p class="post-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta augue
+                    accumsan, vulputate erat non, varius quam. Sed pretium, massa sed sodales luctus, ex sapien
+                    consequat velit, quis ultrices lacus nibh nec leo. Duis vehicula sapien ac tempor fringilla. Duis
+                    ligula velit, aliquam non libero id, maximus vestibulum risus. Nulla id dui ac odio commodo maximus.
+                    Cras a nisl vitae tortor porta porta in vitae ante. Curabitur tempus iaculis arcu quis hendrerit.
+                    Nam non mauris tempus, malesuada tellus quis, dictum enim.
+
+                    Curabitur aliquet, ligula ullamcorper fermentum eleifend, diam lectus tempor quam, vel facilisis
+                    ante tortor id nibh. Quisque sed nisl hendrerit, imperdiet est non, pellentesque risus. Ut magna
+                    tellus, gravida in dui sed, auctor malesuada ex. Integer venenatis, risus at consequat iaculis, eros
+                    est blandit turpis, non aliquet lorem ex vitae metus. Aliquam iaculis nunc velit. Etiam eu tincidunt
+                    elit. Duis venenatis tincidunt odio semper posuere. Vestibulum sollicitudin ullamcorper
+                    aliquet. </p>
+                <div class="post-footer">
+                    <div class="post-tags">
+                        <p class="post-tag">#Python</p>
+                        <p class="post-tag">#Features</p>
+                    </div>
+                    <p class="post-link">More</p>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='posts/img/1-1.jpg') }}" alt="" class="post-image" loading="lazy">
+        </div>
+        <div class="post">
+            <div class="post-text">
+                <h3 class="post-header">Header</h3>
+                <p class="post-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta augue
+                    accumsan, vulputate erat non, varius quam. Sed pretium, massa sed sodales luctus, ex sapien
+                    consequat velit, quis ultrices lacus nibh nec leo. Duis vehicula sapien ac tempor fringilla. Duis
+                    ligula velit, aliquam non libero id, maximus vestibulum risus. Nulla id dui ac odio commodo maximus.
+                    Cras a nisl vitae tortor porta porta in vitae ante. Curabitur tempus iaculis arcu quis hendrerit.
+                    Nam non mauris tempus, malesuada tellus quis, dictum enim.
+
+                    Curabitur aliquet, ligula ullamcorper fermentum eleifend, diam lectus tempor quam, vel facilisis
+                    ante tortor id nibh. Quisque sed nisl hendrerit, imperdiet est non, pellentesque risus. Ut magna
+                    tellus, gravida in dui sed, auctor malesuada ex. Integer venenatis, risus at consequat iaculis, eros
+                    est blandit turpis, non aliquet lorem ex vitae metus. Aliquam iaculis nunc velit. Etiam eu tincidunt
+                    elit. Duis venenatis tincidunt odio semper posuere. Vestibulum sollicitudin ullamcorper
+                    aliquet. </p>
+                <div class="post-footer">
+                    <div class="post-tags">
+                        <p class="post-tag">#Python</p>
+                        <p class="post-tag">#Features</p>
+                    </div>
+                    <p class="post-link">More</p>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='posts/img/2-1.jpg') }}" alt="" class="post-image" loading="lazy">
+        </div>
+        <div class="post">
+            <div class="post-text">
+                <h3 class="post-header">Header</h3>
+                <p class="post-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta augue
+                    accumsan, vulputate erat non, varius quam. Sed pretium, massa sed sodales luctus, ex sapien
+                    consequat velit, quis ultrices lacus nibh nec leo. Duis vehicula sapien ac tempor fringilla. Duis
+                    ligula velit, aliquam non libero id, maximus vestibulum risus. Nulla id dui ac odio commodo maximus.
+                    Cras a nisl vitae tortor porta porta in vitae ante. Curabitur tempus iaculis arcu quis hendrerit.
+                    Nam non mauris tempus, malesuada tellus quis, dictum enim.
+
+                    Curabitur aliquet, ligula ullamcorper fermentum eleifend, diam lectus tempor quam, vel facilisis
+                    ante tortor id nibh. Quisque sed nisl hendrerit, imperdiet est non, pellentesque risus. Ut magna
+                    tellus, gravida in dui sed, auctor malesuada ex. Integer venenatis, risus at consequat iaculis, eros
+                    est blandit turpis, non aliquet lorem ex vitae metus. Aliquam iaculis nunc velit. Etiam eu tincidunt
+                    elit. Duis venenatis tincidunt odio semper posuere. Vestibulum sollicitudin ullamcorper
+                    aliquet. </p>
+                <div class="post-footer">
+                    <div class="post-tags">
+                        <p class="post-tag">#Python</p>
+                        <p class="post-tag">#Features</p>
+                    </div>
+                    <p class="post-link">More</p>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='posts/img/3-1.jpg') }}" alt="" class="post-image" loading="lazy">
+        </div>
+    </div>
+</div>
+<div class="new-posts" id="new-posts">
+    New
+</div>
 {% endblock %}
 {% block js %}
 <script>
+    let active_window = 'old'
     document.getElementById('img-3').className = 'aside-img active-page'
+    document.getElementById('header-nav-1').className = 'header-nav-item active'
+    document.getElementById('new-posts').className = 'new-posts hide-item'
+    let numOfPosts = document.getElementsByClassName('post').length;
+    document.getElementsByTagName('main')[0].style.height = (numOfPosts * 500 + 250).toString() + 'px'
+    document.getElementsByTagName('aside')[0].style.height = (numOfPosts * 500 + 250).toString() + 'px'
+
+    function change_active() {
+        if (active_window == 'old') {
+            active_window = 'new'
+            document.getElementById('header-nav-1').className = 'header-nav-item'
+            document.getElementById('header-nav-2').className = 'header-nav-item active'
+            document.getElementById('old-posts').className = 'old-posts hide-item'
+            document.getElementById('new-posts').className = 'new-posts'
+        } else {
+            active_window = 'old'
+            document.getElementById('header-nav-1').className = 'header-nav-item active'
+            document.getElementById('header-nav-2').className = 'header-nav-item'
+            document.getElementById('old-posts').className = 'old-posts'
+            document.getElementById('new-posts').className = 'new-posts hide-item'
+        }
+    }
 </script>
 {% endblock %}
