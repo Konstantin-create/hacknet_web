@@ -174,3 +174,11 @@
 .edit-button:hover {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
+
+.new-posts {
+    width: 70%;
+    height: 500px;
+    margin: 50px auto;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+}
