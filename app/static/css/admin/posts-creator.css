@@ -182,3 +182,17 @@
     background-color: #1c1c1c;
     border-radius: 10px;
 }
+
+.one-line-input {
+    font-family: "Cantarell Light", sans-serif;
+    font-size: 20px;
+    width: 300px;
+    height: 2em;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    background-color: #202020;
+    color: #EDF2EF;
+    border: none;
+    border-radius: 10px;
+    margin: 100px auto;
+}
