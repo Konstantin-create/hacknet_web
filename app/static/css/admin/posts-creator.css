@@ -183,6 +183,15 @@
     border-radius: 10px;
 }
 
+.form-header {
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #EDF2EF;
+    text-align: center;
+    padding-top: 20px;
+}
+
 .one-line-input {
     font-family: "Cantarell Light", sans-serif;
     font-size: 20px;
@@ -194,5 +203,5 @@
     color: #EDF2EF;
     border: none;
     border-radius: 10px;
-    margin: 100px calc((100% - 500px) / 2);
+    margin: 20px calc((100% - 500px) / 2);
 }
