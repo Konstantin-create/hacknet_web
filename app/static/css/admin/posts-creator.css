@@ -1,3 +1,8 @@
+.hidden {
+    display: none;
+}
+
+
 .header-nav {
     width: 60%;
     height: 100px;
