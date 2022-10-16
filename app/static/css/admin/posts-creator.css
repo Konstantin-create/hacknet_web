@@ -176,11 +176,26 @@
 }
 
 .new-posts {
+    position: relative;
     width: 70%;
     height: 500px;
     margin: 50px auto;
     background-color: #1c1c1c;
     border-radius: 10px;
+}
+
+.form-progress {
+    position: relative;
+    width: 20%;
+    height: 20px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.progress-el {
+    width: 30%;
+    height: 100%;
+    background-color: #5CAB7D;
 }
 
 .form-header {
