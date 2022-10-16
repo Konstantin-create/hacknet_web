@@ -176,11 +176,27 @@
 }
 
 .new-posts {
+    position: relative;
     width: 70%;
     height: 500px;
     margin: 50px auto;
     background-color: #1c1c1c;
     border-radius: 10px;
+}
+
+.form-progress {
+    position: relative;
+    width: 20%;
+    height: 20px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.progress-el {
+    width: 30%;
+    height: 100%;
+    background-color: rgba(92, 171, 125, 0.5);
+    box-shadow: 0 0 20px rgba(92, 171, 125, .9);
 }
 
 .form-header {
@@ -203,5 +219,27 @@
     color: #EDF2EF;
     border: none;
     border-radius: 10px;
-    margin: 20px calc((100% - 500px) / 2);
+    margin: 40px calc((100% - 500px) / 2);
+}
+
+.form-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+}
+
+.form-next-field {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: 200;
+    color: #EDF2EF;
+    background-color: #5CAB7D7F;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
 }
