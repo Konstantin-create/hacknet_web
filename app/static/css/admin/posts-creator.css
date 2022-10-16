@@ -221,3 +221,25 @@
     border-radius: 10px;
     margin: 40px calc((100% - 500px) / 2);
 }
+
+.form-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+}
+
+.form-next-field {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: 200;
+    color: #EDF2EF;
+    background-color: #5CAB7D7F;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+}
