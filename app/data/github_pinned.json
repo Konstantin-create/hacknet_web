@@ -1,20 +1,20 @@
 [
-  {
-    "name": "Konstantin-create",
-    "description": "This is my first simple version control system",
-    "stars": 8,
-    "language": "Python"
-  },
-  {
-    "name": "Konstantin-create",
-    "description": "Client - Server - Client chat",
-    "stars": 2,
-    "language": "Python"
-  },
-  {
-    "name": "Konstantin-create",
-    "description": "In this repo im going to create some data structures",
-    "stars": 2,
-    "language": "Python"
-  }
+    {
+        "name": "Konstantin-create",
+        "description": "This is my first simple version control system",
+        "stars": 9,
+        "language": "Python"
+    },
+    {
+        "name": "Konstantin-create",
+        "description": "Client - Server - Client chat",
+        "stars": 2,
+        "language": "Python"
+    },
+    {
+        "name": "Konstantin-create",
+        "description": "In this repo im going to create some data structures",
+        "stars": 2,
+        "language": "Python"
+    }
 ]
