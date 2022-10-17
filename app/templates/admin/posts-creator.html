@@ -103,18 +103,23 @@
         <div class="progress-el"></div>
     </div>
     <form action="/add-post" method="post">
-        <div id="form-screen1">
-            <h3 class="form-header">Create new post</h3>
-            <label><input type="text" class="one-line-input" placeholder="Post header" name="post-header"></label>
-            <p class="error-text hide-item">Please enter post header</p>
-            <div class="form-footer">
-                <p onclick="next_form_screen()" class="form-next-field">Post text</p>
-            </div>
-        </div>
-        <div id="form-screen2">
-            <h3 class="form-header">Create new post</h3>
-            <input type="submit" value="Publish post">
-        </div>
+        <!--        <div id="form-screen1">-->
+        <h3 class="form-header">Create new post</h3>
+        <label style="clear: both">
+            <input type="text" class="one-line-input" placeholder="Post header" name="post-header" autofocus>
+        </label>
+        <p class="error-text hide-item">Please enter post header</p>
+        <label style="clear: both">
+            <textarea class="text-input" placeholder="Post text" name="post-data"></textarea>
+        </label>
+        <!--            <div class="form-footer">-->
+        <!--                <p onclick="next_form_screen()" class="form-next-field">Post text</p>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div id="form-screen2">-->
+        <!--            <h3 class="form-header">Create new post</h3>-->
+        <!--            <input type="submit" value="Publish post">-->
+        <!--        </div>-->
     </form>
 </div>
 {% endblock %}
