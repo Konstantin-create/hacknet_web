@@ -224,7 +224,30 @@
     color: #EDF2EF;
     border: none;
     border-radius: 10px;
-    margin: 40px calc((100% - 500px) / 2);
+    margin: 40px 50px;
+}
+
+.error-text {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    color: red;
+    margin-top: -20px;
+    text-align: center;
+}
+
+.input-field {
+    font-family: "Cantarell Light", sans-serif;
+    font-size: 20px;
+    width: 500px;
+    height: 10e,;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    background-color: #202020;
+    color: #EDF2EF;
+    border: none;
+    border-radius: 10px;
+    margin: 40px 50px;
 }
 
 .form-footer {
