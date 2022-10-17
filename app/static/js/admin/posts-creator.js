@@ -31,7 +31,9 @@ function change_active() {
 
 
 function next_form_screen() {
-    form_screen += 1
-    document.getElementById(form_screens[form_screen - 1]).className = form_screens[form_screen - 1] + ' hidden'
-    document.getElementById(form_screens[form_screen]).className = form_screens[form_screen]
+    if (document.getElementsByName('post-header')[0].value !== '') {
+        form_screen += 1
+        document.getElementById(form_screens[form_screen - 1]).className = form_screens[form_screen - 1] + ' hidden'
+        document.getElementById(form_screens[form_screen]).className = form_screens[form_screen]
+    }
 }
