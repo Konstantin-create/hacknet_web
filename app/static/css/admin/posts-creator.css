@@ -247,4 +247,10 @@
     border: none;
     border-radius: 10px;
     padding: 10px 25px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.form-next-field:hover {
+    background-color: rgba(92, 171, 125, 0.7);
 }
