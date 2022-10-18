@@ -9,7 +9,7 @@ from app.modules import github_tools, dashboard_tools
 # Flask imports
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask
+from flask import Flask, redirect, render_template, request
 
 # Flask init
 app = Flask(__name__)
