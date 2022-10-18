@@ -11,9 +11,3 @@ class Posts(db.Model):
 
     def __repr__(self):
         return f'<Post: {self.id} | {self.header}>'
-
-
-class PostImages(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
-    image = db.Column(db.LargeBinary, nullable=False)
