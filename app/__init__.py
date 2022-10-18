@@ -3,13 +3,13 @@ import os
 import threading
 
 # My modules imports
-from app.config import Config
+from config import Config
 from app.modules import github_tools, dashboard_tools
 
 # Flask imports
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, request, redirect
+from flask import Flask, redirect, render_template, request
 
 # Flask init
 app = Flask(__name__)
@@ -17,7 +17,7 @@ app.config.from_object(Config)
 
 # DB init
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+# migrate = Migrate(app, db)
 
 web_site_folder = os.path.dirname(__file__)
 
