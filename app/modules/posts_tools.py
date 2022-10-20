@@ -1,9 +1,18 @@
 from app import db
+from config import Config
 from app.modules.models import Posts
 
 
-def get_posts(page_id: int, total: int = 10) -> list:
-    return Posts.query.order_by(Posts.id.desc()).paginate(page=1, per_page=10).items
+def get_posts(page_id: int) -> list:
+    """Function to get items for page by page id"""
+
+    return Posts.query.order_by(Posts.id.desc()).paginate(page=page_id, per_page=Config.POSTS_PER_PAGE).items
+
+
+def get_pages():
+    """Function to get total posts pages"""
+
+    return Posts.query.order_by(Posts.id.desc()).paginate(per_page=Config.POSTS_PER_PAGE).pages
 
 
 def add_post(header: str = '', text: str = '', tags: str = '', img: str = '') -> dict:

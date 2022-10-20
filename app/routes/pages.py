@@ -29,6 +29,8 @@ def blog_page(page_id=1):
     dashboard_tools.request_handler(ip=request.remote_addr, url='/blog')
     return render_template(
         'blog_page.html',
+        page_id=page_id,
+        total_pages=posts_tools.get_pages(),
         posts=posts_tools.get_posts(page_id)
     )
 
