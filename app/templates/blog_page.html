@@ -107,6 +107,19 @@
             <img src="{{ url_for('static', filename='posts/img/3-1.jpg') }}" alt="" class="post-image" loading="lazy">
         </div>
     </div>
+    <div class="page_indexes">
+        {% if page_id == 1 %}
+            <p class="page_index previous disable"><<</p>
+        {% else %}
+            <a href="/blog/page/{{ page_id - 1 }}"><p class="page_index previous disable"><<</p></a>
+        {% endif %}
+        <p class="page_index current">1</p>
+        {% if page_id == total_pages%}
+            <p class="page_index next disable">>></p>
+        {% else %}
+            <a href="/blog/page/{{ page_id + 1 }}"><p class="page_index next disable">>></p></a>
+        {% endif %}
+    </div>
 </main>
 </body>
 </html>
