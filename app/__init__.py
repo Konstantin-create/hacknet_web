@@ -17,7 +17,7 @@ app.config.from_object(Config)
 
 # DB init
 db = SQLAlchemy(app)
-# migrate = Migrate(app, db)
+migrate = Migrate(app, db)
 
 web_site_folder = os.path.dirname(__file__)
 
