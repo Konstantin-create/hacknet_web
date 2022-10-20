@@ -12,14 +12,10 @@ from app import app, redirect, render_template, request
 
 # Index page router
 @app.route('/')
-@app.route('/page/<int:page_id>')
-def init_page(page_id=1):
-    print(page_id)
+def init_page():
     dashboard_tools.request_handler(ip=request.remote_addr, url='/')
     return render_template(
         'index.html',
-        page_id=page_id,
-
         gh_stat=github_tools.get_statistic(),
         gh_pinned=github_tools.get_pinned_repos(),
         web_site_folder=web_site_folder
@@ -28,7 +24,8 @@ def init_page(page_id=1):
 
 # Blog page router
 @app.route('/blog')
-def blog_page():
+@app.route('/blog/page/<int:page_id>')
+def blog_page(page_id=1):
     dashboard_tools.request_handler(ip=request.remote_addr, url='/blog')
     return render_template('blog_page.html')
 
