@@ -27,7 +27,12 @@ def add_post(header: str = '', text: str = '', tags: str = '', img: str = '') ->
         return {'success': False, 'error': e}
 
 
-def delete_post(post_id: int):
+def delete_post(post_id: int) -> dict:
     """Function to remove post from db"""
 
-    pass
+    try:
+        db.session.delete(Posts.query.filter_by(id=post_id).first())
+        db.session.commit()
+        return {'success': True, 'error': ''}
+    except Exception as e:
+        return {'success': False, 'error': e}
