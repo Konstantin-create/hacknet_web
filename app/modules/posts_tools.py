@@ -16,6 +16,8 @@ def get_pages():
 
 
 def add_post(header: str = '', text: str = '', tags: str = '', img: str = '') -> dict:
+    """Function to add post in to db"""
+
     try:
         post = Posts(header=header, text=text, tags=tags, img=img)
         db.session.add(post)
@@ -23,3 +25,9 @@ def add_post(header: str = '', text: str = '', tags: str = '', img: str = '') ->
         return {'success': True, 'error': ''}
     except Exception as e:
         return {'success': False, 'error': e}
+
+
+def delete_post(post_id: int):
+    """Function to remove post from db"""
+
+    pass
