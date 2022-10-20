@@ -66,5 +66,6 @@ def admin_content_editor():
 def admin_post_creator():
     # todo: login required
     return render_template(
-        'admin/posts-creator.html'
+        'admin/posts-creator.html',
+        posts=posts_tools.get_posts(1, on_page=-1)
     )
