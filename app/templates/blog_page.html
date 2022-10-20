@@ -45,96 +45,18 @@
                 <img src="{{ url_for('static', filename=post.img) }}" alt="" class="post-image" loading="lazy">
             </div>
         {% endfor %}
-<!--        <div class="post">-->
-<!--            <div class="post-text">-->
-<!--                <h3 class="post-header">Header</h3>-->
-<!--                <p class="post-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta augue-->
-<!--                    accumsan, vulputate erat non, varius quam. Sed pretium, massa sed sodales luctus, ex sapien-->
-<!--                    consequat velit, quis ultrices lacus nibh nec leo. Duis vehicula sapien ac tempor fringilla. Duis-->
-<!--                    ligula velit, aliquam non libero id, maximus vestibulum risus. Nulla id dui ac odio commodo maximus.-->
-<!--                    Cras a nisl vitae tortor porta porta in vitae ante. Curabitur tempus iaculis arcu quis hendrerit.-->
-<!--                    Nam non mauris tempus, malesuada tellus quis, dictum enim.-->
-
-<!--                    Curabitur aliquet, ligula ullamcorper fermentum eleifend, diam lectus tempor quam, vel facilisis-->
-<!--                    ante tortor id nibh. Quisque sed nisl hendrerit, imperdiet est non, pellentesque risus. Ut magna-->
-<!--                    tellus, gravida in dui sed, auctor malesuada ex. Integer venenatis, risus at consequat iaculis, eros-->
-<!--                    est blandit turpis, non aliquet lorem ex vitae metus. Aliquam iaculis nunc velit. Etiam eu tincidunt-->
-<!--                    elit. Duis venenatis tincidunt odio semper posuere. Vestibulum sollicitudin ullamcorper-->
-<!--                    aliquet. </p>-->
-<!--                <div class="post-footer">-->
-<!--                    <div class="post-tags">-->
-<!--                        <p class="post-tag">#Python</p>-->
-<!--                        <p class="post-tag">#Features</p>-->
-<!--                    </div>-->
-<!--                    <p class="post-link">More</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <img src="{{ url_for('static', filename='posts/img/1-1.jpg') }}" alt="" class="post-image" loading="lazy">-->
-<!--        </div>-->
-<!--        <div class="post">-->
-<!--            <div class="post-text">-->
-<!--                <h3 class="post-header">Header</h3>-->
-<!--                <p class="post-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta augue-->
-<!--                    accumsan, vulputate erat non, varius quam. Sed pretium, massa sed sodales luctus, ex sapien-->
-<!--                    consequat velit, quis ultrices lacus nibh nec leo. Duis vehicula sapien ac tempor fringilla. Duis-->
-<!--                    ligula velit, aliquam non libero id, maximus vestibulum risus. Nulla id dui ac odio commodo maximus.-->
-<!--                    Cras a nisl vitae tortor porta porta in vitae ante. Curabitur tempus iaculis arcu quis hendrerit.-->
-<!--                    Nam non mauris tempus, malesuada tellus quis, dictum enim.-->
-
-<!--                    Curabitur aliquet, ligula ullamcorper fermentum eleifend, diam lectus tempor quam, vel facilisis-->
-<!--                    ante tortor id nibh. Quisque sed nisl hendrerit, imperdiet est non, pellentesque risus. Ut magna-->
-<!--                    tellus, gravida in dui sed, auctor malesuada ex. Integer venenatis, risus at consequat iaculis, eros-->
-<!--                    est blandit turpis, non aliquet lorem ex vitae metus. Aliquam iaculis nunc velit. Etiam eu tincidunt-->
-<!--                    elit. Duis venenatis tincidunt odio semper posuere. Vestibulum sollicitudin ullamcorper-->
-<!--                    aliquet. </p>-->
-<!--                <div class="post-footer">-->
-<!--                    <div class="post-tags">-->
-<!--                        <p class="post-tag">#Python</p>-->
-<!--                        <p class="post-tag">#Features</p>-->
-<!--                    </div>-->
-<!--                    <p class="post-link">More</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <img src="{{ url_for('static', filename='posts/img/2-1.jpg') }}" alt="" class="post-image" loading="lazy">-->
-<!--        </div>-->
-<!--        <div class="post">-->
-<!--            <div class="post-text">-->
-<!--                <h3 class="post-header">Header</h3>-->
-<!--                <p class="post-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta augue-->
-<!--                    accumsan, vulputate erat non, varius quam. Sed pretium, massa sed sodales luctus, ex sapien-->
-<!--                    consequat velit, quis ultrices lacus nibh nec leo. Duis vehicula sapien ac tempor fringilla. Duis-->
-<!--                    ligula velit, aliquam non libero id, maximus vestibulum risus. Nulla id dui ac odio commodo maximus.-->
-<!--                    Cras a nisl vitae tortor porta porta in vitae ante. Curabitur tempus iaculis arcu quis hendrerit.-->
-<!--                    Nam non mauris tempus, malesuada tellus quis, dictum enim.-->
-
-<!--                    Curabitur aliquet, ligula ullamcorper fermentum eleifend, diam lectus tempor quam, vel facilisis-->
-<!--                    ante tortor id nibh. Quisque sed nisl hendrerit, imperdiet est non, pellentesque risus. Ut magna-->
-<!--                    tellus, gravida in dui sed, auctor malesuada ex. Integer venenatis, risus at consequat iaculis, eros-->
-<!--                    est blandit turpis, non aliquet lorem ex vitae metus. Aliquam iaculis nunc velit. Etiam eu tincidunt-->
-<!--                    elit. Duis venenatis tincidunt odio semper posuere. Vestibulum sollicitudin ullamcorper-->
-<!--                    aliquet. </p>-->
-<!--                <div class="post-footer">-->
-<!--                    <div class="post-tags">-->
-<!--                        <p class="post-tag">#Python</p>-->
-<!--                        <p class="post-tag">#Features</p>-->
-<!--                    </div>-->
-<!--                    <p class="post-link">More</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <img src="{{ url_for('static', filename='posts/img/3-1.jpg') }}" alt="" class="post-image" loading="lazy">-->
-<!--        </div>-->
     </div>
     <div class="page_indexes">
         {% if page_id == 1 %}
             <p class="page_index previous disable"><<</p>
         {% else %}
-            <a href="/blog/page/{{ page_id - 1 }}"><p class="page_index previous disable"><<</p></a>
+            <a href="/blog/page/{{ page_id - 1 }}"><p class="page_index previous"><<</p></a>
         {% endif %}
-        <p class="page_index current">1</p>
+        <p class="page_index current">{{ page_id }}</p>
         {% if page_id == total_pages%}
             <p class="page_index next disable">>></p>
         {% else %}
-            <a href="/blog/page/{{ page_id + 1 }}"><p class="page_index next disable">>></p></a>
+            <a href="/blog/page/{{ page_id + 1 }}"><p class="page_index next">>></p></a>
         {% endif %}
     </div>
 </main>
