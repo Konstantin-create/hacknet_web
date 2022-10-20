@@ -27,7 +27,10 @@ def init_page():
 @app.route('/blog/page/<int:page_id>')
 def blog_page(page_id=1):
     dashboard_tools.request_handler(ip=request.remote_addr, url='/blog')
-    return render_template('blog_page.html')
+    return render_template(
+        'blog_page.html',
+        posts=posts_tools.get_posts(page_id)
+    )
 
 
 # Admin login page router

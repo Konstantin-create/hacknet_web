@@ -2,8 +2,8 @@ from app import db
 from app.modules.models import Posts
 
 
-def get_posts(total=20) -> list:
-    return Posts.query.order_by(Posts.id.desc()).limit(20).all()
+def get_posts(page_id: int, total: int = 10) -> list:
+    return Posts.query.order_by(Posts.id.desc()).paginate(page=1, per_page=10).items
 
 
 def add_post(header: str = '', text: str = '', tags: str = '', img: str = '') -> dict:
