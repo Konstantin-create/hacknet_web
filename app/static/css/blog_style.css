@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Emoji&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 * {
     margin: 0;
@@ -102,7 +103,7 @@ main {
     width: 500px;
     height: 100%;
     border-radius: 0 10px 10px 0;
-    background: linear-gradient(45deg, #202020,#000000);
+    background: linear-gradient(45deg, #202020, #000000);
     background-size: 400% 400%;
     animation: loading-anim 20s ease infinite;
     transform: translate3d(0, 0, 0);
@@ -193,4 +194,35 @@ main {
 
 .post-link:hover:after, .post-link:focus:after {
     width: 100%;
+}
+
+.page_indexes {
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+
+    margin: 50px auto;
+    user-select: none;
+}
+
+.page_index {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: #EDF2EF;
+    background-color: #05299E;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.current {
+    line-height: 60px;
+}
+
+.disable {
+    background-color: rgba(5, 41, 158, 0.5);
+    cursor: not-allowed;
 }
