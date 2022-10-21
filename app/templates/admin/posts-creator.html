@@ -37,16 +37,20 @@
 </div>
 <div class="new-posts" id="new-posts">
     <form action="/add-post" method="post">
-        <!--        <div id="form-screen1">-->
         <h3 class="form-header">Create new post</h3>
         <label>
             <input type="text" class="one-line-input" placeholder="Post header" name="post-header"
                    autofocus>
         </label>
-        <p class="error-text hide-item">Please enter post header</p>
+        <p class="error-text hide-item" id="post-header-error">Please enter post header</p>
         <label>
-            <textarea class="text-input" placeholder="Post text" name="post-data"></textarea>
+            <textarea class="text-input" placeholder="Post text" name="post-text"></textarea>
         </label>
+        <p class="error-text hide-item" id="post-text-error">Please enter post text</p>
+        <label>
+            <input type="text" class="one-line-input" placeholder="Post tags" name="post-tags">
+        </label>
+        <p class="error-text hide-item" id="post-tags-error">Please enter post tags</p>
     </form>
 </div>
 {% endblock %}
