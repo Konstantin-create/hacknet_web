@@ -183,25 +183,12 @@
 .new-posts {
     position: relative;
     width: 70%;
-    height: 500px;
+    height: auto;
     margin: 50px auto;
     background-color: #1c1c1c;
     border-radius: 10px;
-}
-
-.form-progress {
-    position: relative;
-    width: 20%;
-    height: 20px;
-    border-radius: 10px 10px 0 0;
-    overflow: hidden;
-}
-
-.progress-el {
-    width: 30%;
-    height: 100%;
-    background-color: rgba(92, 171, 125, 0.5);
-    box-shadow: 0 0 20px rgba(92, 171, 125, .9);
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 .form-header {
@@ -236,44 +223,71 @@
     text-align: center;
 }
 
-.input-field {
+.text-input {
     font-family: "Cantarell Light", sans-serif;
     font-size: 20px;
-    width: 500px;
-    height: 10e,;
+    width: 90%;
+    height: 20em;
     box-sizing: border-box;
     padding: 10px 5px;
     background-color: #202020;
     color: #EDF2EF;
     border: none;
     border-radius: 10px;
-    margin: 40px 50px;
+    margin: 0 50px;
 }
 
-.form-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
+.input-file {
+    position: relative;
+    display: inline-block;
 }
 
-.form-next-field {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    font-family: Roboto, sans-serif;
-    font-size: 24px;
-    font-weight: 200;
-    color: #EDF2EF;
-    background-color: #5CAB7D7F;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 25px;
+.input-file span {
+    position: relative;
+    display: inline-block;
     cursor: pointer;
-    transition: .5s;
+    outline: none;
+    text-decoration: none;
+    font-family: "Cantarell Light", sans-serif;
+    font-size: 20px;
+    vertical-align: middle;
+    color: #EDF2EF;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #202020;
+    line-height: 2em;
+    height: 2em;
+    width: 200px;
+    box-sizing: border-box;
+    border: none;
+    margin: 0 50px 10px;
+    transition: background-color 0.2s;
 }
 
-.form-next-field:hover {
-    background-color: rgba(92, 171, 125, 0.7);
+.input-file input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+/* Focus */
+.input-file input[type=file]:focus + span {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+/* Hover/active */
+.input-file:hover span {
+    background-color: #303030;
+}
+
+.input-file:active span {
+    background-color: #303030;
+}
+
+/* Disabled */
+.input-file input[type=file]:disabled + span {
+    background-color: #797979;
 }

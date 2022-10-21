@@ -4,6 +4,7 @@
 {% block title %}<title xmlns="http://www.w3.org/1999/html">Konstantin-create Posts Creator</title>{% endblock %}
 {% block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/posts-creator.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock %}
 {% block page_name %}
 <h1 class="header-title">Posts creator</h1>
@@ -15,114 +16,58 @@
 {% block content %}
 <div class="old-posts" id="old-posts">
     <div class="posts">
+        {% for post in posts %}
         <div class="post">
             <div class="post-text">
-                <h3 class="post-header">Header</h3>
-                <p class="post-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta augue
-                    accumsan, vulputate erat non, varius quam. Sed pretium, massa sed sodales luctus, ex sapien
-                    consequat velit, quis ultrices lacus nibh nec leo. Duis vehicula sapien ac tempor fringilla. Duis
-                    ligula velit, aliquam non libero id, maximus vestibulum risus. Nulla id dui ac odio commodo maximus.
-                    Cras a nisl vitae tortor porta porta in vitae ante. Curabitur tempus iaculis arcu quis hendrerit.
-                    Nam non mauris tempus, malesuada tellus quis, dictum enim.
-
-                    Curabitur aliquet, ligula ullamcorper fermentum eleifend, diam lectus tempor quam, vel facilisis
-                    ante tortor id nibh. Quisque sed nisl hendrerit, imperdiet est non, pellentesque risus. Ut magna
-                    tellus, gravida in dui sed, auctor malesuada ex. Integer venenatis, risus at consequat iaculis, eros
-                    est blandit turpis, non aliquet lorem ex vitae metus. Aliquam iaculis nunc velit. Etiam eu tincidunt
-                    elit. Duis venenatis tincidunt odio semper posuere. Vestibulum sollicitudin ullamcorper
-                    aliquet. </p>
+                <h3 class="post-header">{{ post.header }}</h3>
+                <p class="post-description">{{ post.text }}</p>
                 <div class="post-footer">
                     <div class="post-tags">
-                        <p class="post-tag">#Python</p>
-                        <p class="post-tag">#Features</p>
+                        {% for tag in post.tags.split() %}
+                        <p class="post-tag">#{{ tag }}</p>
+                        {% endfor %}
                     </div>
-                    <p class="post-link">More</p>
+                    <a href="/posts/{{ post.id }}"><p class="post-link">More</p></a>
                 </div>
             </div>
             <img src="{{ url_for('static', filename='img/admin/edit.png') }}" alt="" class="edit-button">
-            <img src="{{ url_for('static', filename='posts/img/1-1.jpg') }}" alt="" class="post-image" loading="lazy">
+            <img src="{{ url_for('static', filename=post.img) }}" alt="" class="post-image" loading="lazy">
         </div>
-        <div class="post">
-            <div class="post-text">
-                <h3 class="post-header">Header</h3>
-                <p class="post-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta augue
-                    accumsan, vulputate erat non, varius quam. Sed pretium, massa sed sodales luctus, ex sapien
-                    consequat velit, quis ultrices lacus nibh nec leo. Duis vehicula sapien ac tempor fringilla. Duis
-                    ligula velit, aliquam non libero id, maximus vestibulum risus. Nulla id dui ac odio commodo maximus.
-                    Cras a nisl vitae tortor porta porta in vitae ante. Curabitur tempus iaculis arcu quis hendrerit.
-                    Nam non mauris tempus, malesuada tellus quis, dictum enim.
-
-                    Curabitur aliquet, ligula ullamcorper fermentum eleifend, diam lectus tempor quam, vel facilisis
-                    ante tortor id nibh. Quisque sed nisl hendrerit, imperdiet est non, pellentesque risus. Ut magna
-                    tellus, gravida in dui sed, auctor malesuada ex. Integer venenatis, risus at consequat iaculis, eros
-                    est blandit turpis, non aliquet lorem ex vitae metus. Aliquam iaculis nunc velit. Etiam eu tincidunt
-                    elit. Duis venenatis tincidunt odio semper posuere. Vestibulum sollicitudin ullamcorper
-                    aliquet. </p>
-                <div class="post-footer">
-                    <div class="post-tags">
-                        <p class="post-tag">#Python</p>
-                        <p class="post-tag">#Features</p>
-                    </div>
-                    <p class="post-link">More</p>
-                </div>
-            </div>
-            <img src="{{ url_for('static', filename='img/admin/edit.png') }}" alt="" class="edit-button">
-            <img src="{{ url_for('static', filename='posts/img/2-1.jpg') }}" alt="" class="post-image" loading="lazy">
-        </div>
-        <div class="post">
-            <div class="post-text">
-                <h3 class="post-header">Header</h3>
-                <p class="post-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta augue
-                    accumsan, vulputate erat non, varius quam. Sed pretium, massa sed sodales luctus, ex sapien
-                    consequat velit, quis ultrices lacus nibh nec leo. Duis vehicula sapien ac tempor fringilla. Duis
-                    ligula velit, aliquam non libero id, maximus vestibulum risus. Nulla id dui ac odio commodo maximus.
-                    Cras a nisl vitae tortor porta porta in vitae ante. Curabitur tempus iaculis arcu quis hendrerit.
-                    Nam non mauris tempus, malesuada tellus quis, dictum enim.
-
-                    Curabitur aliquet, ligula ullamcorper fermentum eleifend, diam lectus tempor quam, vel facilisis
-                    ante tortor id nibh. Quisque sed nisl hendrerit, imperdiet est non, pellentesque risus. Ut magna
-                    tellus, gravida in dui sed, auctor malesuada ex. Integer venenatis, risus at consequat iaculis, eros
-                    est blandit turpis, non aliquet lorem ex vitae metus. Aliquam iaculis nunc velit. Etiam eu tincidunt
-                    elit. Duis venenatis tincidunt odio semper posuere. Vestibulum sollicitudin ullamcorper
-                    aliquet. </p>
-                <div class="post-footer">
-                    <div class="post-tags">
-                        <p class="post-tag">#Python</p>
-                        <p class="post-tag">#Features</p>
-                    </div>
-                    <p class="post-link">More</p>
-                </div>
-            </div>
-            <img src="{{ url_for('static', filename='img/admin/edit.png') }}" alt="" class="edit-button">
-            <img src="{{ url_for('static', filename='posts/img/3-1.jpg') }}" alt="" class="post-image" loading="lazy">
-        </div>
+        {% endfor %}
     </div>
 </div>
 <div class="new-posts" id="new-posts">
-    <div class="form-progress">
-        <div class="progress-el"></div>
-    </div>
     <form action="/add-post" method="post">
-        <!--        <div id="form-screen1">-->
         <h3 class="form-header">Create new post</h3>
-        <label style="clear: both">
-            <input type="text" class="one-line-input" placeholder="Post header" name="post-header" autofocus>
+        <label>
+            <input type="text" class="one-line-input" placeholder="Post header" name="post-header"
+                   autofocus>
         </label>
-        <p class="error-text hide-item">Please enter post header</p>
-        <label style="clear: both">
-            <textarea class="text-input" placeholder="Post text" name="post-data"></textarea>
+        <p class="error-text hide-item" id="post-header-error">Please enter post header</p>
+        <label>
+            <textarea class="text-input" placeholder="Post text" name="post-text"></textarea>
         </label>
-        <!--            <div class="form-footer">-->
-        <!--                <p onclick="next_form_screen()" class="form-next-field">Post text</p>-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--        <div id="form-screen2">-->
-        <!--            <h3 class="form-header">Create new post</h3>-->
-        <!--            <input type="submit" value="Publish post">-->
-        <!--        </div>-->
+        <p class="error-text hide-item" id="post-text-error">Please enter post text</p>
+        <label>
+            <input type="text" class="one-line-input" placeholder="Post tags" name="post-tags">
+        </label>
+        <p class="error-text hide-item" id="post-tags-error">Please enter post tags</p>
+        <label class="input-file">
+            <input type="file" name="file">
+            <span>Select image</span>
+        </label>
     </form>
 </div>
 {% endblock %}
 {% block js %}
 <script src="{{ url_for('static', filename='js/admin/posts-creator.js') }}"></script>
+<script>
+    $('.input-file input[type=file]').on('change', function () {
+
+        let file = this.files[0];
+
+        $(this).next().html(file.name);
+
+    });
+</script>
 {% endblock %}

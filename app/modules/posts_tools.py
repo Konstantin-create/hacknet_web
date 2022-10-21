@@ -3,8 +3,11 @@ from config import Config
 from app.modules.models import Posts
 
 
-def get_posts(page_id: int) -> list:
+def get_posts(page_id: int, on_page: int = 10) -> list:
     """Function to get items for page by page id"""
+
+    if on_page == -1:
+        return Posts.query.order_by(Posts.id.desc()).all()
 
     return Posts.query.order_by(Posts.id.desc()).paginate(page=page_id, per_page=Config.POSTS_PER_PAGE).items
 
