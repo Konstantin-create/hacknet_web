@@ -183,25 +183,12 @@
 .new-posts {
     position: relative;
     width: 70%;
-    height: 500px;
+    height: auto;
     margin: 50px auto;
     background-color: #1c1c1c;
     border-radius: 10px;
-}
-
-.form-progress {
-    position: relative;
-    width: 20%;
-    height: 20px;
-    border-radius: 10px 10px 0 0;
-    overflow: hidden;
-}
-
-.progress-el {
-    width: 30%;
-    height: 100%;
-    background-color: rgba(92, 171, 125, 0.5);
-    box-shadow: 0 0 20px rgba(92, 171, 125, .9);
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 .form-header {
@@ -236,18 +223,18 @@
     text-align: center;
 }
 
-.input-field {
+.text-input {
     font-family: "Cantarell Light", sans-serif;
     font-size: 20px;
-    width: 500px;
-    height: 10e,;
+    width: 90%;
+    height: 20em;
     box-sizing: border-box;
     padding: 10px 5px;
     background-color: #202020;
     color: #EDF2EF;
     border: none;
     border-radius: 10px;
-    margin: 40px 50px;
+    margin: 0 50px;
 }
 
 .form-footer {

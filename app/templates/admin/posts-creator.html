@@ -16,47 +16,37 @@
 <div class="old-posts" id="old-posts">
     <div class="posts">
         {% for post in posts %}
-            <div class="post">
-                <div class="post-text">
-                    <h3 class="post-header">{{ post.header }}</h3>
-                    <p class="post-description">{{ post.text }}</p>
-                    <div class="post-footer">
-                        <div class="post-tags">
-                            {% for tag in post.tags.split() %}
-                                <p class="post-tag">#{{ tag }}</p>
-                            {% endfor %}
-                        </div>
-                        <a href="/posts/{{ post.id }}"><p class="post-link">More</p></a>
+        <div class="post">
+            <div class="post-text">
+                <h3 class="post-header">{{ post.header }}</h3>
+                <p class="post-description">{{ post.text }}</p>
+                <div class="post-footer">
+                    <div class="post-tags">
+                        {% for tag in post.tags.split() %}
+                        <p class="post-tag">#{{ tag }}</p>
+                        {% endfor %}
                     </div>
+                    <a href="/posts/{{ post.id }}"><p class="post-link">More</p></a>
                 </div>
-                <img src="{{ url_for('static', filename='img/admin/edit.png') }}" alt="" class="edit-button">
-                <img src="{{ url_for('static', filename=post.img) }}" alt="" class="post-image" loading="lazy">
             </div>
+            <img src="{{ url_for('static', filename='img/admin/edit.png') }}" alt="" class="edit-button">
+            <img src="{{ url_for('static', filename=post.img) }}" alt="" class="post-image" loading="lazy">
+        </div>
         {% endfor %}
     </div>
 </div>
 <div class="new-posts" id="new-posts">
-    <div class="form-progress">
-        <div class="progress-el"></div>
-    </div>
     <form action="/add-post" method="post">
         <!--        <div id="form-screen1">-->
         <h3 class="form-header">Create new post</h3>
-        <label style="clear: both">
-            <input type="text" class="one-line-input" placeholder="Post header" name="post-header" autofocus>
+        <label>
+            <input type="text" class="one-line-input" placeholder="Post header" name="post-header"
+                   autofocus>
         </label>
         <p class="error-text hide-item">Please enter post header</p>
-        <label style="clear: both">
+        <label>
             <textarea class="text-input" placeholder="Post text" name="post-data"></textarea>
         </label>
-        <!--            <div class="form-footer">-->
-        <!--                <p onclick="next_form_screen()" class="form-next-field">Post text</p>-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--        <div id="form-screen2">-->
-        <!--            <h3 class="form-header">Create new post</h3>-->
-        <!--            <input type="submit" value="Publish post">-->
-        <!--        </div>-->
     </form>
 </div>
 {% endblock %}
