@@ -291,3 +291,16 @@
 .input-file input[type=file]:disabled + span {
     background-color: #797979;
 }
+
+.post-submit {
+    font-family: "Cantarell", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #EDF2EF;
+    background-color: #09E85E;
+    padding: 10px 30px;
+    margin: 10px 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
