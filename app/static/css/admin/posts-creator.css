@@ -303,4 +303,11 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(7, 178, 73, 0.5);
+    transition: 1s;
+}
+
+.post-submit:hover {
+    background-color: #07b249;
+    box-shadow: 0 0 10px rgba(7, 178, 73, 0.5);
 }
