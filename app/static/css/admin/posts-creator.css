@@ -212,6 +212,7 @@
     border: none;
     border-radius: 10px;
     margin: 40px 50px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
 }
 
 .error-text {
@@ -235,6 +236,8 @@
     border: none;
     border-radius: 10px;
     margin: 0 50px;
+    resize: vertical;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
 }
 
 .input-file {
@@ -262,6 +265,7 @@
     border: none;
     margin: 0 50px 10px;
     transition: background-color 0.2s;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
 }
 
 .input-file input[type=file] {
@@ -303,4 +307,11 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(7, 178, 73, 0.5);
+    transition: 1s;
+}
+
+.post-submit:hover {
+    background-color: #07b249;
+    box-shadow: 0 0 10px rgba(7, 178, 73, 0.5);
 }
