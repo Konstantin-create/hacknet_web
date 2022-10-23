@@ -37,23 +37,29 @@
     </div>
 </div>
 <div class="new-posts" id="new-posts">
-    <form action="/add-post" method="post">
+    <form action="/admin/add-post" method="post">
         <h3 class="form-header">Create new post</h3>
         <label>
             <input type="text" class="one-line-input" placeholder="Post header" name="post-header"
                    autofocus>
         </label>
-        <p class="error-text hide-item" id="post-header-error">Please enter post header</p>
+        {% if header_error %}
+            <p class="error-text" id="post-header-error">Please enter post header</p>
+        {% endif %}
         <label>
             <textarea class="text-input" placeholder="Post text" name="post-text"></textarea>
         </label>
-        <p class="error-text hide-item" id="post-text-error">Please enter post text</p>
+        {% if text_error %}
+            <p class="error-text" id="post-text-error">Please enter post text</p>
+        {% endif %}
         <label>
             <input type="text" class="one-line-input" placeholder="Post tags" name="post-tags">
         </label>
-        <p class="error-text hide-item" id="post-tags-error">Please enter post tags</p>
+        {% if tags_error %}
+            <p class="error-text" id="post-tags-error">Please enter post tags</p>
+        {% endif %}
         <label class="input-file">
-            <input type="file" name="file">
+            <input type="file" name="post-file">
             <span>Select image</span>
         </label>
         <div style="clear: both"></div>
