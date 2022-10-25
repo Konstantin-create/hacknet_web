@@ -1,3 +1,4 @@
+from app import db
 from app import web_site_folder
 from app import app, request, redirect
 from app.modules import dashboard_tools
@@ -48,10 +49,11 @@ def admin_add_post_handler():
         post = Posts(
             header=header,
             text=text,
-            tags=tags
+            tags=tags,
+            img=f'{web_site_folder}/static/posts/img/{post_id}-1.jpg'
         )
         with open(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg', 'w') as file:
             file.write(image)
-        print(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg')
-        print(header, text, tags)
+        db.session.add(post)
+        db.session.commit()
         return redirect('/admin/dashboard')
