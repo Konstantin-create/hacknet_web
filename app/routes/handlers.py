@@ -1,6 +1,7 @@
 from app import web_site_folder
 from app import app, request, redirect
 from app.modules import dashboard_tools
+from app.routes import admin_post_creator
 from app.modules.models import Posts
 from app.routes.pages import admin_login_page
 
@@ -37,8 +38,12 @@ def admin_add_post_handler():
         post_id = Posts.query.order_by(Posts.id.desc()).first().id
 
         # Check fields
-        if header is None:
-            return
+        if header == '':
+            return admin_post_creator(header_error=True)
+        if text == '':
+            return admin_post_creator(text_error=True)
+        if tags == '':
+            return admin_post_creator(tags_error=True)
 
         post = Posts(
             header=header,
