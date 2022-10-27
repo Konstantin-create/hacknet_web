@@ -8,3 +8,9 @@
 My personal site. Maybe it will become a blog :)
 
 Everything, now the site works on the domain: https://hacknet-dev.tech
+
+___
+## Folders means
+/static - immutable data\
+/data - frequently changing data\
+/modules - parts of backend
