@@ -57,3 +57,13 @@ def admin_add_post_handler():
         db.session.add(post)
         db.session.commit()
         return redirect('/admin/dashboard')
+
+
+@app.route('/admin/edit-post/<int:post_id>', methods=['GET', 'POST'])
+def admin_post_edit_handler(post_id):
+    # todo: check is user admin
+    if request.method == 'POST':
+        header = request.form.get('post-header')
+        text = request.form.get('post-text')
+        tags = request.form.get('post-tags')
+        image = request.files.get('post-file', '')
