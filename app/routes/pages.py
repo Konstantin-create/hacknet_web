@@ -75,7 +75,7 @@ def admin_post_creator(header_error=False, text_error=False, tags_error=False):
 
 
 @app.route('/admin/post-editor/<int:post_id>')
-def post_editor_page(post_id, header_error=False, text_error=False, tags_error=False):
+def admin_post_editor_page(post_id, header_error=False, text_error=False, tags_error=False):
     # todo: check is user admin
     post = posts_tools.get_post(post_id)
     return render_template(

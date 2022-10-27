@@ -30,7 +30,8 @@
                     <a href="/posts/{{ post.id }}"><p class="post-link">More</p></a>
                 </div>
             </div>
-            <img src="{{ url_for('static', filename='img/admin/edit.png') }}" alt="" class="edit-button">
+            <a href="/admin/post-editor/{{ post.id }}"><img src="{{ url_for('static', filename='img/admin/edit.png') }}"
+                                                            alt="" class="edit-button"></a>
             <img src="{{ url_for('static', filename=post.img) }}" alt="" class="post-image" loading="lazy">
         </div>
         {% endfor %}
@@ -44,19 +45,19 @@
                    autofocus>
         </label>
         {% if header_error %}
-            <p class="error-text" id="post-header-error">Please enter post header</p>
+        <p class="error-text" id="post-header-error">Please enter post header</p>
         {% endif %}
         <label>
             <textarea class="text-input" placeholder="Post text" name="post-text"></textarea>
         </label>
         {% if text_error %}
-            <p class="error-text" id="post-text-error">Please enter post text</p>
+        <p class="error-text" id="post-text-error">Please enter post text</p>
         {% endif %}
         <label>
             <input type="text" class="one-line-input" placeholder="Post tags" name="post-tags">
         </label>
         {% if tags_error %}
-            <p class="error-text" id="post-tags-error">Please enter post tags</p>
+        <p class="error-text" id="post-tags-error">Please enter post tags</p>
         {% endif %}
         <label class="input-file">
             <input type="file" name="post-file">

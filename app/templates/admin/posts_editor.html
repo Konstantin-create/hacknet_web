@@ -9,7 +9,7 @@
 <main>
     <a href="/admin/posts-creator"><p class="back-btn"><</p></a>
     <div class="new-posts" id="new-posts">
-        <form action="/admin/edit-post" method="post">
+        <form action="/admin/edit-post/{{ post.id }}" method="post">
             <h3 class="form-header">Edit post</h3>
             <label>
                 <input type="text" class="one-line-input" placeholder="Post header" name="post-header"
