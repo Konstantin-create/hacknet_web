@@ -12,7 +12,13 @@ def get_posts(page_id: int, on_page: int = 10) -> list:
     return Posts.query.order_by(Posts.id.desc()).paginate(page=page_id, per_page=Config.POSTS_PER_PAGE).items
 
 
-def get_pages():
+def get_post(post_id: int) -> Posts | None:
+    """Function to get post by id"""
+
+    return Posts.query.get(post_id)
+
+
+def get_pages() -> int:
     """Function to get total posts pages"""
 
     return Posts.query.order_by(Posts.id.desc()).paginate(per_page=Config.POSTS_PER_PAGE).pages

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konstantin Create - Edit post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/posts_editor_styles.css') }}">
+</head>
+<body>
+<main>
+    <a href="/admin/posts-creator"><p class="back-btn"><</p></a>
+    <div class="new-posts" id="new-posts">
+        <form action="/admin/add-post" method="post">
+            <h3 class="form-header">Edit post</h3>
+            <label>
+                <input type="text" class="one-line-input" placeholder="Post header" name="post-header"
+                       autofocus>
+            </label>
+            {% if header_error %}
+            <p class="error-text" id="post-header-error">Please enter post header</p>
+            {% endif %}
+            <label>
+                <textarea class="text-input" placeholder="Post text" name="post-text"></textarea>
+            </label>
+            {% if text_error %}
+            <p class="error-text" id="post-text-error">Please enter post text</p>
+            {% endif %}
+            <label>
+                <input type="text" class="one-line-input" placeholder="Post tags" name="post-tags">
+            </label>
+            {% if tags_error %}
+            <p class="error-text" id="post-tags-error">Please enter post tags</p>
+            {% endif %}
+            <label class="input-file">
+                <input type="file" name="post-file">
+                <span>Select image</span>
+            </label>
+            <div style="clear: both"></div>
+            <label>
+                <input type="submit" class="post-submit" value="Edit">
+            </label>
+        </form>
+    </div>
+</main>
+</body>
+</html>
