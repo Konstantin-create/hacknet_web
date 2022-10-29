@@ -38,7 +38,7 @@
             <div style="clear: both"></div>
             <label>
                 <input type="submit" class="post-submit" value="Edit">
-                <input type="submit" class="post-delete" value="Delete post" onclick="delete_post_redirect()">
+                <a href="/admin/delete-post/{{ post.id }}"><input type="submit" class="post-delete" value="Delete post"></a>
             </label>
         </form>
     </div>
