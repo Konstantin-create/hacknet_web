@@ -88,7 +88,7 @@ def admin_post_edit_handler(post_id):
         return redirect('/admin/dashboard')
 
 
-@app.route('/admin/delete-post/<int: post_id>')
+@app.route('/admin/delete-post/<int:post_id>')
 def admin_delete_post_handler(post_id):
     # todo: check is user admin
 
