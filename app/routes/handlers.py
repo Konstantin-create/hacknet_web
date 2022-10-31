@@ -92,4 +92,9 @@ def admin_post_edit_handler(post_id):
 def admin_delete_post_handler(post_id):
     # todo: check is user admin
 
-    pass
+    try:
+        post = Posts.query.get(post_id)
+        db.session.delete(post)
+        db.session.commit()
+    except Exception as e:
+        return f'<span style="color: red">An error occurred: </span>{e}'
