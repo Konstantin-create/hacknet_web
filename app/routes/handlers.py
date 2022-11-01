@@ -96,5 +96,6 @@ def admin_delete_post_handler(post_id):
         post = Posts.query.get(post_id)
         db.session.delete(post)
         db.session.commit()
+        return redirect('/admin/posts-creator')
     except Exception as e:
         return f'<span style="color: red">An error occurred: </span>{e}'
