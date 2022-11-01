@@ -5,8 +5,16 @@
 {% block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/content_editor_styles.css') }}">
 {% endblock %}
-{% block page_name %}<h1 class="header-title">Content Editor</h1>{% endblock %}
+{% block page_name %}
+<h1 class="header-title">Content Editor</h1>
+<div class="header-nav">
+    <p class="header-nav-item active" id="header-nav-1" onclick="change_active()">Total windows</p>
+    <p class="header-nav-item" id="header-nav-2" onclick="change_active()">Index page</p>
+</div>
+{% endblock %}
 {% block content %}
+<div class="total-settings" id="total"></div>
+<div class="index-settings" id="index-settings"></div>
 {% endblock %}
 {% block js %}
 <script>
