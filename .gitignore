@@ -130,3 +130,5 @@ dmypy.json
 
 TOKEN.txt
 .idea/
+.vscode
+.idea
