@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "hacknet-web"
+version = "0.1.0"
+description = "My blog"
+authors = ["Konstantin-create"]
+readme = "README.md"
+packages = [{include = "hacknet_web"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
