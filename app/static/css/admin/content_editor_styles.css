@@ -46,6 +46,7 @@
     font-size: 24px;
     color: #EDF2EF;
     padding-top: 40px;
+    padding-bottom: 20px;
     padding-left: 50px;
 }
 
@@ -60,6 +61,6 @@
     color: #EDF2EF;
     border: none;
     border-radius: 10px;
-    margin: 30px 60px;
+    margin: 15px 60px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
 }
