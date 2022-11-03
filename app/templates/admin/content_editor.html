@@ -15,13 +15,29 @@
 {% block content %}
 <div class="total-settings" id="total">
     <form method="post">
-        <label><input type="text" class="index-page-header-elements"></label>
+        <div>
+            <h3 class="sep-header">Header Items:</h3>
+            <label><input type="text" class="inline-text" placeholder="Element 1"></label>
+            <div style="clear: both"></div>
+            <label><input type="text" class="inline-text" placeholder="Element 2"></label>
+            <div style="clear: both"></div>
+            <label><input type="text" class="inline-text" placeholder="Element 3"></label>
+            <div style="clear: both"></div>
+        </div>
+        <div>
+            <h3 class="sep-header">Main header:</h3>
+            <label><input type="text" class="inline-text" placeholder="Main Header"></label>
+        </div>
+        <div>
+            <h3 class="sep-header">About text:</h3>
+            <label><textarea class="textarea-text" placeholder="About text"></textarea></label>
+        </div>
     </form>
 </div>
 <div class="index-settings" id="index-settings"></div>
 {% endblock %}
 {% block js %}
-<script src="{{ url_for('static', filename='js/content-editor.js') }}"
+<script src="{{ url_for('static', filename='js/content-editor.js') }}"></script>
 <script>
     document.getElementById('img-2').className = 'aside-img active-page'
 </script>

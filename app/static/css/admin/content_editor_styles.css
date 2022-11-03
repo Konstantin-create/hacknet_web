@@ -40,6 +40,43 @@
     width: 100%;
 }
 
-.index-page-header-elements {
-    
+.sep-header {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    color: #EDF2EF;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+}
+
+.inline-text {
+    font-family: "Cantarell Light", sans-serif;
+    font-size: 20px;
+    width: 500px;
+    height: 2em;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    background-color: #202020;
+    color: #EDF2EF;
+    border: none;
+    border-radius: 10px;
+    margin: 15px 60px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+}
+
+.textarea-text {
+    font-family: "Cantarell Light", sans-serif;
+    font-size: 20px;
+    width: 90%;
+    height: 20em;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    background-color: #202020;
+    color: #EDF2EF;
+    border: none;
+    border-radius: 10px;
+    margin: 0 50px;
+    resize: vertical;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
 }
