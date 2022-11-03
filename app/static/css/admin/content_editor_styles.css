@@ -1,3 +1,11 @@
+main {
+    height: 200vh;
+}
+
+aside {
+    height: 200vh;
+}
+
 .header-nav {
     width: 60%;
     height: 100px;
@@ -68,7 +76,7 @@
 .textarea-text {
     font-family: "Cantarell Light", sans-serif;
     font-size: 20px;
-    width: 90%;
+    width: 80%;
     height: 20em;
     box-sizing: border-box;
     padding: 10px 5px;
@@ -77,6 +85,6 @@
     border: none;
     border-radius: 10px;
     margin: 0 50px;
-    resize: vertical;
+    resize: none;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
 }
