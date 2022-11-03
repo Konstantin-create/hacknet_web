@@ -32,12 +32,18 @@
             <h3 class="sep-header">About text:</h3>
             <label><textarea class="textarea-text" placeholder="About text"></textarea></label>
         </div>
+        <div>
+            <h3 class="sep-header">Links:</h3>
+            <label><input type="text" class="inline-text" placeholder="GitHub"></label>
+            <label><input type="text" class="inline-text" placeholder="Telegram"></label>
+            <label><input type="text" class="inline-text" placeholder="Instagram"></label>
+        </div>
     </form>
 </div>
 <div class="index-settings" id="index-settings"></div>
 {% endblock %}
 {% block js %}
-<script src="{{ url_for('static', filename='js/content-editor.js') }}"></script>
+<script src="{{ url_for('static', filename='js/admin/content-editor.js') }}"></script>
 <script>
     document.getElementById('img-2').className = 'aside-img active-page'
 </script>
