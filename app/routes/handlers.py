@@ -99,3 +99,9 @@ def admin_delete_post_handler(post_id):
         return redirect('/admin/posts-creator')
     except Exception as e:
         return f'<span style="color: red">An error occurred: </span>{e}'
+
+
+@app.route('/admin/edit-content', methods=['GET', 'POST'])
+def edit_content():
+    if request.method == 'POST':
+        return
