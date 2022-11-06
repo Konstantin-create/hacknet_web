@@ -2,6 +2,7 @@ from app import db
 from app import web_site_folder
 from app.modules.models import Posts
 from app import app, request, redirect
+from app.modules import content_editor
 from app.modules import dashboard_tools
 from app.routes.pages import admin_login_page
 from app.routes import admin_post_creator, admin_post_editor_page
@@ -104,4 +105,20 @@ def admin_delete_post_handler(post_id):
 @app.route('/admin/edit-content', methods=['GET', 'POST'])
 def edit_content():
     if request.method == 'POST':
-        return
+        header_item1 = request.form.get('header-item1')
+        header_item2 = request.form.get('header-item2')
+        header_item3 = request.form.get('header-item3')
+        main_header = request.form.get('main-header')
+        about_text = request.form.get('about-text')
+        footer_link1 = request.form.get('footer-link1')
+        footer_link2 = request.form.get('footer-link2')
+        footer_link3 = request.form.get('footer-link3')
+
+        content_editor.edit_content(
+            {
+                'headers': [header_item1, header_item2, header_item3],
+                'main_header': main_header,
+                'about_text': about_text,
+                'footer': [footer_link1, footer_link2, footer_link3]
+            }
+        )
