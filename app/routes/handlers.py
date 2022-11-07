@@ -109,7 +109,6 @@ def edit_content():
         header_item2 = request.form.get('header-item2')
         header_item3 = request.form.get('header-item3')
         main_header = request.form.get('main-header')
-        about_text = request.form.get('about-text')
         footer_link1 = request.form.get('footer-link1')
         footer_link2 = request.form.get('footer-link2')
         footer_link3 = request.form.get('footer-link3')
@@ -118,7 +117,6 @@ def edit_content():
             {
                 'headers': [header_item1, header_item2, header_item3],
                 'main_header': main_header,
-                'about_text': about_text,
                 'footer': [footer_link1, footer_link2, footer_link3]
             }
         )

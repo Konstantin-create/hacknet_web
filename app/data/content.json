@@ -1,0 +1,13 @@
+{
+  "headers": [
+    "Home",
+    "Projects",
+    "Blog"
+  ],
+  "main_header": "Konstantin-create",
+  "footer": [
+    "https://github.com/Konstantin-create/",
+    "https://t.me/hacknet_dev",
+    "https://instagram.com"
+  ]
+}
