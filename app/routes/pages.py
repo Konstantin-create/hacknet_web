@@ -4,6 +4,7 @@ from app import web_site_folder
 # Import modules
 from app.modules import posts_tools
 from app.modules import github_tools
+from app.modules import content_editor
 from app.modules import dashboard_tools
 
 # Flask imports
@@ -14,11 +15,13 @@ from app import app, redirect, render_template, request
 @app.route('/')
 def init_page():
     dashboard_tools.request_handler(ip=request.remote_addr, url='/')
+    content_data = content_editor.get_content()
     return render_template(
         'index.html',
         gh_stat=github_tools.get_statistic(),
         gh_pinned=github_tools.get_pinned_repos(),
-        web_site_folder=web_site_folder
+        web_site_folder=web_site_folder,
+        content_data=content_data
     )
 
 

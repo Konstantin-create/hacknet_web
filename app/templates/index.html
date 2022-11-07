@@ -13,23 +13,23 @@
 <body>
 <header id="header">
     <div class="header-items">
-        <a href="#"><h3 class="header-item">Home</h3></a>
-        <a href="#projects"><h3 class="header-item">Projects</h3></a>
-        <a href="/blog"><h3 class="header-item">Blog</h3></a>
+        <a href="#"><h3 class="header-item">{{ content_data['headers'][0] }}</h3></a>
+        <a href="#projects"><h3 class="header-item">{{ content_data['headers'][1] }}</h3></a>
+        <a href="/blog"><h3 class="header-item">{{ content_data['headers'][2] }}</h3></a>
     </div>
 </header>
 <div class="header-with-opacity" id="faded-header">
     <div class="header-items">
-        <a href="#"><h3 class="header-item">Home</h3></a>
-        <a href="#projects"><h3 class="header-item">Projects</h3></a>
-        <a href="/blog"><h3 class="header-item">Blog</h3></a>
+        <a href="#"><h3 class="header-item">{{ content_data['headers'][0] }}</h3></a>
+        <a href="#projects"><h3 class="header-item">{{ content_data['headers'][1] }}</h3></a>
+        <a href="/blog"><h3 class="header-item">{{ content_data['headers'][2] }}</h3></a>
     </div>
 </div>
 <main>
     <div class="beta">Website under development</div>
     <div class="header">
         <div class="background-img-mask">
-            <h1 class="main-header">Konstantin-create</h1>
+            <h1 class="main-header">{{ content_data['main_header'] }}</h1>
         </div>
         <div class="background-img">
         </div>
@@ -85,9 +85,9 @@
     </div>
 </main>
 <footer>
-    <a href="https://github.com/Konstantin-create/"><img class="footer-item-img" src="../static/img/github.png" alt=""></a>
-    <a href="https://t.me/hacknet_dev"><img class="footer-item-img" src="../static/img/telegram.png" alt=""></a>
-    <a href="https://instagram.com"><img class="footer-item-img" src="../static/img/instagram.png" alt=""></a>
+    <a href="{{ content_data['footer'][0] }}"><img class="footer-item-img" src="../static/img/github.png" alt=""></a>
+    <a href="{{ content_data['footer'][1] }}"><img class="footer-item-img" src="../static/img/telegram.png" alt=""></a>
+    <a href="{{ content_data['footer'][2] }}"><img class="footer-item-img" src="../static/img/instagram.png" alt=""></a>
 </footer>
 </body>
 </html>
