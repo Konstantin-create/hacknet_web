@@ -14,7 +14,7 @@
 {% endblock %}
 {% block content %}
 <div class="total-settings" id="total">
-    <form method="post">
+    <form method="post" action="/admin/edit-content/total">
         <div>
             <h3 class="sep-header">Header Items:</h3>
             <label><input type="text" class="inline-text" name="header-item1" placeholder="Element 1"></label>
@@ -33,6 +33,13 @@
             <label><input type="text" class="inline-text" name="footer-link1" placeholder="GitHub"></label>
             <label><input type="text" class="inline-text" name="footer-link2" placeholder="Telegram"></label>
             <label><input type="text" class="inline-text" name="footer-link3" placeholder="Instagram"></label>
+        </div>
+    </form>
+</div>
+<div class="blog-page-settings">
+    <form method="post">
+        <div>
+
         </div>
     </form>
 </div>
