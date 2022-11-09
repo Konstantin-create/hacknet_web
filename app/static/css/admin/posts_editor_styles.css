@@ -19,6 +19,10 @@ main {
     padding: 10px;
 }
 
+.hide-item {
+    display: none;
+}
+
 .back-btn {
     font-family: Oswald, sans-serif;
     font-size: 45px;
