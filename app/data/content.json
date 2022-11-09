@@ -1,13 +1,12 @@
 {
-  "headers": [
-    "Home",
-    "Projects",
-    "Blog"
-  ],
-  "main_header": "Konstantin-create",
-  "footer": [
-    "https://github.com/Konstantin-create/",
-    "https://t.me/hacknet_dev",
-    "https://instagram.com"
-  ]
+  "index": {
+    "headers": ["Home", "Projects", "Blog"],
+    "header_links": ["#", "#projects", "/blog"],
+    "main_header": "Konstantin-create",
+    "footer": ["https://github.com/Konstantin-create/", "https://t.me/hacknet_dev", "https://instagram.com"]
+  },
+  "blog": {
+    "headers": ["Home", "Projects", "Blog"],
+    "footer": ["https://github.com/Konstantin-create/", "https://t.me/hacknet_dev", "https://instagram.com"]
+  }
 }
