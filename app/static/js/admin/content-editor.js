@@ -21,13 +21,13 @@ function change_active() {
         active_window = 'new'
         document.getElementById('header-nav-1').className = 'header-nav-item'
         document.getElementById('header-nav-2').className = 'header-nav-item active'
-        document.getElementById('total').className = 'total hide-item'
+        document.getElementById('index').className = 'index hide-item'
         document.getElementById('blog-page').className = 'blog-page'
     } else {
         active_window = 'old'
         document.getElementById('header-nav-1').className = 'header-nav-item active'
         document.getElementById('header-nav-2').className = 'header-nav-item'
-        document.getElementById('total').className = 'total'
+        document.getElementById('index').className = 'index'
         document.getElementById('blog-page').className = 'blog-page hide-item'
     }
 }
