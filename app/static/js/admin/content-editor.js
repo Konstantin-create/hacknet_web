@@ -11,6 +11,7 @@ document.getElementById('old-posts').className = 'old-posts hide-item'
 document.getElementsByTagName('main')[0].style.height = '300vh'
 document.getElementsByTagName('aside')[0].style.height = '300vh'
 
+
 for (let i = 1; i <= form_screens.length; i++) {
     document.getElementById(form_screens[i]).className = form_screens[i] + ' hidden'
 }
