@@ -7,6 +7,6 @@
   },
   "blog": {
     "headers": ["Home", "Projects", "Blog"],
-    "footer": ["https://github.com/Konstantin-create/", "https://t.me/hacknet_dev", "https://instagram.com"]
+    "header_links": ["https://github.com/Konstantin-create/", "https://t.me/hacknet_dev", "https://instagram.com"]
   }
 }
