@@ -20,17 +20,13 @@ function change_active() {
         active_window = 'new'
         document.getElementById('header-nav-1').className = 'header-nav-item'
         document.getElementById('header-nav-2').className = 'header-nav-item active'
-        document.getElementById('old-posts').className = 'old-posts hide-item'
-        document.getElementById('new-posts').className = 'new-posts'
-        document.getElementsByTagName('main')[0].style.height = '200vh'
-        document.getElementsByTagName('aside')[0].style.height = '200vh'
+        document.getElementById('total').className = 'total hide-item'
+        document.getElementById('blog-page').className = 'blog-page'
     } else {
         active_window = 'old'
         document.getElementById('header-nav-1').className = 'header-nav-item active'
         document.getElementById('header-nav-2').className = 'header-nav-item'
-        document.getElementById('old-posts').className = 'old-posts'
-        document.getElementById('new-posts').className = 'new-posts hide-item'
-        document.getElementsByTagName('main')[0].style.height = (numOfPosts * 500 + 250).toString() + 'px'
-        document.getElementsByTagName('aside')[0].style.height = (numOfPosts * 500 + 250).toString() + 'px'
+        document.getElementById('total').className = 'total'
+        document.getElementById('blog-page').className = 'blog-page hide-item'
     }
 }
