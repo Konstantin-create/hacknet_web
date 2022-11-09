@@ -105,18 +105,42 @@ def admin_delete_post_handler(post_id):
 @app.route('/admin/edit-content/total', methods=['GET', 'POST'])
 def edit_content():
     if request.method == 'POST':
-        header_item1 = request.form.get('header-item1')
-        header_item2 = request.form.get('header-item2')
-        header_item3 = request.form.get('header-item3')
-        main_header = request.form.get('main-header')
-        footer_link1 = request.form.get('footer-link1')
-        footer_link2 = request.form.get('footer-link2')
-        footer_link3 = request.form.get('footer-link3')
+        # Index page items
+        index_header_item1 = request.form.get('index-header-item1')
+        index_header_item2 = request.form.get('index-header-item2')
+        index_header_item3 = request.form.get('index-header-item3')
+
+        index_header_item1_link = request.form.get('index-header-item1-link')
+        index_header_item2_link = request.form.get('index-header-item2-link')
+        index_header_item3_link = request.form.get('index-header-item3-link')
+
+        index_main_header = request.form.get('index-main-header')
+        index_footer_link1 = request.form.get('index-footer-link1')
+        index_footer_link2 = request.form.get('index-footer-link2')
+        index_footer_link3 = request.form.get('index-footer-link3')
+
+        # Blog page items
+        blog_header_item1 = request.form.get('blog-header-item1')
+        blog_header_item2 = request.form.get('blog-header-item2')
+        blog_header_item3 = request.form.get('blog-header-item3')
+        
+        blog_header_item1_link = request.form.get('blog-header-item1-link')
+        blog_header_item2_link = request.form.get('blog-header-item2-link')
+        blog_header_item3_link = request.form.get('blog-header-item3-link')
+
+
 
         content_editor.edit_content(
             {
-                'headers': [header_item1, header_item2, header_item3],
-                'main_header': main_header,
-                'footer': [footer_link1, footer_link2, footer_link3]
+                'index': {
+                    'headers': [index_header_item1, index_header_item2, index_header_item3],
+                    'header_links': [index_header_item1_link, index_header_item2_link, index_header_item3_link],
+                    'main_header': index_main_header,
+                    'footer': [index_footer_link1, index_footer_link2, index_footer_link3]
+                },
+                'blog': {
+                    'headers': [blog_header_item1, blog_header_item2, blog_header_item3],
+                    'header_links': [blog_header_item1_link, blog_header_item2_link, blog_header_item3_link]
+                }
             }
         )
