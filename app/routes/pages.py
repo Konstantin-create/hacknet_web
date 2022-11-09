@@ -61,8 +61,11 @@ def admin_dashboard_page():
 @app.route('/admin/content-editor')
 def admin_content_editor():
     # todo: login required
+
+    content_data = content_editor.get_content()
     return render_template(
-        'admin/content_editor.html'
+        'admin/content_editor.html',
+        content_data=content_data
     )
 
 
