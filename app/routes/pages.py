@@ -8,7 +8,7 @@ from app.modules import content_editor
 from app.modules import dashboard_tools
 
 # Flask imports
-from app import app, redirect, render_template, request
+from app import app, render_template, request
 
 
 # Index page router
@@ -21,7 +21,7 @@ def init_page():
         gh_stat=github_tools.get_statistic(),
         gh_pinned=github_tools.get_pinned_repos(),
         web_site_folder=web_site_folder,
-        content_data=content_data
+        content_data=content_data['index']
     )
 
 
@@ -30,11 +30,13 @@ def init_page():
 @app.route('/blog/page/<int:page_id>')
 def blog_page(page_id=1):
     dashboard_tools.request_handler(ip=request.remote_addr, url='/blog')
+    content_data = content_editor.get_content()
     return render_template(
         'blog_page.html',
         page_id=page_id,
         total_pages=posts_tools.get_pages(),
-        posts=posts_tools.get_posts(page_id)
+        posts=posts_tools.get_posts(page_id),
+        content_data=content_data['blog']
     )
 
 
