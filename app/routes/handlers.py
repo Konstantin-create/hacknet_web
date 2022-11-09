@@ -123,12 +123,10 @@ def edit_content():
         blog_header_item1 = request.form.get('blog-header-item1')
         blog_header_item2 = request.form.get('blog-header-item2')
         blog_header_item3 = request.form.get('blog-header-item3')
-        
+
         blog_header_item1_link = request.form.get('blog-header-item1-link')
         blog_header_item2_link = request.form.get('blog-header-item2-link')
         blog_header_item3_link = request.form.get('blog-header-item3-link')
-
-
 
         content_editor.edit_content(
             {
