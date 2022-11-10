@@ -18,30 +18,40 @@
         <div>
             <h3 class="sep-header">Header Items:</h3>
             <label>
-                <input type="text" class="inline-text" name="index-header-item1" placeholder="Element 1">
-                <input type="text" class="inline-text" name="index-header-item1-link" placeholder="Element 1 link">
+                <input type="text" class="inline-text" name="index-header-item1" placeholder="Element 1"
+                       value="{{ content_data['index']['headers'][0] }}">
+                <input type="text" class="inline-text" name="index-header-item1-link" placeholder="Element 1 link"
+                       value="{{ content_data['index']['header_links'][0] }}">
             </label>
             <div style="clear: both"></div>
             <label>
-                <input type="text" class="inline-text" name="index-header-item2" placeholder="Element 2">
-                <input type="text" class="inline-text" name="index-header-item2-link" placeholder="Element 2 link">
+                <input type="text" class="inline-text" name="index-header-item2" placeholder="Element 2"
+                       value="{{ content_data['index']['headers'][1] }}">
+                <input type="text" class="inline-text" name="index-header-item2-link" placeholder="Element 2 link"
+                       value="{{ content_data['index']['header_links'][1] }}">
             </label>
             <div style="clear: both"></div>
             <label>
-                <input type="text" class="inline-text" name="index-header-item3" placeholder="Element 3">
-                <input type="text" class="inline-text" name="index-header-item3-link" placeholder="Element 3 link">
+                <input type="text" class="inline-text" name="index-header-item3" placeholder="Element 3"
+                       value="{{ content_data['index']['headers'][2] }}">
+                <input type="text" class="inline-text" name="index-header-item3-link" placeholder="Element 3 link"
+                       value="{{ content_data['index']['header_links'][2] }}">
             </label>
             <div style="clear: both"></div>
         </div>
         <div>
             <h3 class="sep-header">Main header:</h3>
-            <label><input type="text" class="inline-text" name="index-main-header" placeholder="Main Header"></label>
+            <label><input type="text" class="inline-text" name="index-main-header" placeholder="Main Header"
+                          value="{{ content_data['index']['main_header'] }}"></label>
         </div>
         <div>
             <h3 class="sep-header">Links:</h3>
-            <label><input type="text" class="inline-text" name="index-footer-link1" placeholder="GitHub"></label>
-            <label><input type="text" class="inline-text" name="index-footer-link2" placeholder="Telegram"></label>
-            <label><input type="text" class="inline-text" name="index-footer-link3" placeholder="Instagram"></label>
+            <label><input type="text" class="inline-text" name="index-footer-link1" placeholder="GitHub"
+                          value="{{ content_data['index']['footer'][0] }}"></label>
+            <label><input type="text" class="inline-text" name="index-footer-link2" placeholder="Telegram"
+                          value="{{ content_data['index']['footer'][1] }}"></label>
+            <label><input type="text" class="inline-text" name="index-footer-link3" placeholder="Instagram"
+                          value="{{ content_data['index']['footer'][2] }}"></label>
         </div>
     </form>
 </div>
@@ -50,18 +60,24 @@
         <div>
             <h3 class="sep-header">Header items:</h3>
             <label>
-                <input type="text" class="inline-text" name="blog-header-item1" placeholder="Element 1">
-                <input type="text" class="inline-text" name="blog-header-item1-link" placeholder="Element 1 link">
+                <input type="text" class="inline-text" name="blog-header-item1" placeholder="Element 1"
+                       value="{{ content_data['blog']['headers'][0] }}">
+                <input type="text" class="inline-text" name="blog-header-item1-link" placeholder="Element 1 link"
+                       value="{{ content_data['blog']['header_links'][0] }}">
             </label>
             <div style="clear: both"></div>
             <label>
-                <input type="text" class="inline-text" name="blog-header-item2" placeholder="Element 2">
-                <input type="text" class="inline-text" name="blog-header-item2-link" placeholder="Element 2 link">
+                <input type="text" class="inline-text" name="blog-header-item2" placeholder="Element 2"
+                       value="{{ content_data['blog']['headers'][1] }}">
+                <input type="text" class="inline-text" name="blog-header-item2-link" placeholder="Element 2 link"
+                       value="{{ content_data['blog']['header_links'][1] }}">
             </label>
             <div style="clear: both"></div>
             <label>
-                <input type="text" class="inline-text" name="blog-header-item3" placeholder="Element 3">
-                <input type="text" class="inline-text" name="blog-header-item3-link" placeholder="Element 3 link">
+                <input type="text" class="inline-text" name="blog-header-item3" placeholder="Element 3"
+                       value="{{ content_data['blog']['headers'][2] }}">
+                <input type="text" class="inline-text" name="blog-header-item3-link" placeholder="Element 3 link"
+                       value="{{ content_data['blog']['header_links'][2] }}">
             </label>
         </div>
     </form>

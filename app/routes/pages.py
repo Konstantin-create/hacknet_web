@@ -8,7 +8,10 @@ from app.modules import content_editor
 from app.modules import dashboard_tools
 
 # Flask imports
-from app import app, render_template, request
+from app import app, render_template, request, redirect, url_for
+
+# Flask user
+from flask_login import current_user
 
 
 # Index page router
@@ -49,7 +52,9 @@ def admin_login_page(error_code: int = 100):  # dev: Code 100 is OK code
 # Admin dashboard page
 @app.route('/admin/dashboard')
 def admin_dashboard_page():
-    # todo: login required
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
+
     return render_template(
         'admin/dashboard_page.html',
         all_requests=dashboard_tools.generate_requests_data(),
@@ -60,16 +65,22 @@ def admin_dashboard_page():
 # Admin content editor router
 @app.route('/admin/content-editor')
 def admin_content_editor():
-    # todo: login required
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
+
+    content_data = content_editor.get_content()
     return render_template(
-        'admin/content_editor.html'
+        'admin/content_editor.html',
+        content_data=content_data
     )
 
 
 # Admin post creator
 @app.route('/admin/posts-creator')
 def admin_post_creator(header_error=False, text_error=False, tags_error=False):
-    # todo: login required
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
+
     return render_template(
         'admin/posts_creator.html',
         posts=posts_tools.get_posts(1, on_page=-1),
@@ -81,7 +92,9 @@ def admin_post_creator(header_error=False, text_error=False, tags_error=False):
 
 @app.route('/admin/post-editor/<int:post_id>')
 def admin_post_editor_page(post_id, header_error=False, text_error=False, tags_error=False):
-    # todo: check is user admin
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
+
     post = posts_tools.get_post(post_id)
     return render_template(
         'admin/posts_editor.html',
@@ -91,4 +104,15 @@ def admin_post_editor_page(post_id, header_error=False, text_error=False, tags_e
         header_error=header_error,
         text_error=text_error,
         tags_error=tags_error
+    )
+
+
+@app.route('/posts/<int:post_id>')
+def view_post(post_id):
+    post = posts_tools.get_post(post_id)
+    content_data = content_editor.get_content()
+    return render_template(
+        'post_template.html',
+        post=post,
+        content_data=content_data
     )

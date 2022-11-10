@@ -9,7 +9,9 @@ from app.modules import github_tools, dashboard_tools
 # Flask imports
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request, url_for
+
+from flask_login import LoginManager
 
 # Flask init
 app = Flask(__name__)
@@ -19,6 +21,9 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+# Flask login
+login_manager = LoginManager(app)
+
 web_site_folder = os.path.dirname(__file__)
 
 threading.Thread(target=github_tools.set_statistics).start()
@@ -26,4 +31,5 @@ threading.Thread(target=github_tools.set_pinned_repos).start()
 threading.Thread(target=github_tools.set_user_description).start()
 
 from app.modules.models import *
+from app.routes import admin_login
 from app.routes import *

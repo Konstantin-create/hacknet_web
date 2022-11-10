@@ -1,17 +1,23 @@
 from app import db
 from app import web_site_folder
-from app.modules.models import Posts
-from app import app, request, redirect
+
+from app.modules.models import Posts, Admin
+
+from flask_login import login_user, current_user
+from app import app, request, redirect, url_for
+
 from app.modules import content_editor
 from app.modules import dashboard_tools
-from app.routes.pages import admin_login_page
-from app.routes import admin_post_creator, admin_post_editor_page
+
+from app.routes import admin_post_creator, admin_post_editor_page, admin_login_page
 
 
 # Admin clear statistics button click handler
 @app.route('/admin/clear-stat')
 def admin_clear_stat():
-    # todo: login required
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
+
     try:
         dashboard_tools.clear_statistics()
     except Exception as e:
@@ -24,15 +30,21 @@ def admin_clear_stat():
 def admin_login_handler():
     if request.method == 'POST':
         username, password = request.form.get('username'), request.form.get('password')
-        # todo: login admin in flask-login
-        return redirect('/admin/dashboard')
+
+        # todo: check fields
+        admin = Admin.query.filter_by(username=username).first()
+        if admin and admin.check_password(password):
+            login_user(admin, remember=True)
+            return redirect('/admin/dashboard')
     return admin_login_page(error_code=200)  # dev: Error code 200 is login error code
 
 
 @app.route('/admin/add-post', methods=['GET', 'POST'])
 def admin_add_post_handler():
     if request.method == 'POST':
-        # todo: check is user admin
+        if not current_user.is_authenticated:
+            return redirect('/admin/login')
+
         header = request.form.get('post-header')
         text = request.form.get('post-text')
         tags = request.form.get('post-tags')
@@ -62,7 +74,9 @@ def admin_add_post_handler():
 
 @app.route('/admin/edit-post/<int:post_id>', methods=['GET', 'POST'])
 def admin_post_edit_handler(post_id):
-    # todo: check is user admin
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
+
     if request.method == 'POST':
         post = Posts.query.get(post_id)
 
@@ -91,7 +105,8 @@ def admin_post_edit_handler(post_id):
 
 @app.route('/admin/delete-post/<int:post_id>')
 def admin_delete_post_handler(post_id):
-    # todo: check is user admin
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
 
     try:
         post = Posts.query.get(post_id)
@@ -104,6 +119,9 @@ def admin_delete_post_handler(post_id):
 
 @app.route('/admin/edit-content/total', methods=['GET', 'POST'])
 def edit_content():
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
+
     if request.method == 'POST':
         # Index page items
         index_header_item1 = request.form.get('index-header-item1')
@@ -123,12 +141,10 @@ def edit_content():
         blog_header_item1 = request.form.get('blog-header-item1')
         blog_header_item2 = request.form.get('blog-header-item2')
         blog_header_item3 = request.form.get('blog-header-item3')
-        
+
         blog_header_item1_link = request.form.get('blog-header-item1-link')
         blog_header_item2_link = request.form.get('blog-header-item2-link')
         blog_header_item3_link = request.form.get('blog-header-item3-link')
-
-
 
         content_editor.edit_content(
             {
