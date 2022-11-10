@@ -27,6 +27,15 @@ aside {
     transition: 1s;
 }
 
+.logout-img {
+    position: absolute;
+    width: 75%;
+    margin: 0 auto;
+    bottom: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
 .aside-img:hover {
     background-color: #1c1c1c;
     border-radius: 5px;
