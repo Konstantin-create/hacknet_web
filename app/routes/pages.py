@@ -95,3 +95,14 @@ def admin_post_editor_page(post_id, header_error=False, text_error=False, tags_e
         text_error=text_error,
         tags_error=tags_error
     )
+
+
+@app.route('/posts/<int:post_id>')
+def view_post(post_id):
+    post = posts_tools.get_post(post_id)
+    content_data = content_editor.get_content()
+    return render_template(
+        'post_template.html',
+        post=post,
+        content_data=content_data
+    )
