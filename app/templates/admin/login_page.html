@@ -14,6 +14,9 @@
             {% if error_code == 200 %}
             <p class="error-text">Username or password are incorrect!</p>
             {% endif %}
+            {% if error_code == 400 %}
+            <p class="error-text">Fields username and password must be filled!</p>
+            {% endif %}
             <input type="submit" class="input-field submit-field">
         </form>
     </div>

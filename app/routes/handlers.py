@@ -31,7 +31,9 @@ def admin_login_handler():
     if request.method == 'POST':
         username, password = request.form.get('username'), request.form.get('password')
 
-        # todo: check fields
+        if username == '' or password == '':
+            return admin_login_page(error_code=400)
+
         admin = Admin.query.filter_by(username=username).first()
         if admin and admin.check_password(password):
             login_user(admin, remember=True)
