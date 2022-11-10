@@ -52,8 +52,8 @@ def admin_login_page(error_code: int = 100):  # dev: Code 100 is OK code
 # Admin dashboard page
 @app.route('/admin/dashboard')
 def admin_dashboard_page():
-    if current_user.is_authenticated:
-        return redirect(url_for('/admin/login'))
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
 
     return render_template(
         'admin/dashboard_page.html',
@@ -65,8 +65,8 @@ def admin_dashboard_page():
 # Admin content editor router
 @app.route('/admin/content-editor')
 def admin_content_editor():
-    if current_user.is_authenticated:
-        return redirect(url_for('/admin/login'))
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
 
     content_data = content_editor.get_content()
     return render_template(
@@ -78,8 +78,8 @@ def admin_content_editor():
 # Admin post creator
 @app.route('/admin/posts-creator')
 def admin_post_creator(header_error=False, text_error=False, tags_error=False):
-    if current_user.is_authenticated:
-        return redirect(url_for('/admin/login'))
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
 
     return render_template(
         'admin/posts_creator.html',
@@ -92,8 +92,8 @@ def admin_post_creator(header_error=False, text_error=False, tags_error=False):
 
 @app.route('/admin/post-editor/<int:post_id>')
 def admin_post_editor_page(post_id, header_error=False, text_error=False, tags_error=False):
-    if current_user.is_authenticated:
-        return redirect(url_for('/admin/login'))
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
 
     post = posts_tools.get_post(post_id)
     return render_template(

@@ -15,8 +15,8 @@ from app.routes import admin_post_creator, admin_post_editor_page, admin_login_p
 # Admin clear statistics button click handler
 @app.route('/admin/clear-stat')
 def admin_clear_stat():
-    if current_user.is_authenticated:
-        return redirect(url_for('/admin/login'))
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
 
     try:
         dashboard_tools.clear_statistics()
@@ -38,8 +38,8 @@ def admin_login_handler():
 @app.route('/admin/add-post', methods=['GET', 'POST'])
 def admin_add_post_handler():
     if request.method == 'POST':
-        if current_user.is_authenticated:
-            return redirect(url_for('/admin/login'))
+        if not current_user.is_authenticated:
+            return redirect('/admin/login')
 
         header = request.form.get('post-header')
         text = request.form.get('post-text')
@@ -70,8 +70,8 @@ def admin_add_post_handler():
 
 @app.route('/admin/edit-post/<int:post_id>', methods=['GET', 'POST'])
 def admin_post_edit_handler(post_id):
-    if current_user.is_authenticated:
-        return redirect(url_for('/admin/login'))
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
 
     if request.method == 'POST':
         post = Posts.query.get(post_id)
@@ -101,8 +101,8 @@ def admin_post_edit_handler(post_id):
 
 @app.route('/admin/delete-post/<int:post_id>')
 def admin_delete_post_handler(post_id):
-    if current_user.is_authenticated:
-        return redirect(url_for('/admin/login'))
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
 
     try:
         post = Posts.query.get(post_id)
@@ -115,8 +115,8 @@ def admin_delete_post_handler(post_id):
 
 @app.route('/admin/edit-content/total', methods=['GET', 'POST'])
 def edit_content():
-    if current_user.is_authenticated:
-        return redirect(url_for('/admin/login'))
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
 
     if request.method == 'POST':
         # Index page items
