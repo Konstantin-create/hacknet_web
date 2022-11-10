@@ -4,7 +4,6 @@ import threading
 
 # My modules imports
 from config import Config
-from app.modules.models import Admin
 from app.modules import github_tools, dashboard_tools
 
 # Flask imports
@@ -13,7 +12,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, redirect, render_template, request, url_for
 
 from flask_login import LoginManager
-from flask_login import login_user, current_user
 
 # Flask init
 app = Flask(__name__)
@@ -32,11 +30,6 @@ threading.Thread(target=github_tools.set_statistics).start()
 threading.Thread(target=github_tools.set_pinned_repos).start()
 threading.Thread(target=github_tools.set_user_description).start()
 
-
-@login_manager.user_loader
-def load_user(id):
-    return Admin.query.get(int(id))
-
-
 from app.modules.models import *
+from app.routes import admin_login
 from app.routes import *
