@@ -8,7 +8,10 @@ from app.modules import content_editor
 from app.modules import dashboard_tools
 
 # Flask imports
-from app import app, render_template, request
+from app import app, render_template, request, redirect, url_for
+
+# Flask user
+from app import current_user
 
 
 # Index page router
@@ -49,7 +52,9 @@ def admin_login_page(error_code: int = 100):  # dev: Code 100 is OK code
 # Admin dashboard page
 @app.route('/admin/dashboard')
 def admin_dashboard_page():
-    # todo: login required
+    if current_user.is_authentificated:
+        return redirect(url_for('/admin/login'))
+
     return render_template(
         'admin/dashboard_page.html',
         all_requests=dashboard_tools.generate_requests_data(),
@@ -60,7 +65,8 @@ def admin_dashboard_page():
 # Admin content editor router
 @app.route('/admin/content-editor')
 def admin_content_editor():
-    # todo: login required
+    if current_user.is_authentificated:
+        return redirect(url_for('/admin/login'))
 
     content_data = content_editor.get_content()
     return render_template(
@@ -72,7 +78,9 @@ def admin_content_editor():
 # Admin post creator
 @app.route('/admin/posts-creator')
 def admin_post_creator(header_error=False, text_error=False, tags_error=False):
-    # todo: login required
+    if current_user.is_authentificated:
+        return redirect(url_for('/admin/login'))
+
     return render_template(
         'admin/posts_creator.html',
         posts=posts_tools.get_posts(1, on_page=-1),
@@ -84,7 +92,9 @@ def admin_post_creator(header_error=False, text_error=False, tags_error=False):
 
 @app.route('/admin/post-editor/<int:post_id>')
 def admin_post_editor_page(post_id, header_error=False, text_error=False, tags_error=False):
-    # todo: check is user admin
+    if current_user.is_authentificated:
+        return redirect(url_for('/admin/login'))
+
     post = posts_tools.get_post(post_id)
     return render_template(
         'admin/posts_editor.html',

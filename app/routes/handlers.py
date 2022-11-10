@@ -1,17 +1,23 @@
 from app import db
 from app import web_site_folder
+
 from app.modules.models import Posts
-from app import app, request, redirect
+
+from app import login_user, current_user
+from app import app, request, redirect, url_for
+
 from app.modules import content_editor
 from app.modules import dashboard_tools
-from app.routes.pages import admin_login_page
-from app.routes import admin_post_creator, admin_post_editor_page
+
+from app.routes import admin_post_creator, admin_post_editor_page, admin_login_page
 
 
 # Admin clear statistics button click handler
 @app.route('/admin/clear-stat')
 def admin_clear_stat():
-    # todo: login required
+    if current_user.is_authentificated:
+        return redirect(url_for('/admin/login'))
+
     try:
         dashboard_tools.clear_statistics()
     except Exception as e:
@@ -32,7 +38,9 @@ def admin_login_handler():
 @app.route('/admin/add-post', methods=['GET', 'POST'])
 def admin_add_post_handler():
     if request.method == 'POST':
-        # todo: check is user admin
+        if current_user.is_authentificated:
+            return redirect(url_for('/admin/login'))
+
         header = request.form.get('post-header')
         text = request.form.get('post-text')
         tags = request.form.get('post-tags')
@@ -62,7 +70,9 @@ def admin_add_post_handler():
 
 @app.route('/admin/edit-post/<int:post_id>', methods=['GET', 'POST'])
 def admin_post_edit_handler(post_id):
-    # todo: check is user admin
+    if current_user.is_authentificated:
+        return redirect(url_for('/admin/login'))
+
     if request.method == 'POST':
         post = Posts.query.get(post_id)
 
@@ -91,7 +101,8 @@ def admin_post_edit_handler(post_id):
 
 @app.route('/admin/delete-post/<int:post_id>')
 def admin_delete_post_handler(post_id):
-    # todo: check is user admin
+    if current_user.is_authentificated:
+        return redirect(url_for('/admin/login'))
 
     try:
         post = Posts.query.get(post_id)
@@ -104,6 +115,9 @@ def admin_delete_post_handler(post_id):
 
 @app.route('/admin/edit-content/total', methods=['GET', 'POST'])
 def edit_content():
+    if current_user.is_authentificated:
+        return redirect(url_for('/admin/login'))
+
     if request.method == 'POST':
         # Index page items
         index_header_item1 = request.form.get('index-header-item1')
