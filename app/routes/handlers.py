@@ -1,7 +1,7 @@
 from app import db
 from app import web_site_folder
 
-from app.modules.models import Posts
+from app.modules.models import Posts, Admin
 
 from flask_login import login_user, current_user
 from app import app, request, redirect, url_for
@@ -30,8 +30,12 @@ def admin_clear_stat():
 def admin_login_handler():
     if request.method == 'POST':
         username, password = request.form.get('username'), request.form.get('password')
-        # todo: login admin in flask-login
-        return redirect('/admin/dashboard')
+
+        # todo: check fields
+        admin = Admin.query.filter_by(username=username).first()
+        if admin and admin.check_password(password):
+            login_user(admin, remember=True)
+            return redirect('/admin/dashboard')
     return admin_login_page(error_code=200)  # dev: Error code 200 is login error code
 
 
