@@ -3,7 +3,7 @@ from app import web_site_folder
 
 from app.modules.models import Posts, Admin
 
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user
 from app import app, request, redirect, url_for
 
 from app.modules import content_editor
@@ -39,6 +39,12 @@ def admin_login_handler():
             login_user(admin, remember=True)
             return redirect('/admin/dashboard')
     return admin_login_page(error_code=200)  # dev: Error code 200 is login error code
+
+
+@app.route('/admin/logout')
+def admin_logout_handler():
+    logout_user()
+    return redirect('/admin/login')
 
 
 @app.route('/admin/add-post', methods=['GET', 'POST'])
