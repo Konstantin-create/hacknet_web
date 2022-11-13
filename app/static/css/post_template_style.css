@@ -74,7 +74,7 @@ main {
 .post {
     position: relative;
     width: 90%;
-    height: 1000vh;
+    height: auto;
     background-color: #171717;
     border-radius: 10px;
     margin: 5px auto;
@@ -107,4 +107,13 @@ main {
     margin-top: -200px;
     color: #EDF2EF;
     max-width: 50%;
+}
+
+.post-text {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    color: #EDF2EF;
+    width: 90%;
+    margin: 200px auto;
 }
