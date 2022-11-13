@@ -83,12 +83,24 @@ main {
     overflow: hidden;
 }
 
-.icon-view {
-    color: #EDF2EF;
-    background-color: #EDF2EF;
+.post-views {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 460px;
+    right: 10px;
+}
+
+.post-icon-view {
+    float: left;
+}
+
+.post-text-view {
+    float: left;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 24px;
+    padding-left: 5px;
+    color: #EDF2EF;
 }
 
 .post-image {
