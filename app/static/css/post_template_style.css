@@ -131,10 +131,25 @@ main {
 }
 
 .vote {
+    display: block;
+    position: relative;
+    color: #EDF2EF;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.vote-text {
+    position: absolute;
     font-family: Roboto, sans-serif;
     font-size: 20px;
     font-weight: 400;
-    color: #EDF2EF;
+    top: 10px;
+    left: 30px;
+}
+
+.like {
+    padding-top: 5px;
 }
 
 .plus {
