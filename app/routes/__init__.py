@@ -1,2 +1,2 @@
 from .pages import *
-from .handlers import *
+from .admin_handlers import *
