@@ -130,6 +130,15 @@ main {
     margin: 200px auto;
 }
 
+.rating-div {
+    width: 220px;
+    height: 48px;
+    margin-left: 50px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
 .vote {
     display: block;
     position: relative;
@@ -149,7 +158,13 @@ main {
 }
 
 .like {
-    padding-top: 5px;
+    padding-left: 2px;
+    padding-top: 7px;
+}
+
+.dislike {
+    padding-left: 2px;
+    padding-top: 10px;
 }
 
 .plus {
