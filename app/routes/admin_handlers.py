@@ -56,8 +56,7 @@ def admin_add_post_handler():
         header = request.form.get('post-header')
         text = request.form.get('post-text')
         tags = request.form.get('post-tags')
-        image = request.files.get('post-file', '')
-        print(f'{image=}')
+        image = request.files['post-file']
         try:
             post_id = Posts.query.order_by(Posts.id.desc()).first().id + 1
         except Exception as e:
@@ -77,8 +76,7 @@ def admin_add_post_handler():
             tags=tags,
             img=f'{web_site_folder}/static/posts/img/{post_id}-1.jpg'
         )
-        with open(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg', 'w') as file:
-            file.write(image)
+        image.save(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg')
         db.session.add(post)
         db.session.commit()
         return redirect('/admin/dashboard')
