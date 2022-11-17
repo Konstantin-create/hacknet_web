@@ -74,7 +74,7 @@ def admin_add_post_handler():
             header=header,
             text=text,
             tags=tags,
-            img=f'{web_site_folder}/static/posts/img/{post_id}-1.jpg'
+            img=f'posts/img/{post_id}-1.jpg'
         )
         image.save(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg')
         db.session.add(post)
