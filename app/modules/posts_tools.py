@@ -1,6 +1,6 @@
 from app import db
 from config import Config
-from app.modules.models import Posts
+from app.modules.models import Posts, Likes, Dislikes
 
 
 def get_posts(page_id: int, on_page: int = 10) -> list:
@@ -45,3 +45,41 @@ def delete_post(post_id: int) -> dict:
         return {'success': True, 'error': ''}
     except Exception as e:
         return {'success': False, 'error': e}
+
+
+def add_viewer(post) -> None:
+    """Function to add viewer to post table"""
+
+    post.views += 1
+    db.session.add(post)
+    db.session.commit()
+
+
+def get_likes(post) -> int:
+    """Function to count likes on post"""
+
+    return len(Likes.query.filter_by(post.id).all())
+
+
+def get_dislikes(post) -> int:
+    """Function to count dislikes on post"""
+
+    return len(Dislikes.query.filter_by(post.id).all())
+
+
+def add_like(post_id: int, user_ip: str):
+    """Function to like post"""
+
+    if not Likes.query.filter_by(post_id=post_id, user_ip=user_ip).first():
+        like = Likes(post_id=post_id, user_ip=user_ip)
+        db.session.add(like)
+        db.session.commit()
+
+
+def add_dislike(post_id: int, user_ip: str):
+    """Function to dislike post"""
+
+    if not Dislikes.query.filter_by(post_id=post_id, user_ip=user_ip).first():
+        dislike = Dislikes(post_id=post_id, user_ip=user_ip)
+        db.session.add(dislike)
+        db.session.commit()
