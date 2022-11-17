@@ -47,10 +47,9 @@ def delete_post(post_id: int) -> dict:
         return {'success': False, 'error': e}
 
 
-def add_viewer(post_id: int) -> None:
+def add_viewer(post) -> None:
     """Function to add viewer to post table"""
 
-    post = get_post(post_id)
     post.views += 1
     db.session.add(post)
     db.session.commit()
