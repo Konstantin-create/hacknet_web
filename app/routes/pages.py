@@ -110,12 +110,8 @@ def admin_post_editor_page(post_id, header_error=False, text_error=False, tags_e
 
 @app.route('/posts/<int:post_id>')
 def view_post(post_id):
-    post = posts_tools.get_post(post_id)
-    post.views += 1
 
     content_data = content_editor.get_content()
-    db.session.add(post)
-    db.session.commit()
 
     return render_template(
         'post_template.html',
