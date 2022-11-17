@@ -57,7 +57,11 @@ def admin_add_post_handler():
         text = request.form.get('post-text')
         tags = request.form.get('post-tags')
         image = request.files.get('post-file', '')
-        post_id = Posts.query.order_by(Posts.id.desc()).first().id
+        print(f'{image=}')
+        try:
+            post_id = Posts.query.order_by(Posts.id.desc()).first().id + 1
+        except Exception as e:
+            post_id = 1
 
         # Check fields
         if header == '':
