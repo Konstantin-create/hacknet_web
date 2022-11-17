@@ -3,7 +3,7 @@ from app import db
 
 class Likes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
     user_ip = db.Column(db.String(128), nullable=False)
 
     def __repr__(self):
@@ -12,7 +12,7 @@ class Likes(db.Model):
 
 class Dislikes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
     user_ip = db.Column(db.String(128), nullable=False)
 
     def __repr__(self):
