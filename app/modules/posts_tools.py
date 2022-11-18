@@ -58,19 +58,19 @@ def add_viewer(post) -> None:
 def get_likes(post) -> int:
     """Function to count likes on post"""
 
-    return len(Likes.query.filter_by(post.id).all())
+    return len(Likes.query.filter_by(post_id=post.id).all())
 
 
 def get_dislikes(post) -> int:
     """Function to count dislikes on post"""
 
-    return len(Dislikes.query.filter_by(post.id).all())
+    return len(Dislikes.query.filter_by(post_id=post.id).all())
 
 
 def add_like(post_id: int, user_ip: str):
     """Function to like post"""
 
-    if not Likes.query.filter_by(post_id=post_id, user_ip=user_ip).first():
+    if not Likes.query.filter(post_id=post_id, user_ip=user_ip).first():
         like = Likes(post_id=post_id, user_ip=user_ip)
         db.session.add(like)
         db.session.commit()
@@ -79,7 +79,7 @@ def add_like(post_id: int, user_ip: str):
 def add_dislike(post_id: int, user_ip: str):
     """Function to dislike post"""
 
-    if not Dislikes.query.filter_by(post_id=post_id, user_ip=user_ip).first():
+    if not Dislikes.query.filter(post_id=post_id, user_ip=user_ip).first():
         dislike = Dislikes(post_id=post_id, user_ip=user_ip)
         db.session.add(dislike)
         db.session.commit()
