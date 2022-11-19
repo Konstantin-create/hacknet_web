@@ -70,7 +70,7 @@ def get_dislikes(post) -> int:
 def add_like(post_id: int, user_ip: str):
     """Function to like post"""
 
-    if not Likes.query.filter(post_id=post_id, user_ip=user_ip).first():
+    if not Likes.query.filter_by(post_id=post_id).filter_by(user_ip=user_ip).first():
         like = Likes(post_id=post_id, user_ip=user_ip)
         db.session.add(like)
         db.session.commit()
@@ -79,7 +79,7 @@ def add_like(post_id: int, user_ip: str):
 def add_dislike(post_id: int, user_ip: str):
     """Function to dislike post"""
 
-    if not Dislikes.query.filter(post_id=post_id, user_ip=user_ip).first():
+    if not Dislikes.query.filter_by(post_id=post_id).filter_by(user_ip=user_ip).first():
         dislike = Dislikes(post_id=post_id, user_ip=user_ip)
         db.session.add(dislike)
         db.session.commit()
