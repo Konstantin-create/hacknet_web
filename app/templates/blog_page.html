@@ -48,7 +48,7 @@
                     <a href="/posts/{{post.id}}"><p class="post-link">More</p></a>
                 </div>
             </div>
-            <img src="{{ url_for('static', filename=post.img) }}" alt="" class="post-image" loading="lazy">
+            <img src="{{ url_for('static', filename=post.preview_img) }}" alt="" class="post-image" loading="lazy">
         </div>
         {% endfor %}
     </div>

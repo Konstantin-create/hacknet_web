@@ -31,11 +31,24 @@
             {% if tags_error %}
             <p class="error-text" id="post-tags-error">Please enter post tags</p>
             {% endif %}
-            <label class="input-file">
-                <input type="file" name="post-file">
-                <span>{{ post_img_name }}</span>
-            </label>
+
+            <div>
+                <label class="input-file">
+                    <input type="file" name="post-preview-image">
+                    <span>{{ post_preview_img_name }}</span>
+                </label>
+                <p class="post-image-name">Post preview image:</p>
+            </div>
             <div style="clear: both"></div>
+            <div>
+                <label class="input-file">
+                    <input type="file" name="post-main-image">
+                    <span>{{ post_main_img_name }}</span>
+                </label>
+                <p class="post-image-name">Post main image:</p>
+            </div>
+            <div style="clear: both"></div>
+
             <label>
                 <input type="submit" class="post-submit" value="Edit">
                 <a href="/admin/delete-post/{{ post.id }}" class="post-delete">Delete post</a>

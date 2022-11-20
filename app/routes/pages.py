@@ -100,7 +100,8 @@ def admin_post_editor_page(post_id, header_error=False, text_error=False, tags_e
     return render_template(
         'admin/posts_editor.html',
         post=post,
-        post_img_name=post.img.split('/')[-1],
+        post_preview_img_name=post.preview_img.split('/')[-1],
+        post_main_img_name=post.main_img.split('/')[-1],
 
         header_error=header_error,
         text_error=text_error,
