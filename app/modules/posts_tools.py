@@ -73,7 +73,7 @@ def add_like(post_id: int, user_ip: str):
     like_obj = Likes.query.filter_by(post_id=post_id).filter_by(user_ip=user_ip).first()
     if not like_obj:
         like = Likes(post_id=post_id, user_ip=user_ip)
-        dislike_obj = Dislikes.query.filter_by(post_id=post_id).filter_by(user_ip=user_ip).first():
+        dislike_obj = Dislikes.query.filter_by(post_id=post_id).filter_by(user_ip=user_ip).first()
         if dislike_obj:
             db.session.delete(dislike_obj)
         db.session.add(like)
