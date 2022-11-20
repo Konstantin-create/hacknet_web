@@ -93,7 +93,7 @@ def admin_post_edit_handler(post_id):
         header = request.form.get('post-header')
         text = request.form.get('post-text')
         tags = request.form.get('post-tags')
-        image = request.files.get('post-file', '')
+        image = request.files['post-file']
 
         # Check fields
         if header == '':
@@ -102,9 +102,8 @@ def admin_post_edit_handler(post_id):
             return admin_post_editor_page(text_error=True)
         if tags == '':
             return admin_post_editor_page(tags_error=True)
-        with open(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg', 'w') as file:
-            file.write(image)
 
+        image.save(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg')
         post.header = header
         post.text = text
         post.tags = tags
