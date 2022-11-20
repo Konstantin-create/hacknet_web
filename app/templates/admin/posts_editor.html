@@ -9,7 +9,7 @@
 <main>
     <a href="/admin/posts-creator"><p class="back-btn"><</p></a>
     <div class="new-posts" id="new-posts">
-        <form action="/admin/edit-post/{{ post.id }}" method="post">
+        <form action="/admin/edit-post/{{ post.id }}" method="post" enctype="multipart/form-data">
             <h3 class="form-header">Edit post</h3>
             <label>
                 <input type="text" class="one-line-input" placeholder="Post header" name="post-header"
@@ -46,11 +46,8 @@
 <script src="{{ url_for('static', filename='js/admin/posts-creator.js') }}"></script>
 <script>
     $('.input-file input[type=file]').on('change', function () {
-
         let file = this.files[0];
-
         $(this).next().html(file.name);
-
     });
 </script>
 </body>
