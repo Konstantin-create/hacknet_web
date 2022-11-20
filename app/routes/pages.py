@@ -111,6 +111,7 @@ def admin_post_editor_page(post_id, header_error=False, text_error=False, tags_e
 
 @app.route('/posts/<int:post_id>')
 def view_post(post_id):
+    dashboard_tools.request_handler(ip=request.remote_addr, url=f'/posts/{post_id}')
     post = posts_tools.get_post(post_id)
     posts_tools.add_viewer(post)
     likes = posts_tools.get_likes(post)
