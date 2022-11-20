@@ -23,7 +23,8 @@ body {
 }
 
 main {
-    height: 200vh;
+    max-height: 200vh;
+    height: auto;
 }
 
 .header-items {
@@ -197,32 +198,32 @@ main {
 }
 
 .page_indexes {
-    width: 250px;
+    width: 150px;
     display: flex;
     justify-content: space-around;
 
-    margin: 50px auto;
+    margin: 25px auto 50px auto;
     user-select: none;
 }
 
 .page_index {
     font-family: 'Oswald', sans-serif;
-    font-size: 40px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 400;
     color: #EDF2EF;
-    background-color: #05299E;
-    width: 60px;
-    height: 60px;
+    background-color: #202020;
+    width: 40px;
+    height: 40px;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 .current {
-    line-height: 60px;
+    line-height: 40px;
 }
 
 .disable {
-    background-color: rgba(5, 41, 158, 0.5);
+    background-color: #171717;
     cursor: not-allowed;
 }
