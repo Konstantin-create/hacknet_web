@@ -59,10 +59,21 @@
         {% if tags_error %}
         <p class="error-text" id="post-tags-error">Please enter post tags</p>
         {% endif %}
-        <label class="input-file">
-            <input type="file" name="post-file">
-            <span>Select image</span>
-        </label>
+        <div>
+            <label class="input-file">
+                <input type="file" name="post-preview-image">
+                <span>Select image</span>
+            </label>
+            <p class="post-image-name">Post preview image:</p>
+        </div>
+        <div style="clear: both"></div>
+        <div>
+            <label class="input-file">
+                <input type="file" name="post-main-image">
+                <span>Select image</span>
+            </label>
+            <p class="post-image-name">Post main image:</p>
+        </div>
         <div style="clear: both"></div>
         <label>
             <input type="submit" class="post-submit">

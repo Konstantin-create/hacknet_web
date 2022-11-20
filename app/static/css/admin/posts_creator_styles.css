@@ -245,7 +245,18 @@
     display: inline-block;
 }
 
+.post-image-name {
+    float: left;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    color: #EDF2EF;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
 .input-file span {
+    float: left;
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -263,7 +274,7 @@
     width: 200px;
     box-sizing: border-box;
     border: none;
-    margin: 0 50px 10px;
+    margin: 0 20px 10px;
     transition: background-color 0.2s;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
 }
