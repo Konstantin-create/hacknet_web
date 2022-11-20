@@ -7,7 +7,8 @@ class Posts(db.Model):
     header = db.Column(db.String, nullable=False)
     text = db.Column(db.String(120), nullable=False)
     tags = db.Column(db.String(12000), nullable=False)
-    img = db.Column(db.String, nullable=False)
+    preview_img = db.Column(db.String, nullable=False)
+    main_img = db.Column(db.String, nullable=False)
     views = db.Column(db.Integer, default=0)
     time_stamp = db.Column(db.DateTime, index=True, default=datetime.utcnow())
 
