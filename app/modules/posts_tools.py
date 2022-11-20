@@ -73,6 +73,9 @@ def add_like(post_id: int, user_ip: str):
     like_obj = Likes.query.filter_by(post_id=post_id).filter_by(user_ip=user_ip).first()
     if not like_obj:
         like = Likes(post_id=post_id, user_ip=user_ip)
+        dislike_obj = Dislikes.query.filter_by(post_id=post_id).filter_by(user_ip=user_ip).first():
+        if dislike_obj:
+            db.session.delete(dislike_obj)
         db.session.add(like)
     else:
         db.session.delete(like_obj)
@@ -85,6 +88,9 @@ def add_dislike(post_id: int, user_ip: str):
     dislike_obj = Dislikes.query.filter_by(post_id=post_id).filter_by(user_ip=user_ip).first()
     if not dislike_obj:
         dislike = Dislikes(post_id=post_id, user_ip=user_ip)
+        like_obj = Likes.query.filter_by(post_id=post_id).filter_by(user_ip=user_ip).first()
+        if like_obj:
+            db.session.delete(like_obj)
         db.session.add(dislike)
     else:
         db.session.delete(dislike_obj)
