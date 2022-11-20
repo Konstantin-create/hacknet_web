@@ -32,7 +32,7 @@
             </div>
             <a href="/admin/post-editor/{{ post.id }}"><img src="{{ url_for('static', filename='img/admin/edit.png') }}"
                                                             alt="" class="edit-button"></a>
-            <img src="{{ url_for('static', filename=post.img) }}" alt="" class="post-image" loading="lazy">
+            <img src="{{ url_for('static', filename=post.preview_img) }}" alt="" class="post-image" loading="lazy">
         </div>
         {% endfor %}
     </div>

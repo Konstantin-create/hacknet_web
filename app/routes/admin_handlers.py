@@ -1,3 +1,5 @@
+import os
+
 from app import db
 from app import web_site_folder
 
@@ -96,7 +98,8 @@ def admin_post_edit_handler(post_id):
         header = request.form.get('post-header')
         text = request.form.get('post-text')
         tags = request.form.get('post-tags')
-        image = request.files['post-file']
+        preview_image = request.files['post-preview-image']
+        main_image = request.files['post-main-image']
 
         # Check fields
         if header == '':
@@ -106,7 +109,8 @@ def admin_post_edit_handler(post_id):
         if tags == '':
             return admin_post_editor_page(tags_error=True)
 
-        image.save(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg')
+        preview_image.save(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg')
+        main_image.save(f'{web_site_folder}/static/posts/img/{post_id}-2.jpg')
         post.header = header
         post.text = text
         post.tags = tags
@@ -122,6 +126,10 @@ def admin_delete_post_handler(post_id):
 
     try:
         post = Posts.query.get(post_id)
+
+        os.remove(post.preview_img)
+        os.remove(post.main_img)
+
         db.session.delete(post)
         db.session.commit()
         return redirect('/admin/posts-creator')

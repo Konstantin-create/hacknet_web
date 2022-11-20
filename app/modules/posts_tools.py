@@ -24,29 +24,6 @@ def get_pages() -> int:
     return Posts.query.order_by(Posts.id.desc()).paginate(per_page=Config.POSTS_PER_PAGE).pages
 
 
-def add_post(header: str = '', text: str = '', tags: str = '', img: str = '') -> dict:
-    """Function to add post in to db"""
-
-    try:
-        post = Posts(header=header, text=text, tags=tags, img=img)
-        db.session.add(post)
-        db.session.commit()
-        return {'success': True, 'error': ''}
-    except Exception as e:
-        return {'success': False, 'error': e}
-
-
-def delete_post(post_id: int) -> dict:
-    """Function to remove post from db"""
-
-    try:
-        db.session.delete(Posts.query.filter_by(id=post_id).first())
-        db.session.commit()
-        return {'success': True, 'error': ''}
-    except Exception as e:
-        return {'success': False, 'error': e}
-
-
 def add_viewer(post) -> None:
     """Function to add viewer to post table"""
 
