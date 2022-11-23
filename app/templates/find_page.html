@@ -39,11 +39,12 @@
                     <line x1="21" y1="21" x2="15" y2="15"></line>
                 </svg>
                 <lablel>
-                    <input type="text" class="header-finder-input" name="posts-finder" placeholder="Find post">
+                    <input type="text" class="header-finder-input" name="posts-finder" value="{{ header }}" placeholder="Find post">
                 </lablel>
             </form>
         </div>
         <main>
+            <h1 class="blog-header">Find: {{ header }}</h1>
             <div class="posts">
                 {% for post in posts %}
                 <div class="post">
@@ -63,6 +64,7 @@
                 </div>
                 {% endfor %}
             </div>
+            <div style="clear: both;"></div>
             <div class="page_indexes">
                 {% if page_id == 1 %}
                 <p class="page_index previous disable"><<</p>
@@ -76,19 +78,20 @@
                 <a href="/blog/page/{{ page_id + 1 }}"><p class="page_index next">>></p></a>
                 {% endif %}
             </div>
+        </main>
     {% else %}
-    <div class="main-finder">
-        <form action="/blog/find" method="post">
-            <svg xmlns="http://www.w3.org/2000/svg" class="header-finder-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <circle cx="10" cy="10" r="7"></circle>
-                <line x1="21" y1="21" x2="15" y2="15"></line>
-            </svg>
-            <lablel>
-                <input type="text" class="header-finder-input" name="posts-finder" placeholder="Find post">
-            </lablel>
-        </form>
-    </div>
+        <div class="main-finder">
+            <h1 class="main-finder-head">Ooops...<br>We didn't find something like that</h1>
+            <form action="/blog/find" method="post">
+                <lablel>
+                    <input type="text" class="main-finder-input" name="posts-finder" placeholder="Find post">
+                </lablel>
+                <svg xmlns="http://www.w3.org/2000/svg" class="main-finder-icon" width="30" height="30" viewBox="0 0 30 30" stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="10" cy="10" r="7"></circle>
+                    <line x1="21" y1="21" x2="15" y2="15"></line>
+                </svg>
+            </form>
+        </div>
     {% endif %}
-</main>
 </body>
