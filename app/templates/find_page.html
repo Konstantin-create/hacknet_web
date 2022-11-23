@@ -30,4 +30,65 @@
             </a>
         </div>
     </div>
+    {% if posts %}
+        <div class="header-finder-div">
+            <form action="/blog/find" method="post">
+                <svg xmlns="http://www.w3.org/2000/svg" class="header-finder-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="10" cy="10" r="7"></circle>
+                    <line x1="21" y1="21" x2="15" y2="15"></line>
+                </svg>
+                <lablel>
+                    <input type="text" class="header-finder-input" name="posts-finder" placeholder="Find post">
+                </lablel>
+            </form>
+        </div>
+        <main>
+            <div class="posts">
+                {% for post in posts %}
+                <div class="post">
+                    <div class="post-text">
+                        <h3 class="post-header">{{ post.header }}</h3>
+                        <p class="post-description">{{ post.text |safe }}</p>
+                        <div class="post-footer">
+                            <div class="post-tags">
+                                {% for tag in post.tags.split() %}
+                                <p class="post-tag">#{{ tag }}</p>
+                                {% endfor %}
+                            </div>
+                            <a href="/posts/{{post.id}}"><p class="post-link">More</p></a>
+                        </div>
+                    </div>
+                    <img src="{{ url_for('static', filename=post.preview_img) }}" alt="" class="post-image" loading="lazy">
+                </div>
+                {% endfor %}
+            </div>
+            <div class="page_indexes">
+                {% if page_id == 1 %}
+                <p class="page_index previous disable"><<</p>
+                {% else %}
+                <a href="/blog/page/{{ page_id - 1 }}"><p class="page_index previous"><<</p></a>
+                {% endif %}
+                <p class="page_index current">{{ page_id }}</p>
+                {% if page_id == total_pages%}
+                <p class="page_index next disable">>></p>
+                {% else %}
+                <a href="/blog/page/{{ page_id + 1 }}"><p class="page_index next">>></p></a>
+                {% endif %}
+            </div>
+    {% else %}
+    <div class="main-finder">
+        <form action="/blog/find" method="post">
+            <svg xmlns="http://www.w3.org/2000/svg" class="header-finder-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="10" cy="10" r="7"></circle>
+                <line x1="21" y1="21" x2="15" y2="15"></line>
+            </svg>
+            <lablel>
+                <input type="text" class="header-finder-input" name="posts-finder" placeholder="Find post">
+            </lablel>
+        </form>
+    </div>
+    {% endif %}
+</main>
 </body>
