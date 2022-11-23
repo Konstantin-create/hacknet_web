@@ -254,3 +254,37 @@ main {
     cursor: not-allowed;
 }
 
+.main-finder {
+    width: 600px;
+    height: 500px;
+    margin: calc(100vh / 4) auto;
+
+    background-color: #202020;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.main-finder-head {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+    color: #EDF2EF;
+    text-align: center;
+
+    padding-bottom: 10px;
+}
+
+.main-finder-input {
+    float: left;
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    color: #EDF2EF;
+    background-color: #202020;
+
+    width: 90%;
+    height: 30px;
+    padding: 5px 10px;
+    border: 2px solid #1c1c1c;
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+}
