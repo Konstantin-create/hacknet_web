@@ -13,7 +13,7 @@
 <body>
 <header id="header">
     <div class="header-items">
-        <a href="{{ content_data['header_links'][0] }}"><h3 class="header-item">{{ content_data['headers'][0] }}</h3>
+        <a href="{{ content_data['header_links'][0] }}"><h3 class="header-item">{{ content_data['headers'][1] }}</h3>
         </a>
         <a href="{{ content_data['header_links'][1] }}"><h3 class="header-item">{{ content_data['headers'][1] }}</h3>
         </a>
@@ -30,6 +30,13 @@
         <a href="{{ content_data['header_links'][2] }}"><h3 class="header-item">{{ content_data['headers'][2] }}</h3>
         </a>
     </div>
+</div>
+<div class="header-finder-div">
+    <form method="post">
+        <lablel>
+            <input type="text" class="header-finder-input">
+        </lablel>
+    </form>
 </div>
 <main>
     <h1 class="blog-header">Konstantin-create blog</h1>
