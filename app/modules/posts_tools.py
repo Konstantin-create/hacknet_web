@@ -36,7 +36,7 @@ def get_finder_posts(page_id: int, header: str, on_page: int = 10) -> list:
 def get_finder_pages(header: str) -> int:
     """Function to get total posts pages on finder page"""
 
-    return Posts.query.order_by(Posts.id.desc()).filter_by(header=header).paginate(page=page_id, per_page=Config.POSTS_PER_PAGE).pages
+    return Posts.query.order_by(Posts.id.desc()).filter_by(header=header).paginate(per_page=Config.POSTS_PER_PAGE).pages
 
 
 def add_viewer(post) -> None:

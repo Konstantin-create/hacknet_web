@@ -55,9 +55,9 @@ def find_page(page_id=1):
         return render_template(
             'find_page.html',
             page_id=page_id,
-            total_pages=posts_tools.get_find_pages(),
-            posts=posts_tools.get_finder_posts(page_id)
-            content_data=content_data
+            total_pages=posts_tools.get_finder_pages(request_data),
+            posts=posts_tools.get_finder_posts(page_id, request_data),
+            content_data=content_data['blog']
             )
             
     return redirect('/blog')
