@@ -24,6 +24,21 @@ def get_pages() -> int:
     return Posts.query.order_by(Posts.id.desc()).paginate(per_page=Config.POSTS_PER_PAGE).pages
 
 
+def get_finder_posts(page_id: int, header: str, on_page: int = 10) -> list:
+    """Function to get items for page by page id and header"""
+
+    # todo: approximate search
+    if on_page == -1:
+        return Posts.query.order_by(Posts.id.desc()).filter_by(header=header).all()
+    return Posts.query.order_by(Posts.id.desc()).filter_by(header=header).paginate(page=page_id, per_page=Config.POSTS_PER_PAGE).items
+
+
+def get_finder_pages(header: str) -> int:
+    """Function to get total posts pages on finder page"""
+
+    return Posts.query.order_by(Posts.id.desc()).filter_by(header=header).paginate(page=page_id, per_page=Config.POSTS_PER_PAGE).pages
+
+
 def add_viewer(post) -> None:
     """Function to add viewer to post table"""
 

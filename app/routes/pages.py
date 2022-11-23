@@ -35,6 +35,7 @@ def init_page():
 def blog_page(page_id=1):
     dashboard_tools.request_handler(ip=request.remote_addr, url='/blog')
     content_data = content_editor.get_content()
+
     return render_template(
         'blog_page.html',
         page_id=page_id,
@@ -43,14 +44,20 @@ def blog_page(page_id=1):
         content_data=content_data['blog']
     )
 
+@app.route('/blog/find/page/<int:page_id>')
 @app.route('/blog/find', methods=['GET', 'POST'])
-def find_page():
-    if request.method == 'POST':
+def find_page(page_id=1):
+    if request.method == 'POST' or page_id != 0:
         request_data = request.form.get('posts-finder')
+        content_data = content_editor.get_content()
         dashboard_tools.request_handler(ip=request.remote_addr, url=f'/blog/{"+".join(request_data.split())}')
-        print(request_data)
+
         return render_template(
-            'find_page.html'
+            'find_page.html',
+            page_id=page_id,
+            total_pages=posts_tools.get_find_pages(),
+            posts=posts_tools.get_finder_posts(page_id)
+            content_data=content_data
             )
             
     return redirect('/blog')
