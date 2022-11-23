@@ -39,11 +39,12 @@
                     <line x1="21" y1="21" x2="15" y2="15"></line>
                 </svg>
                 <lablel>
-                    <input type="text" class="header-finder-input" name="posts-finder" placeholder="Find post">
+                    <input type="text" class="header-finder-input" name="posts-finder" value="{{ header }}" placeholder="Find post">
                 </lablel>
             </form>
         </div>
         <main>
+            <h1 class="blog-header">Find: {{ header }}</h1>
             <div class="posts">
                 {% for post in posts %}
                 <div class="post">
@@ -63,6 +64,7 @@
                 </div>
                 {% endfor %}
             </div>
+            <div style="clear: both;"></div>
             <div class="page_indexes">
                 {% if page_id == 1 %}
                 <p class="page_index previous disable"><<</p>
