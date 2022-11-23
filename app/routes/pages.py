@@ -43,6 +43,18 @@ def blog_page(page_id=1):
         content_data=content_data['blog']
     )
 
+@app.route('/blog/find', methods=['GET', 'POST'])
+def find_page():
+    if request.method == 'POST':
+        request_data = request.form.get('posts-finder')
+        dashboard_tools.request_handler(ip=request.remote_addr, url=f'/blog/{"+".join(request_data.split())}')
+        print(request_data)
+        return render_template(
+            'find_page.html'
+            )
+            
+    return redirect('/blog')
+
 
 # Admin login page router
 @app.route('/admin/login')
