@@ -1,5 +1,6 @@
 # Import consts
 from app import db
+from config import Config
 from app import web_site_folder
 
 # Import modules
@@ -44,23 +45,26 @@ def blog_page(page_id=1):
         content_data=content_data['blog']
     )
 
-@app.route('/blog/find/page/<int:page_id>')
+
 @app.route('/blog/find', methods=['GET', 'POST'])
+@app.route('/blog/find/page/<int:page_id>')
 def find_page(page_id=1):
     if request.method == 'POST' or page_id != 0:
         request_data = request.form.get('posts-finder')
         content_data = content_editor.get_content()
         dashboard_tools.request_handler(ip=request.remote_addr, url=f'/blog/{"+".join(request_data.split())}')
+        posts = posts_tools.get_finder_posts(page_id, request_data)
+        posts = [posts[i:i + Config.POSTS_PER_PAGE] for i in range(0, len(posts), Config.POSTS_PER_PAGE)]
 
         return render_template(
             'find_page.html',
             page_id=page_id,
             header=request_data,
-            total_pages=posts_tools.get_finder_pages(request_data),
-            posts=posts_tools.get_finder_posts(page_id, request_data),
+            posts=posts[page_id-1],
+            total_pages=len(posts),
             content_data=content_data['blog']
-            )
-            
+        )
+
     return redirect('/blog')
 
 
