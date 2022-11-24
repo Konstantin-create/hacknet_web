@@ -1,4 +1,11 @@
-import Levenshtein
+import difflib
+
+
+def _similarity(string1, string2):
+    normalized1 = string1.lower()
+    normalized2 = string2.lower()
+    matcher = difflib.SequenceMatcher(None, normalized1, normalized2)
+    return matcher.ratio()
 
 
 def approximate_search(header: str, posts: list) -> list:
@@ -6,12 +13,9 @@ def approximate_search(header: str, posts: list) -> list:
 
     compares = {}
     for post in posts:
-        difference = Levenshtein.distance(header, post.header)
-        # if difference <= len(header) // 2:
-        compares[post.id] = [difference, post]
+        difference = _similarity(header, post.header)
+        if len(compares.keys()) <= 10 or (difference >= .6 and len(compares.keys()) > 10):
+            compares[post.id] = [difference, post]
 
     value = [el[1] for el in sorted(compares.values(), key=lambda x: x[0])]
-    print()
-    print(value)
-    print()
     return value
