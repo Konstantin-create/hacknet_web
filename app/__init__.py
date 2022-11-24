@@ -8,7 +8,6 @@ from app.modules import github_tools, dashboard_tools
 
 # Flask imports
 from flask_migrate import Migrate
-from flaskext.markdown import Markdown
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, redirect, render_template, request, url_for
 
@@ -24,9 +23,6 @@ migrate = Migrate(app, db)
 
 # Flask login
 login_manager = LoginManager(app)
-
-# Flask markdown renderer
-Markdown(app)
 
 web_site_folder = os.path.dirname(__file__)
 

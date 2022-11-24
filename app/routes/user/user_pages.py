@@ -1,4 +1,8 @@
 # Import consts
+import os.path
+
+import markdown
+
 from config import Config
 from app import web_site_folder
 
@@ -73,6 +77,10 @@ def view_post(post_id):
     dislikes = posts_tools.get_dislikes(post)
 
     content_data = content_editor.get_content()
+    # todo: move generate post text html file to the post create/edit function
+    if not os.path.exists(f'/{web_site_folder}/templates/temp/posts/{post_id}.html'):
+        with open(f'/{web_site_folder}/templates/temp/posts/{post_id}.html', 'w') as file:
+            file.write(markdown.markdown(post.text))
 
     return render_template(
         'post_template.html',
