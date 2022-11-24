@@ -1,3 +1,2 @@
-from .pages import *
-from .user_handlers import *
-from .admin_handlers import *
+from app.routes import user
+from app.routes import admin

@@ -11,7 +11,7 @@ from app import app, request, redirect, url_for
 from app.modules import content_editor
 from app.modules import dashboard_tools
 
-from app.routes import admin_post_creator, admin_post_editor_page, admin_login_page
+from app.routes.admin.admin_pages import admin_post_creator, admin_post_editor_page, admin_login_page
 
 
 # Admin clear statistics button click handler

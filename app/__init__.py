@@ -31,5 +31,5 @@ threading.Thread(target=github_tools.set_pinned_repos).start()
 threading.Thread(target=github_tools.set_user_description).start()
 
 from app.modules.models import *
-from app.routes import admin_login
-from app.routes import *
+from app.routes.admin import admin_login
+from app.routes.admin import *
