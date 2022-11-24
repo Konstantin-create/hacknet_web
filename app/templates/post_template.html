@@ -47,7 +47,7 @@
     <img src="{{ url_for('static', filename=post.main_img) }}" alt="" class="post-image" loading="lazy">
     <!-- todo: change on image preview -->
     <h1 class="post-header">{{ post.header }}</h1>
-    <p class="post-text">{{ post.text }}</p>
+    <p class="post-text">{{ post.text | markdown }}</p>
     <div class="rating-div">
         <a href="/user/add-post-like/{{ post.id }}">
             <p class="vote plus">
