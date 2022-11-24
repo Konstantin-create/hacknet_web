@@ -78,23 +78,31 @@ main {
     background-color: black;
 }
 
+.header-finder {
+    float: right;
+    background-color: #202020;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(32, 32, 32, 0.5);
+    width: 300px;
+    padding: 2px 10px;
+    margin-right: 10px;
+}
+
 .header-finder-input {
     float: right;
     font-family: Roboto, sans-serif;
     font-size: 20px;
     background-color: #202020;
     color: #EDF2EF;
-    width: 300px;
-    padding: 2px 10px;
+    width: 275px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(32, 32, 32, 0.5);
 }
 
 .header-finder-icon {
     float: right;
-    padding: 2px 10px;
-    
+    /*padding: 2px 10px;*/
+
     cursor: pointer;
 }
 
