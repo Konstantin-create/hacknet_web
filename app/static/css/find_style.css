@@ -254,7 +254,7 @@ main {
     cursor: not-allowed;
 }
 
-.main-finder {
+.main-finder-div {
     width: 600px;
     height: 500px;
     margin: calc(100vh / 4) auto;
@@ -266,13 +266,26 @@ main {
 }
 
 .main-finder-head {
-    font-family: 'Kanit', sans-serif;
+    font-family: "Cantarell Light", sans-serif;
     font-weight: 400;
     color: #EDF2EF;
     text-align: center;
 
     padding-bottom: 10px;
 }
+
+.main-finder {
+    background-color: #202020;
+    width: 90%;
+    height: 30px;
+
+    margin: 50px auto;
+    padding: 5px 10px;
+    border: 2px solid #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+}
+
 
 .main-finder-input {
     float: left;
@@ -281,10 +294,10 @@ main {
     color: #EDF2EF;
     background-color: #202020;
 
-    width: 90%;
-    height: 30px;
-    padding: 5px 10px;
-    border: 2px solid #1c1c1c;
+    width: calc(100% - 30px);
+    border: none;
+}
 
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+.main-finder-icon {
+    padding-top: 3px;
 }
