@@ -10,88 +10,93 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-    <header id="header">
-        <div class="header-items">
-            <a href="{{ content_data['header_links'][0] }}"><h3 class="header-item">{{ content_data['headers'][1] }}</h3>
-            </a>
-            <a href="{{ content_data['header_links'][1] }}"><h3 class="header-item">{{ content_data['headers'][1] }}</h3>
-            </a>
-            <a href="{{ content_data['header_links'][2] }}"><h3 class="header-item">{{ content_data['headers'][2] }}</h3>
-            </a>
-        </div>
-    </header>
-    <div class="header-with-opacity" id="faded-header">
-        <div class="header-items">
-            <a href="{{ content_data['header_links'][0] }}"><h3 class="header-item">{{ content_data['headers'][0] }}</h3>
-            </a>
-            <a href="{{ content_data['header_links'][1] }}"><h3 class="header-item">{{ content_data['headers'][1] }}</h3>
-            </a>
-            <a href="{{ content_data['header_links'][2] }}"><h3 class="header-item">{{ content_data['headers'][2] }}</h3>
-            </a>
-        </div>
+<header id="header">
+    <div class="header-items">
+        <a href="{{ content_data['header_links'][0] }}"><h3 class="header-item">{{ content_data['headers'][1] }}</h3>
+        </a>
+        <a href="{{ content_data['header_links'][1] }}"><h3 class="header-item">{{ content_data['headers'][1] }}</h3>
+        </a>
+        <a href="{{ content_data['header_links'][2] }}"><h3 class="header-item">{{ content_data['headers'][2] }}</h3>
+        </a>
     </div>
-    {% if posts %}
-        <div class="header-finder-div">
-            <form action="/blog/find" method="post">
-                <svg xmlns="http://www.w3.org/2000/svg" class="header-finder-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <circle cx="10" cy="10" r="7"></circle>
-                    <line x1="21" y1="21" x2="15" y2="15"></line>
-                </svg>
-                <lablel>
-                    <input type="text" class="header-finder-input" name="posts-finder" value="{{ header }}" placeholder="Find post">
-                </lablel>
-            </form>
-        </div>
-        <main>
-            <h1 class="blog-header">Find: {{ header }}</h1>
-            <div class="posts">
-                {% for post in posts %}
-                <div class="post">
-                    <div class="post-text">
-                        <h3 class="post-header">{{ post.header }}</h3>
-                        <p class="post-description">{{ post.text |safe }}</p>
-                        <div class="post-footer">
-                            <div class="post-tags">
-                                {% for tag in post.tags.split() %}
-                                <p class="post-tag">#{{ tag }}</p>
-                                {% endfor %}
-                            </div>
-                            <a href="/posts/{{post.id}}"><p class="post-link">More</p></a>
-                        </div>
+</header>
+<div class="header-with-opacity" id="faded-header">
+    <div class="header-items">
+        <a href="{{ content_data['header_links'][0] }}"><h3 class="header-item">{{ content_data['headers'][0] }}</h3>
+        </a>
+        <a href="{{ content_data['header_links'][1] }}"><h3 class="header-item">{{ content_data['headers'][1] }}</h3>
+        </a>
+        <a href="{{ content_data['header_links'][2] }}"><h3 class="header-item">{{ content_data['headers'][2] }}</h3>
+        </a>
+    </div>
+</div>
+{% if posts %}
+<div class="header-finder-div">
+    <form action="/blog/find" method="post">
+        <svg xmlns="http://www.w3.org/2000/svg" class="header-finder-icon" width="24" height="24" viewBox="0 0 24 24"
+             stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+        </svg>
+        <lablel>
+            <input type="text" class="header-finder-input" name="posts-finder" value="{{ header }}"
+                   placeholder="Find post">
+        </lablel>
+    </form>
+</div>
+<main>
+    <h1 class="blog-header">Find: {{ header }}</h1>
+    <div class="posts">
+        {% for post in posts %}
+        <div class="post">
+            <div class="post-text">
+                <h3 class="post-header">{{ post.header }}</h3>
+                <p class="post-description">{{ post.text |safe }}</p>
+                <div class="post-footer">
+                    <div class="post-tags">
+                        {% for tag in post.tags.split() %}
+                        <p class="post-tag">#{{ tag }}</p>
+                        {% endfor %}
                     </div>
-                    <img src="{{ url_for('static', filename=post.preview_img) }}" alt="" class="post-image" loading="lazy">
+                    <a href="/posts/{{post.id}}"><p class="post-link">More</p></a>
                 </div>
-                {% endfor %}
             </div>
-            <div style="clear: both;"></div>
-            <div class="page_indexes">
-                {% if page_id == 1 %}
-                <p class="page_index previous disable"><<</p>
-                {% else %}
-                <a href="/blog/page/{{ page_id - 1 }}"><p class="page_index previous"><<</p></a>
-                {% endif %}
-                <p class="page_index current">{{ page_id }}</p>
-                {% if page_id == total_pages%}
-                <p class="page_index next disable">>></p>
-                {% else %}
-                <a href="/blog/page/{{ page_id + 1 }}"><p class="page_index next">>></p></a>
-                {% endif %}
-            </div>
-        </main>
-    {% else %}
-        <div class="main-finder">
-            <h1 class="main-finder-head">Ooops...<br>We didn't find something like that</h1>
-            <form action="/blog/find" method="post">
-                <lablel>
-                    <input type="text" class="main-finder-input" name="posts-finder" placeholder="Find post">
-                </lablel>
-                <svg xmlns="http://www.w3.org/2000/svg" class="main-finder-icon" width="30" height="30" viewBox="0 0 30 30" stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <circle cx="10" cy="10" r="7"></circle>
-                    <line x1="21" y1="21" x2="15" y2="15"></line>
-                </svg>
-            </form>
+            <img src="{{ url_for('static', filename=post.preview_img) }}" alt="" class="post-image" loading="lazy">
         </div>
-    {% endif %}
+        {% endfor %}
+    </div>
+    <div style="clear: both;"></div>
+    <div class="page_indexes">
+        {% if page_id == 1 %}
+        <p class="page_index previous disable"><<</p>
+        {% else %}
+        <a href="/blog/page/{{ page_id - 1 }}"><p class="page_index previous"><<</p></a>
+        {% endif %}
+        <p class="page_index current">{{ page_id }}</p>
+        {% if page_id == total_pages%}
+        <p class="page_index next disable">>></p>
+        {% else %}
+        <a href="/blog/page/{{ page_id + 1 }}"><p class="page_index next">>></p></a>
+        {% endif %}
+    </div>
+</main>
+{% else %}
+<div class="main-finder-div">
+    <h1 class="main-finder-head">Ooops...<br>We didn't find something like that</h1>
+    <form action="/blog/find" method="post">
+        <div class="main-finder">
+            <label>
+                <input type="text" class="main-finder-input" name="posts-finder" placeholder="Find post">
+            </label>
+            <svg xmlns="http://www.w3.org/2000/svg" class="main-finder-icon" width="30" height="30" viewBox="0 0 30 30"
+                 stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="10" cy="10" r="7"></circle>
+                <line x1="21" y1="21" x2="15" y2="15"></line>
+            </svg>
+        </div>
+    </form>
+</div>
+{% endif %}
 </body>
