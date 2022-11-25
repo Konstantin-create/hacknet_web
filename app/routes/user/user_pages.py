@@ -87,5 +87,6 @@ def view_post(post_id):
         post=post,
         content_data=content_data,
         likes=likes,
-        dislikes=dislikes
+        dislikes=dislikes,
+        text_path=f'/temp/posts/{post.id}.html'
     )
