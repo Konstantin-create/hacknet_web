@@ -185,36 +185,37 @@ main {
 }
 
 
-.post-text > h1 {
+.post-text h1 {
     font-size: 30px;
 }
 
-.post-text > h2 {
+.post-text h2 {
     font-size: 24px;
 }
 
-.post-text > h3 {
+.post-text h3 {
     font-size: 20px;
 }
 
-.post-text > h4 {
+.post-text h4 {
     font-size: 18px;
 }
 
-.post-text > h5 {
+.post-text h5 {
     font-size: 17px;
 }
 
-.post-text > h6 {
+.post-text h6 {
     font-size: 15px;
 }
 
-.post-text > hr {
+.post-text hr {
     width: 50%;
     margin: 5px auto;
+    color: #EDF2EF;
 }
 
-.post-text > ul {
+.post-text ul {
     font-family: Roboto, sans-serif;
     color: #EDF2EF;
 
@@ -223,7 +224,7 @@ main {
     margin-bottom: 10px;
 }
 
-.post-text > li {
+.post-text li {
     margin-left: 10px;
     margin-top: 2px;
 }
