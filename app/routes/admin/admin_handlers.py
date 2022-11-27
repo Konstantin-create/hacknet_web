@@ -81,6 +81,9 @@ def admin_add_post_handler():
             preview_img=f'posts/img/{post_id}-1.jpg',
             main_img=f'posts/img/{post_id}-2.jpg'
         )
+        with open(f'/{web_site_folder}/templates/temp/posts/{post_id}.html', 'w') as file:
+            file.write(markdown.markdown(post.text))
+
         preview_image.save(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg')
         main_image.save(f'{web_site_folder}/static/posts/img/{post_id}-2.jpg')
         db.session.add(post)
