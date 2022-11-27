@@ -126,14 +126,14 @@ main {
     height: 150px;
 }
 
-/*.post-text {*/
-/*    font-family: Roboto, sans-serif;*/
-/*    font-weight: 200;*/
-/*    font-size: 18px;*/
-/*    color: #EDF2EF;*/
-/*    width: 90%;*/
-/*    margin: 200px auto;*/
-/*}*/
+.post-text {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    color: #EDF2EF;
+    width: 90%;
+    margin: 200px auto;
+}
 
 .rating-div {
     width: 220px;
