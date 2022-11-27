@@ -229,10 +229,31 @@ main {
     margin-top: 2px;
 }
 
-/*todo: mb not working because of h2 tag*/
 .post-text img {
     display: block;
     width: 50%;
     margin: 20px auto;
     box-shadow: 10px 10px 10px rgba(10, 10, 10, .5);
+}
+
+.post-text table {
+    font-family: Roboto, sans-serif;
+    color: #EDF2EF;
+    width: auto;
+    margin: 10px auto;
+    border-spacing: 0;
+}
+
+.post-text th {
+    border: 1px solid rgba(237, 242, 239, .4);
+    padding: 10px 25px;
+}
+
+.post-text td {
+    border: 1px solid rgba(237, 242, 239, .4);
+    padding: 5px 20px;
+}
+
+.post-text td > img {
+    width: 75px;
 }
