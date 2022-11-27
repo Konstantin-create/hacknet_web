@@ -98,6 +98,17 @@ main {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
 }
 
+.post-image-name {
+    float: left;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    color: #EDF2EF;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+
 .input-file {
     position: relative;
     display: inline-block;
