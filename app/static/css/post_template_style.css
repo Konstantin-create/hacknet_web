@@ -123,17 +123,9 @@ main {
 }
 
 .post-text {
-    height: 150px;
+    margin-top: 150px;
 }
 
-.post-text {
-    font-family: Roboto, sans-serif;
-    font-weight: 200;
-    font-size: 18px;
-    color: #EDF2EF;
-    width: 90%;
-    margin: 200px auto;
-}
 
 .rating-div {
     width: 220px;
@@ -181,4 +173,57 @@ main {
 .minus {
     background-color: #790000;
     box-shadow: 0 0 10px rgba(178, 7, 7, 0.5);
+}
+
+
+/*Post text styles*/
+
+.post-text > h1, .post-text > h2, .post-text > h3, .post-text > h4, .post-text > h5, .post-text > h6, .post-text > p {
+    font-family: Cantarell, sans-serif;
+    color: #EDF2EF;
+    padding: 10px 50px;
+}
+
+
+.post-text > h1 {
+    font-size: 30px;
+}
+
+.post-text > h2 {
+    font-size: 24px;
+}
+
+.post-text > h3 {
+    font-size: 20px;
+}
+
+.post-text > h4 {
+    font-size: 18px;
+}
+
+.post-text > h5 {
+    font-size: 17px;
+}
+
+.post-text > h6 {
+    font-size: 15px;
+}
+
+.post-text > hr {
+    width: 50%;
+    margin: 5px auto;
+}
+
+.post-text > ul {
+    font-family: Roboto, sans-serif;
+    color: #EDF2EF;
+
+    margin-left: 65px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post-text > li {
+    margin-left: 10px;
+    margin-top: 2px;
 }

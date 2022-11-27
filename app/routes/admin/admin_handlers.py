@@ -1,4 +1,5 @@
 import os
+import markdown
 
 from app import db
 from app import web_site_folder
@@ -80,6 +81,9 @@ def admin_add_post_handler():
             preview_img=f'posts/img/{post_id}-1.jpg',
             main_img=f'posts/img/{post_id}-2.jpg'
         )
+        with open(f'/{web_site_folder}/templates/temp/posts/{post_id}.html', 'w') as file:
+            file.write(markdown.markdown(post.text))
+
         preview_image.save(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg')
         main_image.save(f'{web_site_folder}/static/posts/img/{post_id}-2.jpg')
         db.session.add(post)
@@ -108,12 +112,15 @@ def admin_post_edit_handler(post_id):
             return admin_post_editor_page(text_error=True)
         if tags == '':
             return admin_post_editor_page(tags_error=True)
-
-        preview_image.save(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg')
-        main_image.save(f'{web_site_folder}/static/posts/img/{post_id}-2.jpg')
+        if preview_image:
+            preview_image.save(f'{web_site_folder}/static/posts/img/{post_id}-1.jpg')
+        if main_image:
+            main_image.save(f'{web_site_folder}/static/posts/img/{post_id}-2.jpg')
         post.header = header
         post.text = text
         post.tags = tags
+        with open(f'/{web_site_folder}/templates/temp/posts/{post_id}.html', 'w') as file:
+            file.write(markdown.markdown(post.text))
 
         db.session.commit()
         return redirect('/admin/dashboard')
