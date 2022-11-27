@@ -212,5 +212,18 @@ main {
 .post-text > hr {
     width: 50%;
     margin: 5px auto;
-    
+}
+
+.post-text > ul {
+    font-family: Roboto, sans-serif;
+    color: #EDF2EF;
+
+    margin-left: 65px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post-text > li {
+    margin-left: 10px;
+    margin-top: 2px;
 }
