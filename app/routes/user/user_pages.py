@@ -77,7 +77,7 @@ def view_post(post_id):
     dislikes = posts_tools.get_dislikes(post)
 
     content_data = content_editor.get_content()
-    
+
     return render_template(
         'post_template.html',
         post=post,
