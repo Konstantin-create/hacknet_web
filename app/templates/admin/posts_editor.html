@@ -35,7 +35,7 @@
             <div>
                 <label class="input-file">
                     <input type="file" name="post-preview-image">
-                    <span>{{ post_preview_img_name }}</span>
+                    <span id="preview-image">{{ post_preview_img_name }}</span>
                 </label>
                 <p class="post-image-name">Post preview image:</p>
             </div>
@@ -43,7 +43,7 @@
             <div>
                 <label class="input-file">
                     <input type="file" name="post-main-image">
-                    <span>{{ post_main_img_name }}</span>
+                    <span id="main-image">{{ post_main_img_name }}</span>
                 </label>
                 <p class="post-image-name">Post main image:</p>
             </div>
@@ -58,7 +58,11 @@
 </main>
 <script src="{{ url_for('static', filename='js/admin/posts-creator.js') }}"></script>
 <script>
-    $('.input-file input[type=file]').on('change', function () {
+    $('#preview-image input[type=file]').on('change', function () {
+        let file = this.files[0];
+        $(this).next().html(file.name);
+    });
+    $('#main-image input[type=file]').on('change', function () {
         let file = this.files[0];
         $(this).next().html(file.name);
     });
