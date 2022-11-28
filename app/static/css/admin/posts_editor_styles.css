@@ -85,17 +85,24 @@ main {
 .text-input {
     font-family: "Cantarell Light", sans-serif;
     font-size: 20px;
+
     width: 90%;
     height: 20em;
+
     box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+
     padding: 10px 5px;
+    margin: 0 50px;
+
     background-color: #202020;
     color: #EDF2EF;
+
     border: none;
     border-radius: 10px;
-    margin: 0 50px;
+
     resize: vertical;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+    overflow-wrap: normal;
 }
 
 .post-image-name {

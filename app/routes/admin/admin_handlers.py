@@ -136,6 +136,7 @@ def admin_delete_post_handler(post_id):
 
         os.remove(post.preview_img)
         os.remove(post.main_img)
+        os.remove(f'{web_site_folder}/templates/temp/posts/{post_id}.html')
 
         db.session.delete(post)
         db.session.commit()
