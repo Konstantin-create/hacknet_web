@@ -20,7 +20,8 @@ a {
     float: left;
     margin: 20px calc((100% - 75px - 1000px) / 6);
     width: 600px;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     background-color: #1c1c1c;
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(28, 28, 28, .5);
@@ -78,7 +79,7 @@ a {
 .clear_btn {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -115px;
 
     font-family: Roboto, sans-serif;
     font-size: 20px;
