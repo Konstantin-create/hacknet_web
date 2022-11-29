@@ -19,8 +19,8 @@ class Posts(db.Model):
         with open(f'{web_site_folder}/templates/temp/posts/{self.id}.html', 'r') as file:
             full_text = file.read()
         soup = BeautifulSoup(full_text, 'html.parser')
-        p_tags = soup.find_all('p')
-        return p_tags[0]
+        p_tags = soup.find('p').getText()
+        return p_tags
 
     def __repr__(self):
         return f'<Post: {self.id} | {self.header}>'

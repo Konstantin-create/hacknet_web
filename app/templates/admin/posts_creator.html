@@ -20,7 +20,7 @@
         <div class="post">
             <div class="post-text">
                 <h3 class="post-header">{{ post.header }}</h3>
-                <p class="post-description">{{ post.text }}</p>
+                <p class="post-description">{{ post.get_short_description() }}</p>
                 <div class="post-footer">
                     <div class="post-tags">
                         {% for tag in post.tags.split() %}
