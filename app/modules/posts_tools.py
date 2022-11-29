@@ -86,13 +86,3 @@ def add_dislike(post_id: int, user_ip: str):
     else:
         db.session.delete(dislike_obj)
     db.session.commit()
-
-
-def get_short_description(post_id: int) -> str:
-    """Function to get short description for post"""
-
-    with open(f'{web_site_folder}/templates/temp/posts/{post_id}.html', 'r') as file:
-        full_text = file.read()
-    soup = BeautifulSoup(full_text, 'html.parser')
-    p_tags = soup.find_all('p')
-    return p_tags[0]
