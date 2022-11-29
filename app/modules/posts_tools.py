@@ -1,5 +1,10 @@
+from bs4 import BeautifulSoup
+
 from app import db
+from app import web_site_folder
+
 from config import Config
+
 from app.modules.find_tools import approximate_search
 from app.modules.models import Posts, Likes, Dislikes
 
