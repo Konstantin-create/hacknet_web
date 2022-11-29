@@ -32,24 +32,19 @@
     </div>
     <div class="dash">
         <h3 class="data-header">The most visitable pages</h3>
-        <div class="left">
-            <h4 class="data-col-header">Urls:</h4>
+        <table>
+            <tr>
+                <th class="data-col-header">Urls</th>
+                <th class="data-col-header">Total visits</th>
+            </tr>
             {% for el in all_visitors %}
-            <p class="data-value">{{ el[0] }}</p>
-            {% else %}
-            <p class="no-data">No data</p>
+            <tr>
+                <td><p class="data-value">{{ el[0] }}</p></td>
+                <td><p class="data-value">{{ el[1] }}</p></td>
+            </tr>
             {% endfor %}
-        </div>
-        <div class="right">
-            <h4 class="data-col-header">Total visits:</h4>
-            {% for el in all_visitors %}
-            <p class="data-value">{{ el[1] }}</p>
-            {% else %}
-            <p class="no-data">No data</p>
-            {% endfor %}
-        </div>
+        </table>
     </div>
-    <div class="dash"></div>
 </div>
 {% endblock %}
 {% block js %}
