@@ -96,3 +96,24 @@ a {
 .clear_btn:hover {
     background-color: #282828;
 }
+
+.get_stat_btn {
+    position: absolute;
+    left: 0;
+    bottom: -115px;
+
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+
+    color: #EDF2EF;
+    background-color: #202020;
+
+    padding: 10px 20px;
+    border-radius: 0 10px 0 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.get_stat_btn:hover {
+    background-color: #282828;
+}

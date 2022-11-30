@@ -14,6 +14,7 @@
             <p class="data-value">All time: {{ all_requests['requests']['total'] }}</p>
             <p class="data-value">Per month: {{ all_requests['requests']['per_month'] }}</p>
             <p class="data-value">Per day: {{ all_requests['requests']['per_day'] }}</p>
+            <p class="get_stat_btn"><a href="/admin/get-logs">Get logs</a></p>
             {% else %}
             <p class="no-data">No data</p>
             {% endif %}

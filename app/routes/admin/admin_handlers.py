@@ -6,7 +6,7 @@ from app import web_site_folder
 from app.modules.models import Posts, Admin
 
 from flask_login import login_user, current_user, logout_user
-from app import app, request, redirect, url_for
+from app import app, request, redirect, url_for, send_file
 
 from app.modules import markdown_tools
 from app.modules import content_editor
@@ -23,6 +23,18 @@ def admin_clear_stat():
 
     try:
         dashboard_tools.clear_statistics()
+    except Exception as e:
+        print(e)
+    return redirect('/admin/dashboard')
+
+
+@app.route('/admin/get-logs')
+def admin_get_logs():
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
+
+    try:
+        return send_file(f'{web_site_folder}/data/visits/requests.json')
     except Exception as e:
         print(e)
     return redirect('/admin/dashboard')
