@@ -44,6 +44,15 @@ def admin_get_logs():
 @app.route('/admin/login/form', methods=['GET', 'POST'])
 def admin_login_handler():
     if request.method == 'POST':
+        if current_user.is_authenticated:
+            try:
+                admin = Admin.query.get(current_user.get_id())
+                admin.set_last_login(ip=request.remote_addr)
+                db.session.add(admin)
+                db.session.commit()
+            except:
+                pass
+            return redirect('/admin/dashboard')
         username, password = request.form.get('username'), request.form.get('password')
 
         if username == '' or password == '':
@@ -52,6 +61,14 @@ def admin_login_handler():
         admin = Admin.query.filter_by(username=username).first()
         if admin and admin.check_password(password):
             login_user(admin, remember=True)
+            try:
+                admin = Admin.query.get(current_user.get_id())
+                print(admin)
+                admin.set_last_login(ip=request.remote_addr)
+                db.session.add(admin)
+                db.session.commit()
+            except:
+                pass
             return redirect('/admin/dashboard')
     return admin_login_page(error_code=200)  # dev: Error code 200 is login error code
 
