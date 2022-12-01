@@ -6,7 +6,7 @@ from app import web_site_folder
 from app.modules.models import Posts, Admin
 
 from flask_login import login_user, current_user, logout_user
-from app import app, request, redirect, url_for
+from app import app, request, redirect, url_for, send_file
 
 from app.modules import markdown_tools
 from app.modules import content_editor
@@ -28,10 +28,31 @@ def admin_clear_stat():
     return redirect('/admin/dashboard')
 
 
+@app.route('/admin/get-logs')
+def admin_get_logs():
+    if not current_user.is_authenticated:
+        return redirect('/admin/login')
+
+    try:
+        return send_file(f'{web_site_folder}/data/visits/requests.json')
+    except Exception as e:
+        print(e)
+    return redirect('/admin/dashboard')
+
+
 # Admin login form data handler
 @app.route('/admin/login/form', methods=['GET', 'POST'])
 def admin_login_handler():
     if request.method == 'POST':
+        if current_user.is_authenticated:
+            try:
+                admin = Admin.query.get(current_user.get_id())
+                admin.set_last_login(ip=request.remote_addr)
+                db.session.add(admin)
+                db.session.commit()
+            except:
+                pass
+            return redirect('/admin/dashboard')
         username, password = request.form.get('username'), request.form.get('password')
 
         if username == '' or password == '':
@@ -40,6 +61,14 @@ def admin_login_handler():
         admin = Admin.query.filter_by(username=username).first()
         if admin and admin.check_password(password):
             login_user(admin, remember=True)
+            try:
+                admin = Admin.query.get(current_user.get_id())
+                print(admin)
+                admin.set_last_login(ip=request.remote_addr)
+                db.session.add(admin)
+                db.session.commit()
+            except:
+                pass
             return redirect('/admin/dashboard')
     return admin_login_page(error_code=200)  # dev: Error code 200 is login error code
 

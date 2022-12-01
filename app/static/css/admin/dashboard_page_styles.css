@@ -96,3 +96,58 @@ a {
 .clear_btn:hover {
     background-color: #282828;
 }
+
+.get_stat_btn {
+    position: absolute;
+    left: 0;
+    bottom: -115px;
+
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+
+    color: #EDF2EF;
+    background-color: #202020;
+
+    padding: 10px 20px;
+    border-radius: 0 10px 0 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.get_stat_btn:hover {
+    background-color: #282828;
+}
+
+.last-login-div {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    width: 300px;
+    height: 150px;
+    background-color: #1c1c1c;
+    border-radius: 10px 0 0 0;
+    box-shadow: -5px -5px 10px rgba(10, 10, 10, .5);
+
+    box-sizing: border-box;
+    padding: 5px 10px;
+}
+
+.last-login-header {
+    font-family: Cantarell, sans-serif;
+    color: #EDF2EF;
+    padding-bottom: 10px;
+}
+
+.last-login-data, .last-login-time-stamp {
+    font-family: Roboto, sans-serif;
+    color: #EDF2EF;
+    padding: 5px 15px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
