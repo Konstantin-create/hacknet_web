@@ -7,7 +7,7 @@ from config import Config
 # Flask imports
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for, send_file
 
 from flask_login import LoginManager
 

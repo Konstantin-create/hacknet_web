@@ -3,6 +3,7 @@ from app import app, redirect, render_template
 
 # Flask user
 from flask_login import current_user
+from app.modules.models import Admin
 
 # Import modules
 from app.modules import posts_tools
@@ -22,10 +23,19 @@ def admin_dashboard_page():
     if not current_user.is_authenticated:
         return redirect('/admin/login')
 
+    admin = Admin.query.get(current_user.get_id())
+    ip = 'no data'
+    time_stamp = 'no data'
+    if admin:
+        ip = admin.last_login_ip
+        time_stamp = admin.last_login_time.strftime("%B %d %Y - %H:%M:%S")
+
     return render_template(
         'admin/dashboard_page.html',
         all_requests=dashboard_tools.generate_requests_data(),
-        all_visitors=dashboard_tools.generate_pages_data()
+        all_visitors=dashboard_tools.generate_pages_data(),
+        ip=ip,
+        time_stamp=time_stamp
     )
 
 

@@ -14,6 +14,7 @@
             <p class="data-value">All time: {{ all_requests['requests']['total'] }}</p>
             <p class="data-value">Per month: {{ all_requests['requests']['per_month'] }}</p>
             <p class="data-value">Per day: {{ all_requests['requests']['per_day'] }}</p>
+            <p class="get_stat_btn"><a href="/admin/get-logs">Get logs</a></p>
             {% else %}
             <p class="no-data">No data</p>
             {% endif %}
@@ -32,28 +33,43 @@
     </div>
     <div class="dash">
         <h3 class="data-header">The most visitable pages</h3>
-        <div class="left">
-            <h4 class="data-col-header">Urls:</h4>
+        <table>
+            <tr>
+                <th class="data-col-header">Urls</th>
+                <th class="data-col-header">Total visits</th>
+            </tr>
             {% for el in all_visitors %}
-            <p class="data-value">{{ el[0] }}</p>
-            {% else %}
-            <p class="no-data">No data</p>
+            <tr>
+                <td><p class="data-value">{{ el[0] }}</p></td>
+                <td><p class="data-value">{{ el[1] }}</p></td>
+            </tr>
             {% endfor %}
-        </div>
-        <div class="right">
-            <h4 class="data-col-header">Total visits:</h4>
-            {% for el in all_visitors %}
-            <p class="data-value">{{ el[1] }}</p>
-            {% else %}
-            <p class="no-data">No data</p>
-            {% endfor %}
-        </div>
+        </table>
     </div>
-    <div class="dash"></div>
+</div>
+<div class="last-login-div">
+    <h3 class="last-login-header">Last login</h3>
+    <p class="last-login-data">IP: {{ ip }}</p>
+    <p class="last-login-time-stamp">Time stamp: {{ time_stamp }}</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="close-btn" viewBox="0 0 20 20"
+         onclick="hide_last_login()">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+    </svg>
 </div>
 {% endblock %}
 {% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+    function sleep(time) {
+        return new Promise((resolve) => setTimeout(resolve, time));
+    }
+
+    function hide_last_login() {
+        $('.last-login-div').fadeOut()
+    }
+
     document.getElementById('img-1').className = 'aside-img active-page'
+
+    sleep(6000).then(hide_last_login)
 </script>
 {% endblock %}
