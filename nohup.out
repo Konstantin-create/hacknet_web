@@ -1,0 +1,99 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://83.220.172.52:80
+[33mPress CTRL+C to quit[0m
+Exception ignored in: <module 'threading' from '/usr/lib/python3.8/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 1388, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://83.220.172.52:80
+[33mPress CTRL+C to quit[0m
+162.158.203.61 - - [03/Dec/2022 20:30:33] "GET /blog HTTP/1.1" 200 -
+162.158.203.61 - - [03/Dec/2022 20:30:40] "GET /blog HTTP/1.1" 200 -
+162.158.203.62 - - [03/Dec/2022 20:30:52] "GET / HTTP/1.1" 200 -
+162.158.203.62 - - [03/Dec/2022 20:30:57] "GET /blog HTTP/1.1" 200 -
+162.158.203.62 - - [03/Dec/2022 20:31:01] "GET /posts/2 HTTP/1.1" 200 -
+162.158.203.39 - - [03/Dec/2022 20:31:01] "GET /static/css/post_template_style.css HTTP/1.1" 200 -
+162.158.203.141 - - [03/Dec/2022 20:31:02] "GET /static/posts/img/2-2.jpg HTTP/1.1" 200 -
+80.94.92.40 - - [03/Dec/2022 20:31:02] "GET / HTTP/1.1" 200 -
+172.71.182.14 - - [03/Dec/2022 20:33:06] "GET /blog HTTP/1.1" 200 -
+172.71.182.14 - - [03/Dec/2022 20:33:06] "GET / HTTP/1.1" 200 -
+172.70.46.13 - - [03/Dec/2022 20:33:09] "GET / HTTP/1.1" 200 -
+172.70.46.84 - - [03/Dec/2022 20:33:10] "GET /static/css/style.css HTTP/1.1" 200 -
+172.70.46.15 - - [03/Dec/2022 20:33:10] "GET /static/img/instagram.png HTTP/1.1" 200 -
+172.70.46.59 - - [03/Dec/2022 20:33:10] "GET /static/js/animations.js HTTP/1.1" 200 -
+172.70.46.3 - - [03/Dec/2022 20:33:10] "GET /static/img/telegram.png HTTP/1.1" 200 -
+172.70.46.20 - - [03/Dec/2022 20:33:10] "GET /static/img/github.png HTTP/1.1" 200 -
+172.70.46.109 - - [03/Dec/2022 20:33:10] "GET /static/img/user-logo.png HTTP/1.1" 200 -
+172.70.46.131 - - [03/Dec/2022 20:33:10] "GET /static/img/gh-contributions.png HTTP/1.1" 200 -
+172.70.46.30 - - [03/Dec/2022 20:33:10] "GET /static/img/background.jpg HTTP/1.1" 200 -
+172.70.246.208 - - [03/Dec/2022 20:33:12] "GET / HTTP/1.1" 200 -
+172.70.46.13 - - [03/Dec/2022 20:33:18] "GET /blog HTTP/1.1" 200 -
+172.70.46.136 - - [03/Dec/2022 20:33:18] "GET /static/posts/img/1-1.jpg HTTP/1.1" 200 -
+172.70.46.69 - - [03/Dec/2022 20:33:18] "GET /static/css/blog_style.css HTTP/1.1" 200 -
+172.70.46.183 - - [03/Dec/2022 20:33:18] "GET /static/posts/img/2-1.jpg HTTP/1.1" 200 -
+172.70.246.209 - - [03/Dec/2022 20:33:32] "GET /admin/dashboard HTTP/1.1" 200 -
+172.70.246.208 - - [03/Dec/2022 20:33:38] "GET /admin/get-logs HTTP/1.1" 200 -
+172.70.46.7 - - [03/Dec/2022 20:34:02] "GET / HTTP/1.1" 200 -
+172.70.246.208 - - [03/Dec/2022 20:34:05] "GET /admin/get-logs HTTP/1.1" 200 -
+172.70.251.117 - - [03/Dec/2022 20:34:38] "[36mGET /admin/get-logs HTTP/1.1[0m" 304 -
+141.101.76.42 - - [03/Dec/2022 20:37:21] "[36mGET /admin/get-logs HTTP/1.1[0m" 304 -
+141.101.76.138 - - [03/Dec/2022 20:37:57] "[36mGET /admin/get-logs HTTP/1.1[0m" 304 -
+141.101.76.138 - - [03/Dec/2022 20:38:12] "GET /admin/dashboard HTTP/1.1" 200 -
+141.101.76.99 - - [03/Dec/2022 20:38:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+141.101.76.139 - - [03/Dec/2022 20:38:14] "GET /admin/posts-creator HTTP/1.1" 200 -
+141.101.76.24 - - [03/Dec/2022 20:38:14] "GET /static/css/admin/posts_creator_styles.css HTTP/1.1" 200 -
+141.101.77.24 - - [03/Dec/2022 20:38:14] "GET /static/img/admin/edit.png HTTP/1.1" 200 -
+141.101.76.233 - - [03/Dec/2022 20:38:14] "GET /static/js/admin/posts-creator.js HTTP/1.1" 200 -
+80.94.92.40 - - [03/Dec/2022 20:49:13] "GET / HTTP/1.1" 200 -
+172.71.160.4 - - [03/Dec/2022 20:52:36] "GET /admin/content-editor HTTP/1.1" 200 -
+172.71.160.77 - - [03/Dec/2022 20:52:36] "GET /static/css/admin/content_editor_styles.css HTTP/1.1" 200 -
+172.71.160.94 - - [03/Dec/2022 20:52:36] "GET /static/js/admin/content-editor.js HTTP/1.1" 200 -
+172.71.160.5 - - [03/Dec/2022 20:52:39] "GET /admin/posts-creator HTTP/1.1" 200 -
+172.71.160.4 - - [03/Dec/2022 20:52:44] "GET /admin/post-editor/2 HTTP/1.1" 200 -
+198.41.242.71 - - [03/Dec/2022 20:52:44] "GET /static/css/admin/posts_editor_styles.css HTTP/1.1" 200 -
+172.71.160.4 - - [03/Dec/2022 20:52:49] "GET /posts/2 HTTP/1.1" 200 -
+[2022-12-03 21:02:04,543] ERROR in app: Exception on /admin/add-post [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/hacknet/hacknet_web/app/routes/admin/admin_handlers.py", line 114, in admin_add_post_handler
+    file.write(markdown_tools.markdown_to_html(post.text))
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 3-6: ordinal not in range(256)
+172.71.160.4 - - [03/Dec/2022 21:02:04] "[35m[1mPOST /admin/add-post HTTP/1.1[0m" 500 -
+198.41.242.81 - - [03/Dec/2022 21:04:03] "[32mPOST /admin/add-post HTTP/1.1[0m" 302 -
+198.41.242.78 - - [03/Dec/2022 21:04:03] "GET /admin/dashboard HTTP/1.1" 200 -
+198.41.242.76 - - [03/Dec/2022 21:04:05] "GET /admin/posts-creator HTTP/1.1" 200 -
+198.41.242.97 - - [03/Dec/2022 21:04:07] "GET /static/posts/img/3-1.jpg HTTP/1.1" 200 -
+198.41.242.76 - - [03/Dec/2022 21:04:11] "GET /posts/3 HTTP/1.1" 200 -
+198.41.242.210 - - [03/Dec/2022 21:04:12] "GET /static/posts/img/3-2.jpg HTTP/1.1" 200 -
+198.41.242.79 - - [03/Dec/2022 21:04:32] "GET /admin/post-editor/3 HTTP/1.1" 200 -
+198.41.242.77 - - [03/Dec/2022 21:05:01] "[32mPOST /admin/edit-post/3 HTTP/1.1[0m" 302 -
+198.41.242.76 - - [03/Dec/2022 21:05:01] "GET /admin/dashboard HTTP/1.1" 200 -
+198.41.242.76 - - [03/Dec/2022 21:05:03] "GET /admin/posts-creator HTTP/1.1" 200 -
+198.41.242.77 - - [03/Dec/2022 21:05:07] "GET /posts/3 HTTP/1.1" 200 -
+198.41.242.78 - - [03/Dec/2022 21:05:14] "GET /admin/post-editor/3 HTTP/1.1" 200 -
+194.55.186.216 - - [03/Dec/2022 21:11:12] "[33mPOST /boaform/admin/formLogin HTTP/1.1[0m" 404 -
+172.68.73.32 - - [03/Dec/2022 21:16:24] "[32mPOST /admin/edit-post/3 HTTP/1.1[0m" 302 -
+172.68.73.32 - - [03/Dec/2022 21:16:25] "GET /admin/dashboard HTTP/1.1" 200 -
+172.68.73.32 - - [03/Dec/2022 21:16:34] "GET /admin/posts-creator HTTP/1.1" 200 -
+172.68.73.32 - - [03/Dec/2022 21:16:39] "GET /posts/3 HTTP/1.1" 200 -
+172.68.73.32 - - [03/Dec/2022 21:16:47] "GET /admin/post-editor/3 HTTP/1.1" 200 -
+172.68.73.32 - - [03/Dec/2022 21:17:03] "GET /admin/posts-creator HTTP/1.1" 200 -
+172.68.73.32 - - [03/Dec/2022 21:17:04] "GET /admin/posts-creator HTTP/1.1" 200 -
+172.68.73.32 - - [03/Dec/2022 21:17:08] "GET /admin/posts-creator HTTP/1.1" 200 -
