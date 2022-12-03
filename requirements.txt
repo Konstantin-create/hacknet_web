@@ -1,0 +1,7 @@
+Markdown
+beautifulsoup4
+Werkzeug
+PyGithub
+Flask
+alembic
+SQLAlchemy
