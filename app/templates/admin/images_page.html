@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+{% extends 'admin/admin_template.html' %}
 
-</body>
-</html>
+{% block title %}<title>Konstantin-create Images</title>{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/images_page_styles.css') }}">
+{% endblock %}
+{% block page_name %}<h1 class="header-title">Images</h1>{% endblock %}
+{% block content %}
+
+{% endblock %}
+
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function sleep(time) {
+        return new Promise((resolve) => setTimeout(resolve, time));
+    }
+
+    function hide_last_login() {
+        $('.last-login-div').fadeOut()
+    }
+
+    document.getElementById('img-4').className = 'aside-img active-page'
+
+    sleep(6000).then(hide_last_login)
+</script>
+{% endblock %}
