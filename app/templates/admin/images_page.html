@@ -6,7 +6,11 @@
 {% endblock %}
 {% block page_name %}<h1 class="header-title">Images</h1>{% endblock %}
 {% block content %}
-
+<div class="images-div">
+    {% for image in images %}
+        <a href="/images/{{ image.id }}"><div class="image"></div></a>
+    {% endfor %}
+</div>
 {% endblock %}
 
 {% block js %}
