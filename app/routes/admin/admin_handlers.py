@@ -217,8 +217,3 @@ def admin_edit_content():
                 }
             }
         )
-
-
-@app.route('/admin/add-image', methods=['GET', 'POST'])
-def admin_add_image():
-    pass
