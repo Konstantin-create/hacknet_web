@@ -175,7 +175,7 @@ def admin_delete_post_handler(post_id):
 
 
 @app.route('/admin/edit-content/total', methods=['GET', 'POST'])
-def edit_content():
+def admin_edit_content():
     if not current_user.is_authenticated:
         return redirect('/admin/login')
 
