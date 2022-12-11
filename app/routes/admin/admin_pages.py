@@ -67,11 +67,6 @@ def admin_post_creator(header_error=False, text_error=False, tags_error=False):
     )
 
 
-@app.route('/admin/images')
-def admin_images_page():
-    return render_template('admin/images_page.html')
-
-
 @app.route('/admin/post-editor/<int:post_id>')
 def admin_post_editor_page(post_id, header_error=False, text_error=False, tags_error=False):
     if not current_user.is_authenticated:
