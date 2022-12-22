@@ -51,7 +51,8 @@ aside {
 main {
     float: left;
     width: calc(100% - 75px);
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     background-color: #171717;
 }
 

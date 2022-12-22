@@ -163,9 +163,12 @@ def admin_delete_post_handler(post_id):
     try:
         post = Posts.query.get(post_id)
 
-        os.remove(post.preview_img)
-        os.remove(post.main_img)
-        os.remove(f'{web_site_folder}/templates/temp/posts/{post_id}.html')
+        try:
+            os.remove(post.preview_img)
+            os.remove(post.main_img)
+            os.remove(f'{web_site_folder}/templates/temp/posts/{post_id}.html')
+        except:
+            pass
 
         db.session.delete(post)
         db.session.commit()
@@ -175,7 +178,7 @@ def admin_delete_post_handler(post_id):
 
 
 @app.route('/admin/edit-content/total', methods=['GET', 'POST'])
-def edit_content():
+def admin_edit_content():
     if not current_user.is_authenticated:
         return redirect('/admin/login')
 
