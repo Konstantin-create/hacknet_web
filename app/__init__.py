@@ -24,6 +24,11 @@ login_manager = LoginManager(app)
 
 web_site_folder = os.path.dirname(__file__)
 
+# Errors codes import
+from app.routes import error_code_pages
+
+app.register_error_handler(404, error_code_pages.page_not_found)
+
 from app.modules.models import *
 from app.routes.admin import admin_login
 from app.routes.admin import *

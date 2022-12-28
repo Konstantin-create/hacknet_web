@@ -1,7 +1,6 @@
-from app import db
-from app import app, redirect, request
+from app import app
+from flask import redirect, request
 from app.modules import posts_tools
-from app.modules.models import Posts
 
 
 @app.route('/user/add-post-like/<int:post_id>')
