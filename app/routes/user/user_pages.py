@@ -87,9 +87,9 @@ def view_post(post_id):
 
 @app.route('/not-allowed')
 def not_allowed_page():
-    return render_template('not_allowed_page.html', content_data=content_editor.get_content())
+    return render_template('not_allowed_page.html', content_data=content_editor.get_content()['index'])
 
 
 @app.route('/not-found')
 def not_found_page():
-    return render_template('not_found_page.html', content_data=content_editor.get_content())
+    return render_template('not_found_page.html', content_data=content_editor.get_content()['index'])
