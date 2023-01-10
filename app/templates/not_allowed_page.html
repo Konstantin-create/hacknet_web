@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Bank - Now allowed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user/index_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/not_allowed_styles.css') }}">
+</head>
+<body>
+<header id="header">
+    <div class="header-items">
+        <a href="/"><h3 class="header-item">Index page</h3></a>
+        <a href="{{ content_data['header_links'][0] }}"><h3 class="header-item">{{ content_data['headers'][0] }}</h3>
+        </a>
+        <a href="{{ content_data['header_links'][1] }}"><h3 class="header-item">{{ content_data['headers'][1] }}</h3>
+        </a>
+    </div>
+</header>
+<main>
+    <h1 class="allowed-main-header">This page is not allowed</h1>
+    <h3 class="home-link"><a href="/">Index page</a></h3>
+</main>
+</body>
+</html>

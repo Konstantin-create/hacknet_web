@@ -6,7 +6,8 @@ from app import web_site_folder
 from app.modules.models import Posts, Admin
 
 from flask_login import login_user, current_user, logout_user
-from app import app, request, redirect, url_for, send_file
+from app import app
+from flask import request, redirect, send_file
 
 from app.modules import markdown_tools
 from app.modules import content_editor

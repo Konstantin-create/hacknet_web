@@ -1,5 +1,6 @@
 # Flask imports
-from app import app, redirect, render_template
+from app import app
+from flask import redirect, render_template
 
 # Flask user
 from flask_login import current_user

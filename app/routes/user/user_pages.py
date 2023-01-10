@@ -1,8 +1,4 @@
 # Import consts
-import os.path
-
-import markdown
-
 from config import Config
 from app import web_site_folder
 
@@ -13,7 +9,8 @@ from app.modules import content_editor
 from app.modules import dashboard_tools
 
 # Flask imports
-from app import app, render_template, request, redirect, url_for
+from app import app
+from flask import render_template, request, redirect
 
 
 # Index page router
@@ -86,3 +83,13 @@ def view_post(post_id):
         dislikes=dislikes,
         text_path=f'/temp/posts/{post.id}.html'
     )
+
+
+@app.route('/not-allowed')
+def not_allowed_page():
+    return render_template('not_allowed_page.html', content_data=content_editor.get_content()['index'])
+
+
+@app.route('/not-found')
+def not_found_page():
+    return render_template('not_found_page.html', content_data=content_editor.get_content()['index'])
