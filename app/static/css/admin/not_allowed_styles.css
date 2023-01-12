@@ -1,0 +1,40 @@
+a {
+    text-decoration: none;
+    color: #EDF2EF;
+}
+
+.allowed-main-header {
+    font-family: "Cantarell Extra Bold", sans-serif;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 30vh;
+
+    color: #EDF2EF;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.home-link {
+    font-family: Cantarell, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    padding: 5px;
+    width: 100px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+
+.home-link:after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: width 0.2s ease-in-out;
+    z-index: 10;
+}
+
+.home-link:hover:after, .home-link:focus:after {
+    width: 100%;
+}
